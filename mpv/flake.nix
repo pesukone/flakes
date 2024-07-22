@@ -50,7 +50,7 @@
         };
 
         packages.default = pkgs.stdenv.mkDerivation {
-          name = "mpv-git";
+          name = "mpv";
           src = mpv-src;
           buildInputs = with pkgs; [
             pkg-config
