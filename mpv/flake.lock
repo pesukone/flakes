@@ -1,0 +1,96 @@
+{
+  "nodes": {
+    "flake-utils": {
+      "inputs": {
+        "systems": "systems"
+      },
+      "locked": {
+        "lastModified": 1705309234,
+        "narHash": "sha256-uNRRNRKmJyCRC/8y1RqBkqWBLM034y4qN7EprSdmgyA=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "1ef2e671c3b0c19053962c07dbda38332dcebf26",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "type": "github"
+      }
+    },
+    "libplacebo-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1706555333,
+        "narHash": "sha256-755doV6Vi7lCK4jGbl80OXgp8VsLw85y6fRGTDEGlyc=",
+        "ref": "refs/heads/master",
+        "rev": "c320f61e601caef2be081ce61138e5d51c1be21d",
+        "revCount": 3498,
+        "submodules": true,
+        "type": "git",
+        "url": "https://github.com/haasn/libplacebo"
+      },
+      "original": {
+        "submodules": true,
+        "type": "git",
+        "url": "https://github.com/haasn/libplacebo"
+      }
+    },
+    "mpv-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1706870387,
+        "narHash": "sha256-UqRHQGRLlfGe4WdXaPabaSle/3rkoVFZUEW9Kae23Rk=",
+        "owner": "mpv-player",
+        "repo": "mpv",
+        "rev": "fe0c181b1c3a73fb9d2a423d362a47d522e78c91",
+        "type": "github"
+      },
+      "original": {
+        "owner": "mpv-player",
+        "repo": "mpv",
+        "type": "github"
+      }
+    },
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1706891885,
+        "narHash": "sha256-0OUgOwQZu1z8x1zZ0iBhntYj8bMfl2adSrfjeFKMY6o=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "0efa801784b9ef44eddd458c123f9371ece23baa",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "root": {
+      "inputs": {
+        "flake-utils": "flake-utils",
+        "libplacebo-src": "libplacebo-src",
+        "mpv-src": "mpv-src",
+        "nixpkgs": "nixpkgs"
+      }
+    },
+    "systems": {
+      "locked": {
+        "lastModified": 1681028828,
+        "narHash": "sha256-Vy1rq5AaRuLzOxct8nz4T6wlgyUR7zLU309k9mBC768=",
+        "owner": "nix-systems",
+        "repo": "default",
+        "rev": "da67096a3b9bf56a91d16901293e51ba5b49a27e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-systems",
+        "repo": "default",
+        "type": "github"
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}
