@@ -20,8 +20,8 @@
       in rec {
         flakedPkgs = pkgs;
 
-        packages.default = pkgs.stdenv.mkDerivation {
-          name = "sm";
+        packages.sm-exe = pkgs.stdenv.mkDerivation {
+          name = "sm-exe";
           src = sm-src;
           enableParallelBuilding = true;
           buildInputs = with pkgs; [
@@ -30,8 +30,17 @@
 
           installPhase = ''
             mkdir -p $out/bin
-            cp sm $out/bin
-            cp sm.ini $out
+            cp sm $out/bin/sm-exe
+            cp ${self}/sm.ini $out/bin/
+          '';
+        };
+
+        packages.default = pkgs.writeShellApplication {
+          name = "sm";
+          runtimeInputs = [ packages.sm-exe ];
+
+          text = ''
+            sm-exe ~/roms/sm.smc
           '';
         };
       }
