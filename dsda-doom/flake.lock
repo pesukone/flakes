@@ -1,5 +1,21 @@
 {
   "nodes": {
+    "deutex-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1609665312,
+        "narHash": "sha256-P7TDOCaUF4Dn9ocXsJOxXkd6MIHm1PSEZJ4iFrI5uFo=",
+        "owner": "Doom-Utils",
+        "repo": "deutex",
+        "rev": "ef1c06a62cc0eff82ecea984f58fbbe41d8a593d",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Doom-Utils",
+        "repo": "deutex",
+        "type": "github"
+      }
+    },
     "dsda-src": {
       "flake": false,
       "locked": {
@@ -34,6 +50,22 @@
         "type": "github"
       }
     },
+    "freedoom-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1723579774,
+        "narHash": "sha256-bff7dS8jPJJxNOAAYm32GrWjrBgOBIPEpVIs2s3zdVQ=",
+        "owner": "freedoom",
+        "repo": "freedoom",
+        "rev": "e3aef25ee6347ff0e7907fd8677fa45c1cc7d524",
+        "type": "github"
+      },
+      "original": {
+        "owner": "freedoom",
+        "repo": "freedoom",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1723801788,
@@ -51,8 +83,10 @@
     },
     "root": {
       "inputs": {
+        "deutex-src": "deutex-src",
         "dsda-src": "dsda-src",
         "flake-utils": "flake-utils",
+        "freedoom-src": "freedoom-src",
         "nixpkgs": "nixpkgs"
       }
     },
