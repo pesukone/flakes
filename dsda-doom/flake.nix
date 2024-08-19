@@ -101,6 +101,60 @@
           ];
         };
 
+        packages.doom = pkgs.writeShellApplication {
+          name = "doom";
+          runtimeInputs = [ packages.dsda-doom ];
+
+          text = ''
+            dsda-doom ~/roms/doom/doom.wad
+          '';
+        };
+
+        packages.doom2 = pkgs.writeShellApplication {
+          name = "doom2";
+          runtimeInputs = [ packages.dsda-doom ];
+
+          text = ''
+            dsda-doom ~/rom/doom/doom2.wad
+          '';
+        };
+
+        packages.tnt = pkgs.writeShellApplication {
+          name = "tnt";
+          runtimeInputs = [ packages.dsda-doom ];
+
+          text = ''
+            dsda-doom ~/roms/doom/tnt.wad
+          '';
+        };
+
+        packages.plutonia = pkgs.writeShellApplication {
+          name = "plutonia";
+          runtimeInputs = [ packages.dsda-doom ];
+
+          text = ''
+            dsda-doom ~/roms/doom/plutonia.wad
+          '';
+        };
+
+        packages.nerve = pkgs.writeShellApplication {
+          name = "no rest for the living";
+          runtimeInputs = [ packages.dsda-doom ];
+
+          text = ''
+            dsda-doom -iwad ~/roms/doom/doom2.wad -file ~/roms/doom/nerve.wad
+          '';
+        };
+
+        packages.lor = pkgs.writeShellApplication {
+          name = "legacy of rust";
+          runtimeInputs = [ packages.dsda-doom ];
+
+          text = ''
+            dsda-doom -iwad ~/roms/doom/doom2.wad -file ~/roms/doom/id1.wad
+          '';
+        };
+
         packages.default = packages.dsda-doom;
       }
     );
