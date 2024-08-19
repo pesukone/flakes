@@ -87,7 +87,21 @@
         "dsda-src": "dsda-src",
         "flake-utils": "flake-utils",
         "freedoom-src": "freedoom-src",
-        "nixpkgs": "nixpkgs"
+        "nixpkgs": "nixpkgs",
+        "sunlust-zip": "sunlust-zip"
+      }
+    },
+    "sunlust-zip": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1439105161,
+        "narHash": "sha256-C8Y7lJoYz4xOx1sEkIVbw28DtqLaN5GSwWpBgMWc0DQ=",
+        "type": "tarball",
+        "url": "https://ftpmirror1.infania.net/pub/idgames/levels/doom2/Ports/megawads/sunlust.zip"
+      },
+      "original": {
+        "type": "tarball",
+        "url": "https://ftpmirror1.infania.net/pub/idgames/levels/doom2/Ports/megawads/sunlust.zip"
       }
     },
     "systems": {

@@ -25,6 +25,11 @@
       repo = "deutex";
       flake = false;
     };
+
+    sunlust-zip = {
+      url = "https://ftpmirror1.infania.net/pub/idgames/levels/doom2/Ports/megawads/sunlust.zip";
+      flake = false;
+    };
   };
 
   outputs = {
@@ -33,7 +38,8 @@
     flake-utils,
     dsda-src,
     freedoom-src,
-    deutex-src
+    deutex-src,
+    sunlust-zip
   }:
     flake-utils.lib.eachDefaultSystem (system:
       let pkgs = nixpkgs.legacyPackages.${system};
@@ -152,6 +158,29 @@
 
           text = ''
             dsda-doom -iwad ~/roms/doom/doom2.wad -file ~/roms/doom/id1.wad
+          '';
+        };
+
+        /*
+        packages.freedoom1 = pkgs.writeShellApplication {
+          name = "freedoom";
+          runtimeInputs = [
+            packages.dsda-doom
+          ];
+
+          text = ''
+            ls ${packages.freedoom-wads}/usr/local/bin
+            dsda-doom -iwad ~/roms/doom/doom.wad -file ${packages.freedoom-wads}/usr/local/bin/freedoom1
+          '';
+        };
+        */
+
+        packages.sunlust = pkgs.writeShellApplication {
+          name = "sunlust";
+          runtimeInputs = [ packages.dsda-doom ];
+
+          text = ''
+            dsda-doom -iwad ~/roms/doom/doom2.wad -file ${sunlust-zip}/sunlust.wad
           '';
         };
 
