@@ -4,6 +4,7 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs";
     flake-utils.url = "github:numtide/flake-utils";
+
     mpv-src = {
       type = "github";
       owner = "mpv-player";
@@ -14,9 +15,22 @@
       url = "git+https://github.com/haasn/libplacebo?submodules=1";
       flake = false;
     };
+    yt-dlp-src = {
+      type = "github";
+      owner = "yt-dlp";
+      repo = "yt-dlp";
+      flake = false;
+    };
   };
 
-  outputs = { self, nixpkgs, flake-utils, mpv-src, libplacebo-src }:
+  outputs = {
+    self,
+    nixpkgs,
+    flake-utils,
+    mpv-src,
+    libplacebo-src,
+    yt-dlp-src
+  }:
     flake-utils.lib.eachDefaultSystem (system:
       let
         pkgs = nixpkgs.legacyPackages.${system};
@@ -49,7 +63,7 @@
           ];
         };
 
-        packages.default = pkgs.stdenv.mkDerivation {
+        packages.mpv = pkgs.stdenv.mkDerivation {
           name = "mpv";
           src = mpv-src;
           buildInputs = with pkgs; [
@@ -114,6 +128,25 @@
           #  mkdir $out
           #'';
         };
+
+        packages.yt-dlp = pkgs.python3Packages.buildPythonPackage {
+          name = "yt-dlp";
+          src = yt-dlp-src;
+          format = "pyproject";
+
+          propagatedBuildInputs = with pkgs.python3Packages; [
+            hatchling
+            brotli
+            certifi
+            mutagen
+            pycryptodomex
+            requests
+            urllib3
+            websockets
+          ];
+        };
+
+        packages.default = packages.mpv;
 
         devShell = pkgs.mkShell {
           buildInputs = with pkgs; [
