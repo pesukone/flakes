@@ -30,6 +30,11 @@
       url = "https://ftpmirror1.infania.net/pub/idgames/levels/doom2/Ports/megawads/sunlust.zip";
       flake = false;
     };
+
+    soundfont = {
+      url = "https://archive.org/download/SC55EmperorGrieferus/Roland%20SC-55%20v3.7.sf2";
+      flake = false;
+    };
   };
 
   outputs = {
@@ -39,10 +44,15 @@
     dsda-src,
     freedoom-src,
     deutex-src,
+    soundfont,
     sunlust-zip
   }:
     flake-utils.lib.eachDefaultSystem (system:
-      let pkgs = nixpkgs.legacyPackages.${system};
+      let
+        pkgs = nixpkgs.legacyPackages.${system};
+        config = pkgs.writeText "dsda-doom.conf" ''
+          snd_soundfont "${soundfont}"
+        '';
 
       in rec {
         packages.dsda-doom = pkgs.stdenv.mkDerivation {
@@ -112,7 +122,7 @@
           runtimeInputs = [ packages.dsda-doom ];
 
           text = ''
-            dsda-doom ~/roms/doom/doom.wad
+            dsda-doom -config ${config} -iwad ~/roms/doom/doom.wad
           '';
         };
 
@@ -121,7 +131,7 @@
           runtimeInputs = [ packages.dsda-doom ];
 
           text = ''
-            dsda-doom ~/rom/doom/doom2.wad
+            dsda-doom -config ${config} -iwad ~/roms/doom/doom2.wad
           '';
         };
 
@@ -130,7 +140,7 @@
           runtimeInputs = [ packages.dsda-doom ];
 
           text = ''
-            dsda-doom ~/roms/doom/tnt.wad
+            dsda-doom -config ${config} -iwad ~/roms/doom/tnt.wad
           '';
         };
 
@@ -139,7 +149,7 @@
           runtimeInputs = [ packages.dsda-doom ];
 
           text = ''
-            dsda-doom ~/roms/doom/plutonia.wad
+            dsda-doom -config ${config} -iwad ~/roms/doom/plutonia.wad
           '';
         };
 
@@ -148,7 +158,7 @@
           runtimeInputs = [ packages.dsda-doom ];
 
           text = ''
-            dsda-doom -iwad ~/roms/doom/doom2.wad -file ~/roms/doom/nerve.wad
+            dsda-doom -config ${config} -iwad ~/roms/doom/doom2.wad -file ~/roms/doom/nerve.wad
           '';
         };
 
@@ -157,7 +167,7 @@
           runtimeInputs = [ packages.dsda-doom ];
 
           text = ''
-            dsda-doom -iwad ~/roms/doom/doom2.wad -file ~/roms/doom/id1.wad
+            dsda-doom -config ${config} -iwad ~/roms/doom/doom2.wad -file ~/roms/doom/id1.wad
           '';
         };
 
@@ -180,7 +190,7 @@
           runtimeInputs = [ packages.dsda-doom ];
 
           text = ''
-            dsda-doom -iwad ~/roms/doom/doom2.wad -file ${sunlust-zip}/sunlust.wad
+            dsda-doom -config ${config} -iwad ~/roms/doom/doom2.wad -file ${sunlust-zip}/sunlust.wad
           '';
         };
 

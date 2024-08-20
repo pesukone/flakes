@@ -88,7 +88,20 @@
         "flake-utils": "flake-utils",
         "freedoom-src": "freedoom-src",
         "nixpkgs": "nixpkgs",
+        "soundfont": "soundfont",
         "sunlust-zip": "sunlust-zip"
+      }
+    },
+    "soundfont": {
+      "flake": false,
+      "locked": {
+        "narHash": "sha256-llKV2cIsD6tjVJSi5NoIKfkjab30xGQPm5avJ4fVdAs=",
+        "type": "file",
+        "url": "https://archive.org/download/SC55EmperorGrieferus/Roland%20SC-55%20v3.7.sf2"
+      },
+      "original": {
+        "type": "file",
+        "url": "https://archive.org/download/SC55EmperorGrieferus/Roland%20SC-55%20v3.7.sf2"
       }
     },
     "sunlust-zip": {
