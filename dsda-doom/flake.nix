@@ -129,7 +129,7 @@
           runtimeInputs = [ packages.dsda-doom ];
 
           text = ''
-            dsda-doom -config ${config} -iwad ~/roms/doom/doom.wad
+            dsda-doom -config ${config} -iwad ~/roms/doom/doom.wad -complevel 3
           '';
         };
 
@@ -138,7 +138,7 @@
           runtimeInputs = [ packages.dsda-doom ];
 
           text = ''
-            dsda-doom -config ${config} -iwad ~/roms/doom/doom2.wad
+            dsda-doom -config ${config} -iwad ~/roms/doom/doom2.wad -complevel 2
           '';
         };
 
@@ -147,7 +147,7 @@
           runtimeInputs = [ packages.dsda-doom ];
 
           text = ''
-            dsda-doom -config ${config} -iwad ~/roms/doom/tnt.wad
+            dsda-doom -config ${config} -iwad ~/roms/doom/tnt.wad -complevel 4
           '';
         };
 
@@ -156,7 +156,7 @@
           runtimeInputs = [ packages.dsda-doom ];
 
           text = ''
-            dsda-doom -config ${config} -iwad ~/roms/doom/plutonia.wad
+            dsda-doom -config ${config} -iwad ~/roms/doom/plutonia.wad -complevel 4
           '';
         };
 
@@ -165,7 +165,7 @@
           runtimeInputs = [ packages.dsda-doom ];
 
           text = ''
-            dsda-doom -config ${config} -iwad ~/roms/doom/doom2.wad -file ~/roms/doom/nerve.wad
+            dsda-doom -config ${config} -iwad ~/roms/doom/doom2.wad -file ~/roms/doom/nerve.wad -complevel 2
           '';
         };
 
@@ -174,7 +174,7 @@
           runtimeInputs = [ packages.dsda-doom ];
 
           text = ''
-            dsda-doom -config ${config} -iwad ~/roms/doom/doom2.wad -file ~/roms/doom/id1.wad
+            dsda-doom -config ${config} -iwad ~/roms/doom/doom2.wad -file ~/roms/doom/id1.wad -complevel 9
           '';
         };
 
@@ -197,7 +197,7 @@
           runtimeInputs = [ packages.dsda-doom ];
 
           text = ''
-            dsda-doom -config ${config} -iwad ~/roms/doom/doom2.wad -file ${sunlust-zip}/sunlust.wad
+            dsda-doom -config ${config} -iwad ~/roms/doom/doom2.wad -file ${sunlust-zip}/sunlust.wad -complevel 9
           '';
         };
 
