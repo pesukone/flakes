@@ -32,6 +32,13 @@
       repo = "osg";
       flake = false;
     };
+
+    collada-src = {
+      type = "github";
+      owner = "rdiankov";
+      repo = "collada-dom";
+      flake = false;
+    };
   };
 
   outputs = {
@@ -41,11 +48,21 @@
     openmw-src,
     bullet-src,
     mygui-src,
-    osg-src
+    osg-src,
+    collada-src
   }:
     flake-utils.lib.eachDefaultSystem (system:
       let
         pkgs = nixpkgs.legacyPackages.${system};
+        config = pkgs.writeTextDir "openmw.cfg" ''
+          data=~/roms/morrowind/
+          content=Morrowind.esm
+          content=Tribunal.esm
+          content=Bloodmoon.esm
+          fallback-archive=Morrowind.bsa
+          fallback-archive=Tribunal.bsa
+          fallback-archive=Bloodmoon.bsa
+        '';
 
       in rec {
         packages.bullet3 = pkgs.stdenv.mkDerivation {
@@ -95,19 +112,59 @@
           ];
         };
 
+        packages.collada-dom = pkgs.stdenv.mkDerivation {
+          name = "collada-dom";
+          src = collada-src;
+          enableParallelBuilding = true;
+
+          nativeBuildInputs = with pkgs; [
+            cmake
+            pkg-config
+          ];
+
+          buildInputs = with pkgs; [
+            boost.dev
+            libxml2.dev
+          ];
+        };
+
         packages.osg-openmw = pkgs.stdenv.mkDerivation {
           name = "osg-openmw";
           src = osg-src;
           enableParallelBuilding = true;
 
-          nativeBuildInputs = with pkgs; [ cmake ];
+          nativeBuildInputs = with pkgs; [
+            cmake
+            pkg-config
+          ];
 
           buildInputs = with pkgs; [
-            libGL
+            libGL.dev
+            #libglvnd.dev
             xorg.libX11.dev
+            #xorg.libxcb.dev
+            xorg.libXdmcp
+            xorg.xrandr
+            xorg.libXinerama.dev
+            freetype.dev
+            libjpeg.dev
+            jasper.dev
+            zlib.dev
+            gdal
+            curl.dev
+            SDL2.dev
+            dcmtk
+            poppler.dev
+            cairo.dev
+            librsvg.dev
+            pcre2.dev
+            expat.dev
+            mount
+            packages.collada-dom
           ];
 
           cmakeFlags = [
+            #"-DOpenGL_GL_PREFERENCE=GLVND"
             "-DBUILD_OSG_PLUGINS_BY_DEFAULT=0"
             "-DBUILD_OSG_PLUGIN_OSG=1"
             "-DBUILD_OSG_PLUGIN_DAE=1"
@@ -121,7 +178,7 @@
           ];
         };
 
-        packages.default = pkgs.stdenv.mkDerivation {
+        packages.openmw = pkgs.stdenv.mkDerivation {
           name = "openmw";
           src = openmw-src;
           enableParallelBuilding = true;
@@ -153,6 +210,15 @@
           cmakeFlags = [
             "-DOPENMW_USE_SYSTEM_RECASTNAVIGATION=ON"
           ];
+        };
+
+        packages.default = pkgs.writeShellApplication {
+          name = "launch-openmw";
+          runtimeInputs = [ packages.openmw packages.osg-openmw ];
+
+          text = ''
+            openmw --data ~/roms/morrowind/ --config ${config}
+          '';
         };
       }
     );

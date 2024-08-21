@@ -16,6 +16,22 @@
         "type": "github"
       }
     },
+    "collada-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1578088487,
+        "narHash": "sha256-A1ne/D6S0shwCzb9spd1MoSt/238HWA8dvgd+DC9cXc=",
+        "owner": "rdiankov",
+        "repo": "collada-dom",
+        "rev": "c1e20b7d6ff806237030fe82f126cb86d661f063",
+        "type": "github"
+      },
+      "original": {
+        "owner": "rdiankov",
+        "repo": "collada-dom",
+        "type": "github"
+      }
+    },
     "flake-utils": {
       "inputs": {
         "systems": "systems"
@@ -100,6 +116,7 @@
     "root": {
       "inputs": {
         "bullet-src": "bullet-src",
+        "collada-src": "collada-src",
         "flake-utils": "flake-utils",
         "mygui-src": "mygui-src",
         "nixpkgs": "nixpkgs",
