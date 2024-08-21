@@ -52,6 +52,10 @@
         pkgs = nixpkgs.legacyPackages.${system};
         config = pkgs.writeText "dsda-doom.conf" ''
           snd_soundfont "${soundfont}"
+
+          use_fullscreen 1
+          exclusive_fullscreen 1
+          gl_exclusive_fullscreen 1
         '';
 
       in rec {
