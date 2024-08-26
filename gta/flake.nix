@@ -5,23 +5,13 @@
     nixpkgs.url = "github:nixos/nixpkgs";
     flake-utils.url = "github:numtide/flake-utils";
 
-    librw-src = {
-      type = "github";
-      owner = "aap";
-      repo = "librw";
+    gta3-src = {
+      url = "git+https://github.com/halpz/re3?submodules=1";
       flake = false;
     };
 
-    /*
-    gta3-src = {
-      type = "github";
-      owner = "halpz";
-      repo = "re3";
-      flake = false;
-    };
-    */
-    gta3-src = {
-      url = "git+https://github.com/halpz/re3?submodules=1";
+    vc-src = {
+      url = "git+https://github.com/halpz/re3?submodules=1&ref=miami";
       flake = false;
     };
   };
@@ -30,8 +20,8 @@
     self,
     nixpkgs,
     flake-utils,
-    librw-src,
-    gta3-src
+    gta3-src,
+    vc-src
   }:
     flake-utils.lib.eachDefaultSystem (system:
       let
@@ -98,6 +88,69 @@
             chmod -R u+w ./*
 
             ./gta3
+          '';
+        };
+
+        packages.vc-bin = pkgs.stdenv.mkDerivation {
+          name = "vc-bin";
+          src = vc-src;
+          enableParallelBuilding = true;
+
+          nativeBuildInputs = with pkgs; [
+            premake5
+            gnumake
+          ];
+
+          buildInputs = with pkgs; [
+            glfw
+            openal
+            libmpg123
+            libsndfile
+          ];
+
+          postPatch = ''
+            patchShebangs printHash.sh
+          '';
+
+          configurePhase = ''
+            premake5 --with-librw --no-git-hash gmake2
+          '';
+
+          buildPhase = ''
+            cd build
+            make config=release_linux-amd64-librw_gl3_glfw-oal -j$(nproc)
+          '';
+
+          installPhase = ''
+            mkdir -p $out/bin
+            cp ../bin/linux-amd64-librw_gl3_glfw-oal/Release/reVC $out/bin/gta-vc
+          '';
+        };
+
+        packages.vc-assets = pkgs.stdenv.mkDerivation {
+          name = "vc-assets";
+          src = vc-src;
+
+          phases = [ "unpackPhase" "installPhase" ];
+
+          installPhase = ''
+            mkdir $out
+            cp -r gamefiles/* $out
+          '';
+        };
+
+        packages.gta-vc = pkgs.writeShellApplication {
+          name = "gta-vc";
+          runtimeInputs = [ packages.vc-bin packages.vc-assets ];
+
+          text = ''
+            cd ~/roms/gta-vc
+            cp ${packages.vc-bin}/bin/gta-vc ./gta-vc
+            cp -r ${packages.vc-assets}/* .
+
+            chmod -R u+w ./*
+
+            ./gta-vc
           '';
         };
       }

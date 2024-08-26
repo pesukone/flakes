@@ -36,22 +36,6 @@
         "url": "https://github.com/halpz/re3"
       }
     },
-    "librw-src": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1724340664,
-        "narHash": "sha256-snlKkyzGITYAwoPgpnBl8/blOuXyOsGKgAKTRzEz9xU=",
-        "owner": "aap",
-        "repo": "librw",
-        "rev": "895556fd81f2b78fce092f1f0bc4c992b2bbb5b7",
-        "type": "github"
-      },
-      "original": {
-        "owner": "aap",
-        "repo": "librw",
-        "type": "github"
-      }
-    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1724691153,
@@ -71,8 +55,8 @@
       "inputs": {
         "flake-utils": "flake-utils",
         "gta3-src": "gta3-src",
-        "librw-src": "librw-src",
-        "nixpkgs": "nixpkgs"
+        "nixpkgs": "nixpkgs",
+        "vc-src": "vc-src"
       }
     },
     "systems": {
@@ -88,6 +72,25 @@
         "owner": "nix-systems",
         "repo": "default",
         "type": "github"
+      }
+    },
+    "vc-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1700067283,
+        "narHash": "sha256-PxibZrB9dzGfoJRwdw3XFgoNjwd4njb0Z5PlVYz5ANo=",
+        "ref": "miami",
+        "rev": "37e9ec0d19cbd3cd25823089380fcdae558bee0b",
+        "revCount": 5089,
+        "submodules": true,
+        "type": "git",
+        "url": "https://github.com/halpz/re3"
+      },
+      "original": {
+        "ref": "miami",
+        "submodules": true,
+        "type": "git",
+        "url": "https://github.com/halpz/re3"
       }
     }
   },
