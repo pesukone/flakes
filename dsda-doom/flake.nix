@@ -174,7 +174,7 @@
           runtimeInputs = [ packages.dsda-doom ];
 
           text = ''
-            dsda-doom -config ${config} -iwad ~/roms/doom/doom2.wad -file ~/roms/doom/id1.wad -complevel 9
+            dsda-doom -config ${config} -iwad ~/roms/doom/doom2.wad -file ~/roms/doom/id1.wad -complevel 21
           '';
         };
 
@@ -198,6 +198,33 @@
 
           text = ''
             dsda-doom -config ${config} -iwad ~/roms/doom/doom2.wad -file ${sunlust-zip}/sunlust.wad -complevel 9
+          '';
+        };
+
+        packages.heretic = pkgs.writeShellApplication {
+          name = "heretic";
+          runtimeInputs = [ packages.dsda-doom ];
+
+          text = ''
+            dsda-doom -config ${config} -iwad ~/roms/doom/heretic.wad
+          '';
+        };
+
+        packages.hexen = pkgs.writeShellApplication {
+          name = "hexen";
+          runtimeInputs = [ packages.dsda-doom ];
+
+          text = ''
+            dsda-doom -config ${config} -iwad ~/roms/doom/hexen.wad
+          '';
+        };
+
+        packages.hexdd = pkgs.writeShellApplication {
+          name = "hexdd";
+          runtimeInputs = [ packages.dsda-doom ];
+
+          text = ''
+            dsda-doom -config ${config} -iwad ~/roms/doom/hexen.wad -file ~/roms/doom/hexdd.wad
           '';
         };
 
