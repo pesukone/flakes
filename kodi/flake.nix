@@ -120,6 +120,7 @@
             libGL.dev
             kdePackages.wayland.dev
             mesa
+            dbus
           ];
 
           cmakeFlags = [
