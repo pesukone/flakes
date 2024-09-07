@@ -119,11 +119,12 @@
             gtest.dev
             libGL.dev
             kdePackages.wayland.dev
+            mesa
           ];
 
           cmakeFlags = [
             "-DCORE_PLATFORM_NAME=wayland"
-            "-DAPP_RENDER_SYSTEM=gl"
+            "-DAPP_RENDER_SYSTEM=gles"
 
             "-DENABLE_INTERNAL_CROSSGUID=off"
             "-DENABLE_INTERNAL_FFMPEG=off"
