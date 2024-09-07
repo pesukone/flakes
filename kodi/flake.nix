@@ -121,6 +121,8 @@
             kdePackages.wayland.dev
             mesa
             dbus
+            libnfs
+            libpulseaudio
           ];
 
           cmakeFlags = [
