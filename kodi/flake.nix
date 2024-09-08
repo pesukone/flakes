@@ -158,7 +158,8 @@
             swig4
             libcec
             fontconfig.dev
-            packages.ffmpeg
+            #packages.ffmpeg
+            ffmpeg.dev
             glib.dev
             gtest.dev
             libGL.dev
