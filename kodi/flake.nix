@@ -92,6 +92,7 @@
             x264
             x265
             libva1
+            libpulseaudio
           ];
 
           configureFlags = [
@@ -107,6 +108,7 @@
             (enableFeature false "vaapi")
             (enableFeature true "libx264")
             (enableFeature true "libx265")
+            (enableFeature true "libpulse")
           ];
         };
 
