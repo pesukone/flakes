@@ -3,7 +3,7 @@
     "apache-commons-lang-zip": {
       "flake": false,
       "locked": {
-        "lastModified": 1725646474,
+        "lastModified": 1725777965,
         "narHash": "sha256-h/mO0e9ai0/8SBxXP0R58z1lLniRbZ4BJtPU9+Qu80o=",
         "type": "tarball",
         "url": "http://mirrors.kodi.tv/build-deps/sources/commons-lang3-3.14.0-bin.tar.gz"
@@ -16,7 +16,7 @@
     "apache-commons-text-zip": {
       "flake": false,
       "locked": {
-        "lastModified": 1725646683,
+        "lastModified": 1725777966,
         "narHash": "sha256-CaDGcqCF6B44lYw6fTe54Zlo1kRpzWRqVKZdADRNlDE=",
         "type": "tarball",
         "url": "http://mirrors.kodi.tv/build-deps/sources/commons-text-1.11.0-bin.tar.gz"
@@ -24,6 +24,23 @@
       "original": {
         "type": "tarball",
         "url": "http://mirrors.kodi.tv/build-deps/sources/commons-text-1.11.0-bin.tar.gz"
+      }
+    },
+    "ffmpeg-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1725451090,
+        "narHash": "sha256-dIP9Ie+0kemzYq2FeVlRreMbEMrFoe2vdfQNr7XEErc=",
+        "owner": "FFmpeg",
+        "repo": "FFmpeg",
+        "rev": "f749aaf108696fcfc2be6a9f6c1059415474caf3",
+        "type": "github"
+      },
+      "original": {
+        "owner": "FFmpeg",
+        "ref": "release/6.1",
+        "repo": "FFmpeg",
+        "type": "github"
       }
     },
     "flake-utils": {
@@ -60,11 +77,11 @@
     "kodi-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1725624675,
-        "narHash": "sha256-cdhrERORaK2ThbhVQRm3zy4brVeU/z6ImL62vBOdpHA=",
+        "lastModified": 1725728139,
+        "narHash": "sha256-ZyHQidd4RBi0BUucuhEbyID0Gh7pw5B6wXLjKB+7FEI=",
         "owner": "xbmc",
         "repo": "xbmc",
-        "rev": "2b6306bf73909efb506cce4ac0d6aa767aa4e458",
+        "rev": "2defdf63bcd9508eb9627c5d9c2dc876557f9a80",
         "type": "github"
       },
       "original": {
@@ -126,11 +143,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1725634150,
-        "narHash": "sha256-cEoftXrjIE7NrwAmyIwqv8aTmDUVGBde/Gaa/QkfI48=",
+        "lastModified": 1725777508,
+        "narHash": "sha256-TiVaIhJLkD7LK75JNAXpF3KQ+O/nFqucRo6Kobzmvsc=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "0bc3d6f447b27187a91e6f0cee7d506165e20caa",
+        "rev": "00c3eae870e90744f7c62f340dbb3a6551194a71",
         "type": "github"
       },
       "original": {
@@ -143,6 +160,7 @@
       "inputs": {
         "apache-commons-lang-zip": "apache-commons-lang-zip",
         "apache-commons-text-zip": "apache-commons-text-zip",
+        "ffmpeg-src": "ffmpeg-src",
         "flake-utils": "flake-utils",
         "groovy-zip": "groovy-zip",
         "kodi-src": "kodi-src",

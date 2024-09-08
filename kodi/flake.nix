@@ -40,6 +40,14 @@
       flake = false;
     };
 
+    ffmpeg-src = {
+      type = "github";
+      owner = "FFmpeg";
+      repo = "FFmpeg";
+      ref = "release/6.1";
+      flake = false;
+    };
+
     kodi-src = {
       type = "github";
       owner = "xbmc";
@@ -58,14 +66,48 @@
     libdvdcss-src,
     libdvdread-src,
     libdvdnav-src,
+    ffmpeg-src,
     kodi-src
   }:
     flake-utils.lib.eachDefaultSystem (system:
       let
         pkgs = nixpkgs.legacyPackages.${system};
+        enableFeature = pkgs.lib.enableFeature;
 
       in rec {
         flakedPkgs = pkgs;
+
+        packages.ffmpeg = pkgs.stdenv.mkDerivation {
+          name = "ffmpeg";
+          src = ffmpeg-src;
+
+          nativeBuildInputs = with pkgs; [
+            yasm
+            pkg-config
+          ];
+
+          buildInputs = with pkgs; [
+            libv4l
+            x264
+            x265
+            libva1
+          ];
+
+          configureFlags = [
+            (enableFeature true "shared")
+            (enableFeature true "nonfree")
+            (enableFeature true "gpl")
+            (enableFeature true "pthreads")
+            (enableFeature true "ffmpeg")
+            (enableFeature true "ffplay")
+            (enableFeature true "ffprobe")
+            (enableFeature true "libv4l2")
+            (enableFeature true "v4l2-m2m")
+            (enableFeature false "vaapi")
+            (enableFeature true "libx264")
+            (enableFeature true "libx265")
+          ];
+        };
 
         packages.kodi = pkgs.stdenv.mkDerivation {
           name = "kodi";
@@ -114,7 +156,7 @@
             swig4
             libcec
             fontconfig.dev
-            ffmpeg.dev
+            packages.ffmpeg
             glib.dev
             gtest.dev
             libGL.dev
