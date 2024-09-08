@@ -80,6 +80,7 @@
         packages.ffmpeg = pkgs.stdenv.mkDerivation {
           name = "ffmpeg";
           src = ffmpeg-src;
+          enableParallelBuilding = true;
 
           nativeBuildInputs = with pkgs; [
             yasm
@@ -112,6 +113,7 @@
         packages.kodi = pkgs.stdenv.mkDerivation {
           name = "kodi";
           src = kodi-src;
+          enableParallelBuilding = true;
 
           nativeBuildInputs = with pkgs; [
             cmake
