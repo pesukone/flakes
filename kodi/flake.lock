@@ -167,7 +167,8 @@
         "libdvdcss-src": "libdvdcss-src",
         "libdvdnav-src": "libdvdnav-src",
         "libdvdread-src": "libdvdread-src",
-        "nixpkgs": "nixpkgs"
+        "nixpkgs": "nixpkgs",
+        "x265-src": "x265-src"
       }
     },
     "systems": {
@@ -183,6 +184,22 @@
         "owner": "nix-systems",
         "repo": "default",
         "type": "github"
+      }
+    },
+    "x265-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1725605411,
+        "narHash": "sha256-TH4hiVufa2sb255Dbq/NCH7z/eKH6XJ/+v7neDj1isk=",
+        "ref": "refs/heads/master",
+        "rev": "973bf1ac711c3d945018eebd35575b4940054906",
+        "revCount": 12970,
+        "type": "git",
+        "url": "https://bitbucket.org/multicoreware/x265_git"
+      },
+      "original": {
+        "type": "git",
+        "url": "https://bitbucket.org/multicoreware/x265_git"
       }
     }
   },

@@ -40,6 +40,11 @@
       flake = false;
     };
 
+    x265-src = {
+      url = "git+https://bitbucket.org/multicoreware/x265_git";
+      flake = false;
+    };
+
     ffmpeg-src = {
       type = "github";
       owner = "FFmpeg";
@@ -66,6 +71,7 @@
     libdvdcss-src,
     libdvdread-src,
     libdvdnav-src,
+    x265-src,
     ffmpeg-src,
     kodi-src
   }:
@@ -76,6 +82,26 @@
 
       in rec {
         flakedPkgs = pkgs;
+
+        packages.x265 = pkgs.stdenv.mkDerivation {
+          name = "x265";
+          src = x265-src;
+          enableParallelBuilding = true;
+
+          nativeBuildInputs = with pkgs; [
+            cmake
+            nasm
+            numactl
+          ];
+
+          cmakeFlags = [
+            "-DNATIVE_BUILD=ON"
+          ];
+
+          preConfigure = ''
+            cd source
+          '';
+        };
 
         packages.ffmpeg = pkgs.stdenv.mkDerivation {
           name = "ffmpeg";
@@ -93,6 +119,10 @@
             x265
             libva1
             libpulseaudio
+            lame
+            libvpx
+            dav1d
+            fdk_aac
           ];
 
           configureFlags = [
@@ -103,12 +133,24 @@
             (enableFeature true "ffmpeg")
             (enableFeature true "ffplay")
             (enableFeature true "ffprobe")
+            (enableFeature true "avcodec")
+            (enableFeature true "avdevice")
+            (enableFeature true "avfilter")
+            (enableFeature true "avformat")
+            (enableFeature true "avutil")
+            (enableFeature true "swresample")
+            (enableFeature true "swscale")
             (enableFeature true "libv4l2")
             (enableFeature true "v4l2-m2m")
             (enableFeature false "vaapi")
             (enableFeature true "libx264")
             (enableFeature true "libx265")
+            (enableFeature true "libdav1d")
             (enableFeature true "libpulse")
+            (enableFeature true "libmp3lame")
+            (enableFeature true "libfdk-aac")
+            (enableFeature true "libvpx")
+            (enableFeature true "optimizations")
           ];
         };
 
