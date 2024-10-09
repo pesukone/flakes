@@ -42,6 +42,7 @@
 
 	  configureFlags = [
 	    "--sysconfdir=/etc"
+	    "--enable-debug"
 	  ];
         };
 
