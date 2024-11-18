@@ -24,8 +24,34 @@
         packages.rpcs3 = pkgs.stdenv.mkDerivation {
           name = "rpcs3";
           src = rpcs3-src;
+          enableParallelBuilding = true;
 
-          nativeBuildInputs = with pkgs; [ cmake ];
+          nativeBuildInputs = with pkgs; [
+            cmake
+            pkg-config
+          ];
+
+          buildInputs = with pkgs; [
+            zlib.dev
+            glew.dev
+            libudev-zero
+            openal
+            ffmpeg.dev
+            llvm.dev
+            curl.dev
+            qt6.full
+            wayland.dev
+            xorg.libX11.dev
+            vulkan-headers
+            vulkan-validation-layers
+            SDL2.dev
+            sndio
+            pulseaudio.dev
+          ];
+
+          cmakeFlags = [
+            "-DUSE_SYSTEM_FFMPEG=ON"
+          ];
         };
 
         packages.default = packages.rpcs3;

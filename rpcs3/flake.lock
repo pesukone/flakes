@@ -1,0 +1,79 @@
+{
+  "nodes": {
+    "flake-utils": {
+      "inputs": {
+        "systems": "systems"
+      },
+      "locked": {
+        "lastModified": 1731533236,
+        "narHash": "sha256-l0KFg5HjrsfsO/JpG+r7fRrqm12kzFHyUHqHCVpMMbI=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "11707dc2f618dd54ca8739b309ec4fc024de578b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "type": "github"
+      }
+    },
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1731971183,
+        "narHash": "sha256-5y/h/+Tx53pt73pbt4Fi039iB8JtO7vDnzLGbtgtJ0U=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "96b329f8050d026fa3490d21af1b5c58cf13b384",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "root": {
+      "inputs": {
+        "flake-utils": "flake-utils",
+        "nixpkgs": "nixpkgs",
+        "rpcs3-src": "rpcs3-src"
+      }
+    },
+    "rpcs3-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1731948334,
+        "narHash": "sha256-eFiBR8dc+gq+G/U5rQa7EsiQiwl4Etsq+pS3nWmOzV4=",
+        "ref": "refs/heads/master",
+        "rev": "cc86e01df98ca84276f6cec97e1fb37fda1eb568",
+        "revCount": 17137,
+        "submodules": true,
+        "type": "git",
+        "url": "https://github.com/RPCS3/rpcs3"
+      },
+      "original": {
+        "submodules": true,
+        "type": "git",
+        "url": "https://github.com/RPCS3/rpcs3"
+      }
+    },
+    "systems": {
+      "locked": {
+        "lastModified": 1681028828,
+        "narHash": "sha256-Vy1rq5AaRuLzOxct8nz4T6wlgyUR7zLU309k9mBC768=",
+        "owner": "nix-systems",
+        "repo": "default",
+        "rev": "da67096a3b9bf56a91d16901293e51ba5b49a27e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-systems",
+        "repo": "default",
+        "type": "github"
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}
