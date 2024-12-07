@@ -12,13 +12,22 @@
       dir = "pinctrl";
       flake = false;
     };
+
+    ovmerge-src = {
+      type = "github";
+      owner = "raspberrypi";
+      repo = "utils";
+      dir = "ovmerge";
+      flake = false;
+    };
   };
 
   outputs = {
     self,
     nixpkgs,
     flake-utils,
-    pinctrl-src
+    pinctrl-src,
+    ovmerge-src
   }:
     flake-utils.lib.eachDefaultSystem (system:
       let
@@ -33,6 +42,20 @@
 
 	  buildInputs = with pkgs; [ python3Packages.libfdt ];
 	};
+
+        packages.ovmerge = pkgs.stdenv.mkDerivation {
+          name = "ovmerge";
+          src = ovmerge-src;
+
+          buildInputs = with pkgs; [ perl ];
+
+          phases = [ "unpackPhase" "installPhase" "fixupPhase" ];
+
+          installPhase = ''
+            mkdir -p $out/bin
+            cp ovmerge/ovmerge $out/bin
+          '';
+        };
       }
     );
 }

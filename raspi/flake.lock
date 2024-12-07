@@ -33,6 +33,24 @@
         "type": "github"
       }
     },
+    "ovmerge-src": {
+      "flake": false,
+      "locked": {
+        "dir": "ovmerge",
+        "lastModified": 1733477333,
+        "narHash": "sha256-xUFdRX05tDr7WtJXKUxxMt1a00NlKnzXV1TPfFrqkM4=",
+        "owner": "raspberrypi",
+        "repo": "utils",
+        "rev": "63929145cc639d6cb4715073df4efaf50d38d939",
+        "type": "github"
+      },
+      "original": {
+        "dir": "ovmerge",
+        "owner": "raspberrypi",
+        "repo": "utils",
+        "type": "github"
+      }
+    },
     "pinctrl-src": {
       "flake": false,
       "locked": {
@@ -55,6 +73,7 @@
       "inputs": {
         "flake-utils": "flake-utils",
         "nixpkgs": "nixpkgs",
+        "ovmerge-src": "ovmerge-src",
         "pinctrl-src": "pinctrl-src"
       }
     },
