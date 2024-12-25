@@ -41,6 +41,10 @@
 	  nativeBuildInputs = with pkgs; [ cmake ];
 
 	  buildInputs = with pkgs; [ python3Packages.libfdt ];
+
+          cmakeFlags = [
+            "-DCMAKE_C_FLAGS=\"-Wno-error=maybe-uninitialized\""
+          ];
 	};
 
         packages.ovmerge = pkgs.stdenv.mkDerivation {
