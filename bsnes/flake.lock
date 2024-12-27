@@ -1,0 +1,77 @@
+{
+  "nodes": {
+    "bsnes-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1730553982,
+        "narHash": "sha256-nZRo1FRceh5fRKAKGDQDjGOXTNWZC+OUJGMFnrlRfj4=",
+        "owner": "bsnes-emu",
+        "repo": "bsnes",
+        "rev": "b815744b4cff6d6854090545b78ae8e1a6669976",
+        "type": "github"
+      },
+      "original": {
+        "owner": "bsnes-emu",
+        "repo": "bsnes",
+        "type": "github"
+      }
+    },
+    "flake-utils": {
+      "inputs": {
+        "systems": "systems"
+      },
+      "locked": {
+        "lastModified": 1731533236,
+        "narHash": "sha256-l0KFg5HjrsfsO/JpG+r7fRrqm12kzFHyUHqHCVpMMbI=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "11707dc2f618dd54ca8739b309ec4fc024de578b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "type": "github"
+      }
+    },
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1735293893,
+        "narHash": "sha256-F0t2Iz2AsTuUJ64l/XUEdZBopmt7035n1ky3Sow+91g=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "7796d95836e26e0bca22b61a172f415d3cf9b788",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "root": {
+      "inputs": {
+        "bsnes-src": "bsnes-src",
+        "flake-utils": "flake-utils",
+        "nixpkgs": "nixpkgs"
+      }
+    },
+    "systems": {
+      "locked": {
+        "lastModified": 1681028828,
+        "narHash": "sha256-Vy1rq5AaRuLzOxct8nz4T6wlgyUR7zLU309k9mBC768=",
+        "owner": "nix-systems",
+        "repo": "default",
+        "rev": "da67096a3b9bf56a91d16901293e51ba5b49a27e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-systems",
+        "repo": "default",
+        "type": "github"
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}
