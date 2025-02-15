@@ -21,6 +21,10 @@
       repo = "yt-dlp";
       flake = false;
     };
+    wayland-protocols-src = {
+      url = "git+https://gitlab.freedesktop.org/wayland/wayland-protocols.git";
+      flake = false;
+    };
   };
 
   outputs = {
@@ -29,7 +33,8 @@
     flake-utils,
     mpv-src,
     libplacebo-src,
-    yt-dlp-src
+    yt-dlp-src,
+    wayland-protocols-src
   }:
     flake-utils.lib.eachDefaultSystem (system:
       let
@@ -63,6 +68,24 @@
           ];
         };
 
+        packages.wayland-protocols = pkgs.stdenv.mkDerivation {
+          name = "wayland-protocols";
+          src = wayland-protocols-src;
+          
+          nativeBuildInputs = with pkgs; [
+            meson
+            ninja
+            pkg-config
+          ];
+
+          buildInputs = with pkgs; [
+            wayland-scanner.dev
+            wayland.dev
+          ];
+
+          mesonFlags = [ "-Dtests=false" ];
+        };
+
         packages.mpv = pkgs.stdenv.mkDerivation {
           name = "mpv";
           src = mpv-src;
@@ -88,7 +111,7 @@
             libdrm
             libsixel
             wayland
-            wayland-protocols
+            packages.wayland-protocols
             libxkbcommon
             xorg.libX11
             xorg.libXScrnSaver
@@ -108,6 +131,7 @@
 
           mesonFlags = [
             (pkgs.lib.mesonEnable "lua" true)
+	    (pkgs.lib.mesonEnable "wayland" false)
           ];
 
           postPatch = ''
