@@ -1,0 +1,183 @@
+{
+  "nodes": {
+    "astc-encoder-py-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1733913476,
+        "narHash": "sha256-VW8m6oIk6+2IlzvE7tUPQuv6gIZZ2Es9U5ocYok7uaM=",
+        "ref": "refs/heads/main",
+        "rev": "488da083b0006b237d07fbd12c51cee0fac1eb2b",
+        "revCount": 57,
+        "submodules": true,
+        "type": "git",
+        "url": "https://github.com/K0lb3/astc-encoder-py"
+      },
+      "original": {
+        "submodules": true,
+        "type": "git",
+        "url": "https://github.com/K0lb3/astc-encoder-py"
+      }
+    },
+    "etcpak-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1732702177,
+        "narHash": "sha256-l+yGwUTBNtjmIKwr0ffG4tSWoJLMWcrqrQnYwLBOg6Y=",
+        "ref": "refs/heads/master",
+        "rev": "aaad473e359e77cc2ffcbd1d93b42e9e143dd212",
+        "revCount": 48,
+        "submodules": true,
+        "type": "git",
+        "url": "https://github.com/K0lb3/etcpak"
+      },
+      "original": {
+        "submodules": true,
+        "type": "git",
+        "url": "https://github.com/K0lb3/etcpak"
+      }
+    },
+    "extract-toolbox-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1717980837,
+        "narHash": "sha256-TlfYdKRN+Y3cme97Y8qXSBP+YgzO73UR8zDZKKasR7g=",
+        "owner": "shawngmc",
+        "repo": "game-extraction-toolbox",
+        "rev": "4d262fd861a13a19edc4c28a1103f28bce6f0cd9",
+        "type": "github"
+      },
+      "original": {
+        "owner": "shawngmc",
+        "repo": "game-extraction-toolbox",
+        "type": "github"
+      }
+    },
+    "flake-utils": {
+      "inputs": {
+        "systems": "systems"
+      },
+      "locked": {
+        "lastModified": 1731533236,
+        "narHash": "sha256-l0KFg5HjrsfsO/JpG+r7fRrqm12kzFHyUHqHCVpMMbI=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "11707dc2f618dd54ca8739b309ec4fc024de578b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "type": "github"
+      }
+    },
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1739727368,
+        "narHash": "sha256-+NRMx5fBUd0UCXp8fiApiiHCsNVI4C5f8ft0Ztwgi3Y=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "1a0f9b1f7c6aeeb02a97310ffcd4ca07c1a8cd69",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "pyfmodex-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1723358684,
+        "narHash": "sha256-r1hti+WH0Dec+5zV6+qhos5ajtcrj77iMUr+AkvleRg=",
+        "owner": "tyrylu",
+        "repo": "pyfmodex",
+        "rev": "80b028b97d1eceb43d6fad98ac2eb97db99b7b2e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "tyrylu",
+        "repo": "pyfmodex",
+        "type": "github"
+      }
+    },
+    "ree-pak-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1738871725,
+        "narHash": "sha256-9ZtTrkFpu/ojGFNA/w2j2O2pCKOvwpGpoPbQbimTT9Y=",
+        "owner": "Ekey",
+        "repo": "REE.PAK.TOOL",
+        "rev": "730b5c02c376482cb78aaa8ba4786b6c026761f2",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Ekey",
+        "repo": "REE.PAK.TOOL",
+        "type": "github"
+      }
+    },
+    "root": {
+      "inputs": {
+        "astc-encoder-py-src": "astc-encoder-py-src",
+        "etcpak-src": "etcpak-src",
+        "extract-toolbox-src": "extract-toolbox-src",
+        "flake-utils": "flake-utils",
+        "nixpkgs": "nixpkgs",
+        "pyfmodex-src": "pyfmodex-src",
+        "ree-pak-src": "ree-pak-src",
+        "texture2ddecoder-src": "texture2ddecoder-src",
+        "unitypy-src": "unitypy-src"
+      }
+    },
+    "systems": {
+      "locked": {
+        "lastModified": 1681028828,
+        "narHash": "sha256-Vy1rq5AaRuLzOxct8nz4T6wlgyUR7zLU309k9mBC768=",
+        "owner": "nix-systems",
+        "repo": "default",
+        "rev": "da67096a3b9bf56a91d16901293e51ba5b49a27e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-systems",
+        "repo": "default",
+        "type": "github"
+      }
+    },
+    "texture2ddecoder-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1727090755,
+        "narHash": "sha256-3ND2gM0kuQTfgvEl5az4J0AHEB6XtcGANVg3WBKDwUA=",
+        "owner": "K0lb3",
+        "repo": "texture2ddecoder",
+        "rev": "6772a7bb1ba657d59b53fdada305c11c5d14969f",
+        "type": "github"
+      },
+      "original": {
+        "owner": "K0lb3",
+        "repo": "texture2ddecoder",
+        "type": "github"
+      }
+    },
+    "unitypy-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1739650498,
+        "narHash": "sha256-quc74QrFTWeCgtzYyFpSzRVUmAgG3ryqoGq2GoqO9xA=",
+        "owner": "K0lb3",
+        "repo": "UnityPy",
+        "rev": "0ed5f2ff65708a49caa706fe8f9da39be7a0aae4",
+        "type": "github"
+      },
+      "original": {
+        "owner": "K0lb3",
+        "repo": "UnityPy",
+        "type": "github"
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}
