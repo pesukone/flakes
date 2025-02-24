@@ -111,7 +111,7 @@
             libdrm
             libsixel
             wayland
-            packages.wayland-protocols
+            wayland-protocols
             libxkbcommon
             xorg.libX11
             xorg.libXScrnSaver
