@@ -35,19 +35,27 @@
       url = "https://archive.org/download/SC55EmperorGrieferus/Roland%20SC-55%20v3.7.sf2";
       flake = false;
     };
+
+    plutonia-midi-pack-zip = {
+      url = "https://ftpmirror1.infania.net/pub/idgames/music/plutmidi.zip";
+      flake = false;
+    };
   };
 
-  outputs = {
-    self,
-    nixpkgs,
-    flake-utils,
-    dsda-src,
-    freedoom-src,
-    deutex-src,
-    soundfont,
-    sunlust-zip
-  }:
-    flake-utils.lib.eachDefaultSystem (system:
+  outputs =
+    {
+      self,
+      nixpkgs,
+      flake-utils,
+      dsda-src,
+      freedoom-src,
+      deutex-src,
+      soundfont,
+      sunlust-zip,
+      plutonia-midi-pack-zip,
+    }:
+    flake-utils.lib.eachDefaultSystem (
+      system:
       let
         pkgs = nixpkgs.legacyPackages.${system};
         config = pkgs.writeText "dsda-doom.conf" ''
@@ -61,7 +69,8 @@
           dsda_exhud 1
         '';
 
-      in rec {
+      in
+      rec {
         packages.dsda-doom = pkgs.stdenv.mkDerivation {
           name = "dsda-doom";
           src = dsda-src;
@@ -156,7 +165,7 @@
           runtimeInputs = [ packages.dsda-doom ];
 
           text = ''
-            dsda-doom -config ${config} -iwad ~/roms/doom/plutonia.wad -complevel 4
+            dsda-doom -config ${config} -iwad ~/roms/doom/plutonia.wad -complevel 4 -file ${plutonia-midi-pack-zip}/plutmidi.wad
           '';
         };
 
@@ -179,17 +188,17 @@
         };
 
         /*
-        packages.freedoom1 = pkgs.writeShellApplication {
-          name = "freedoom";
-          runtimeInputs = [
-            packages.dsda-doom
-          ];
+          packages.freedoom1 = pkgs.writeShellApplication {
+            name = "freedoom";
+            runtimeInputs = [
+              packages.dsda-doom
+            ];
 
-          text = ''
-            ls ${packages.freedoom-wads}/usr/local/bin
-            dsda-doom -iwad ~/roms/doom/doom.wad -file ${packages.freedoom-wads}/usr/local/bin/freedoom1
-          '';
-        };
+            text = ''
+              ls ${packages.freedoom-wads}/usr/local/bin
+              dsda-doom -iwad ~/roms/doom/doom.wad -file ${packages.freedoom-wads}/usr/local/bin/freedoom1
+            '';
+          };
         */
 
         packages.sunlust = pkgs.writeShellApplication {

@@ -3,11 +3,11 @@
     "deutex-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1609665312,
-        "narHash": "sha256-P7TDOCaUF4Dn9ocXsJOxXkd6MIHm1PSEZJ4iFrI5uFo=",
+        "lastModified": 1739910537,
+        "narHash": "sha256-wDAlwOtupkYv6y4fQPwL/PVOhh7wqORnjxV22kmON+U=",
         "owner": "Doom-Utils",
         "repo": "deutex",
-        "rev": "ef1c06a62cc0eff82ecea984f58fbbe41d8a593d",
+        "rev": "870ca04ec16f39b474a7bebe900faf53d36a8d6d",
         "type": "github"
       },
       "original": {
@@ -19,11 +19,11 @@
     "dsda-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1724435905,
-        "narHash": "sha256-sv5nG+lqQUBl6IbUA7ejInWGQpYGdQLaMDHujundULk=",
+        "lastModified": 1746224196,
+        "narHash": "sha256-rwkdqM+aGeeDajTVW1G+ugfLmpWyilnzslvIFt93AO4=",
         "owner": "kraflab",
         "repo": "dsda-doom",
-        "rev": "801db0a9946f10f319e0b1729ee9549d9f3ee614",
+        "rev": "267eb7e25a1ab05338945e1b48f6e05f6bd40e91",
         "type": "github"
       },
       "original": {
@@ -37,11 +37,11 @@
         "systems": "systems"
       },
       "locked": {
-        "lastModified": 1710146030,
-        "narHash": "sha256-SZ5L6eA7HJ/nmkzGG7/ISclqe6oZdOZTNoesiInkXPQ=",
+        "lastModified": 1731533236,
+        "narHash": "sha256-l0KFg5HjrsfsO/JpG+r7fRrqm12kzFHyUHqHCVpMMbI=",
         "owner": "numtide",
         "repo": "flake-utils",
-        "rev": "b1d9ab70662946ef0850d488da1c9019f3a9752a",
+        "rev": "11707dc2f618dd54ca8739b309ec4fc024de578b",
         "type": "github"
       },
       "original": {
@@ -53,11 +53,11 @@
     "freedoom-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1724587002,
-        "narHash": "sha256-VQY7vOA1vBNG4cYb5aD4Pq8dSLVZU/bRVNDMKZO8VWw=",
+        "lastModified": 1739221830,
+        "narHash": "sha256-scV3ok2g6ELXTAVEjwGVwHjQvJp4rL/gMI9CJgHTmT8=",
         "owner": "freedoom",
         "repo": "freedoom",
-        "rev": "22ec37334f78a6660468d8e2b685aa4dafece927",
+        "rev": "4f756816e53fb957ea241600ad643196423464cc",
         "type": "github"
       },
       "original": {
@@ -68,17 +68,30 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1724691153,
-        "narHash": "sha256-eWPRhbOTX3haZcqQ/Fk69kLYUUYxQXz31iZLhLBFAjQ=",
+        "lastModified": 1746291635,
+        "narHash": "sha256-n25UfYR4ZDzlCQif6XKAqUBBorkx3+GI5Z8PYOZM88E=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "e8788303bb8051fe139eeb0b8721a0af5f34b192",
+        "rev": "a0844d7d9273fc4a13cd801432d8eabdd326f7a1",
         "type": "github"
       },
       "original": {
         "owner": "nixos",
         "repo": "nixpkgs",
         "type": "github"
+      }
+    },
+    "plutonia-midi-pack-zip": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1380056092,
+        "narHash": "sha256-nPn1IkEj0PLFWkI3Ccm7z1MUH89YKkO5KmcTHIPi0dc=",
+        "type": "tarball",
+        "url": "https://ftpmirror1.infania.net/pub/idgames/music/plutmidi.zip"
+      },
+      "original": {
+        "type": "tarball",
+        "url": "https://ftpmirror1.infania.net/pub/idgames/music/plutmidi.zip"
       }
     },
     "root": {
@@ -88,6 +101,7 @@
         "flake-utils": "flake-utils",
         "freedoom-src": "freedoom-src",
         "nixpkgs": "nixpkgs",
+        "plutonia-midi-pack-zip": "plutonia-midi-pack-zip",
         "soundfont": "soundfont",
         "sunlust-zip": "sunlust-zip"
       }
