@@ -61,6 +61,7 @@
         config = pkgs.writeText "dsda-doom.conf" ''
           snd_soundfont "${soundfont}"
 
+          videomode "Software"
           use_fullscreen 1
           exclusive_fullscreen 1
           gl_exclusive_fullscreen 1
