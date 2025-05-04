@@ -62,9 +62,9 @@
           snd_soundfont "${soundfont}"
 
           videomode "Software"
-          use_fullscreen 0
-          exclusive_fullscreen 0
-          gl_exclusive_fullscreen 0
+          use_fullscreen 1
+          exclusive_fullscreen 1
+          gl_exclusive_fullscreen 1
 
           dsda_show_fps 1
           dsda_exhud 1
