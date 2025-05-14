@@ -27,20 +27,23 @@
     };
   };
 
-  outputs = {
-    self,
-    nixpkgs,
-    flake-utils,
-    mpv-src,
-    libplacebo-src,
-    yt-dlp-src,
-    wayland-protocols-src
-  }:
-    flake-utils.lib.eachDefaultSystem (system:
+  outputs =
+    {
+      self,
+      nixpkgs,
+      flake-utils,
+      mpv-src,
+      libplacebo-src,
+      yt-dlp-src,
+      wayland-protocols-src,
+    }:
+    flake-utils.lib.eachDefaultSystem (
+      system:
       let
         pkgs = nixpkgs.legacyPackages.${system};
 
-      in rec {
+      in
+      rec {
         flakedPkgs = pkgs;
 
         packages.libplacebo = pkgs.stdenv.mkDerivation {
@@ -71,7 +74,7 @@
         packages.wayland-protocols = pkgs.stdenv.mkDerivation {
           name = "wayland-protocols";
           src = wayland-protocols-src;
-          
+
           nativeBuildInputs = with pkgs; [
             meson
             ninja
@@ -127,11 +130,14 @@
             lua
           ];
 
-          nativeBuildInputs = with pkgs; [ meson ninja ];
+          nativeBuildInputs = with pkgs; [
+            meson
+            ninja
+            wayland-scanner
+          ];
 
           mesonFlags = [
             (pkgs.lib.mesonEnable "lua" true)
-	    (pkgs.lib.mesonEnable "wayland" false)
           ];
 
           postPatch = ''
