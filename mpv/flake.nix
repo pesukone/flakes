@@ -124,10 +124,13 @@
             xorg.libXv
             xorg.libXfixes
             vulkan-loader
+            vulkan-headers
+            shaderc
             libva
             libvdpau
             docutils
             lua
+            SDL2
           ];
 
           nativeBuildInputs = with pkgs; [
