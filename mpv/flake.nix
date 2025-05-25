@@ -95,7 +95,7 @@
           buildInputs = with pkgs; [
             pkg-config
             ffmpeg
-            packages.libplacebo
+            libplacebo
             libass
             mujs
             lcms2
@@ -131,6 +131,9 @@
             docutils
             lua
             SDL2
+            egl-wayland
+            libGL
+            libllvm
           ];
 
           nativeBuildInputs = with pkgs; [
@@ -141,6 +144,12 @@
 
           mesonFlags = [
             (pkgs.lib.mesonEnable "lua" true)
+            (pkgs.lib.mesonEnable "vulkan" true)
+            (pkgs.lib.mesonEnable "wayland" true)
+            (pkgs.lib.mesonEnable "egl-wayland" true)
+            (pkgs.lib.mesonEnable "vaapi" true)
+            (pkgs.lib.mesonEnable "vaapi-wayland" true)
+            (pkgs.lib.mesonEnable "dmabuf-wayland" true)
           ];
 
           postPatch = ''
