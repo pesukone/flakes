@@ -56,6 +56,8 @@
             pkg-config
             libunwind
             shaderc
+            #glslang
+            spirv-headers
             python3Packages.glad2
             vulkan-loader
             lcms
@@ -67,6 +69,10 @@
 
           mesonFlags = [
             (pkgs.lib.mesonEnable "glslang" false)
+            (pkgs.lib.mesonEnable "shaderc" true)
+            (pkgs.lib.mesonEnable "vulkan" false)
+            (pkgs.lib.mesonEnable "vk-proc-addr" false)
+            (pkgs.lib.mesonEnable "opengl" true)
             (pkgs.lib.mesonEnable "d3d11" false)
           ];
         };
@@ -95,7 +101,7 @@
           buildInputs = with pkgs; [
             pkg-config
             ffmpeg
-            libplacebo
+            packages.libplacebo
             libass
             mujs
             lcms2
@@ -144,7 +150,7 @@
 
           mesonFlags = [
             (pkgs.lib.mesonEnable "lua" true)
-            (pkgs.lib.mesonEnable "vulkan" true)
+            (pkgs.lib.mesonEnable "vulkan" false)
             (pkgs.lib.mesonEnable "wayland" true)
             (pkgs.lib.mesonEnable "egl-wayland" true)
             (pkgs.lib.mesonEnable "vaapi" true)
