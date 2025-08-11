@@ -25,6 +25,7 @@
       system:
       let
         pkgs = nixpkgs.legacyPackages.${system};
+        rockspecFilename = "mini.indentscope-0.16.0-1.rockspec";
       in
       {
         flakedPkgs = pkgs;
@@ -32,15 +33,14 @@
         packages.mini-indentscope = pkgs.lua.pkgs.buildLuarocksPackage {
           pname = "mini.indentscope";
           version = "0.16.0";
-          knownRockspec = mini-indentscope-rockspec;
+          rockspecFilename = rockspecFilename;
           src = mini-indentscope-src;
 
-          disabled = pkgs.lua.pkgs.luaOlder "5.1";
-
-          installPhase = ''
-            ls
-            exit 1
+          preInstall = ''
+            cp ${mini-indentscope-rockspec} ${rockspecFilename}
           '';
+
+          disabled = pkgs.lua.pkgs.luaOlder "5.1";
         };
       }
     );
