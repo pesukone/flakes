@@ -30,17 +30,19 @@
       {
         flakedPkgs = pkgs;
 
-        packages.mini-indentscope = pkgs.lua.pkgs.buildLuarocksPackage {
-          pname = "mini.indentscope";
-          version = "0.16.0";
-          rockspecFilename = rockspecFilename;
-          src = mini-indentscope-src;
+        packages.mini-indentscope = pkgs.neovimUtils.buildNeovimPlugin {
+          luaAttr = pkgs.lua.pkgs.buildLuarocksPackage {
+            pname = "mini.indentscope";
+            version = "0.16.0-1";
+            rockspecFilename = rockspecFilename;
+            src = mini-indentscope-src;
 
-          preInstall = ''
-            cp ${mini-indentscope-rockspec} ${rockspecFilename}
-          '';
+            preInstall = ''
+              cp ${mini-indentscope-rockspec} ${rockspecFilename}
+            '';
 
-          disabled = pkgs.lua.pkgs.luaOlder "5.1";
+            disabled = pkgs.lua.pkgs.luaOlder "5.1";
+          };
         };
       }
     );
