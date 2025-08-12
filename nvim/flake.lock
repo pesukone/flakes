@@ -18,6 +18,93 @@
         "type": "github"
       }
     },
+    "mini-diff-rockspec": {
+      "flake": false,
+      "locked": {
+        "narHash": "sha256-gEh7bvho6JeUvbPvKfGx4Hlz16gbJlgKbT6MnpDiqgg=",
+        "type": "file",
+        "url": "https://luarocks.org/manifests/neorocks/mini.diff-0.16.0-1.rockspec"
+      },
+      "original": {
+        "type": "file",
+        "url": "https://luarocks.org/manifests/neorocks/mini.diff-0.16.0-1.rockspec"
+      }
+    },
+    "mini-diff-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1746531063,
+        "narHash": "sha256-5FnfQGz/HiVTwWPfWZqWpHkB2sjCemjPtDP6ulGhZb0=",
+        "owner": "echasnovski",
+        "repo": "mini.diff",
+        "rev": "ec8a5ae365c5d15920721ea42b1351dbc9e61f2d",
+        "type": "github"
+      },
+      "original": {
+        "owner": "echasnovski",
+        "ref": "refs/tags/v0.16.0",
+        "repo": "mini.diff",
+        "type": "github"
+      }
+    },
+    "mini-git-rockspec": {
+      "flake": false,
+      "locked": {
+        "narHash": "sha256-CMYr3xKL3Lr1cGp7deHg7KURtEU0zFGWrRgxI1SwjO4=",
+        "type": "file",
+        "url": "https://luarocks.org/manifests/neorocks/mini.git-0.16.0-1.rockspec"
+      },
+      "original": {
+        "type": "file",
+        "url": "https://luarocks.org/manifests/neorocks/mini.git-0.16.0-1.rockspec"
+      }
+    },
+    "mini-git-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1743956237,
+        "narHash": "sha256-wlu1LzBwyB12inqGP+Vp2Wbf2Dyy00fVVcF5EI72wG0=",
+        "owner": "echasnovski",
+        "repo": "mini-git",
+        "rev": "a0ddc6302f654523053c28109e8b6dbbf05c08f8",
+        "type": "github"
+      },
+      "original": {
+        "owner": "echasnovski",
+        "ref": "refs/tags/v0.16.0",
+        "repo": "mini-git",
+        "type": "github"
+      }
+    },
+    "mini-icons-rockspec": {
+      "flake": false,
+      "locked": {
+        "narHash": "sha256-kv3WjA+uJFwja7yTxWf4R7XlXxY1vG0VHuttEugHwFI=",
+        "type": "file",
+        "url": "https://luarocks.org/manifests/neorocks/mini.icons-0.16.0-1.rockspec"
+      },
+      "original": {
+        "type": "file",
+        "url": "https://luarocks.org/manifests/neorocks/mini.icons-0.16.0-1.rockspec"
+      }
+    },
+    "mini-icons-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1743517626,
+        "narHash": "sha256-/sdLtMOOGeVvFDBB9N4CyUHpGXtUi1ZJ9dIpvxZ9C4Q=",
+        "owner": "echasnovski",
+        "repo": "mini.icons",
+        "rev": "397ed3807e96b59709ef3292f0a3e253d5c1dc0a",
+        "type": "github"
+      },
+      "original": {
+        "owner": "echasnovski",
+        "ref": "refs/tags/v0.16.0",
+        "repo": "mini.icons",
+        "type": "github"
+      }
+    },
     "mini-indentscope-rockspec": {
       "flake": false,
       "locked": {
@@ -94,6 +181,12 @@
     "root": {
       "inputs": {
         "flake-utils": "flake-utils",
+        "mini-diff-rockspec": "mini-diff-rockspec",
+        "mini-diff-src": "mini-diff-src",
+        "mini-git-rockspec": "mini-git-rockspec",
+        "mini-git-src": "mini-git-src",
+        "mini-icons-rockspec": "mini-icons-rockspec",
+        "mini-icons-src": "mini-icons-src",
         "mini-indentscope-rockspec": "mini-indentscope-rockspec",
         "mini-indentscope-src": "mini-indentscope-src",
         "mini-pairs-rockspec": "mini-pairs-rockspec",
