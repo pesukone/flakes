@@ -47,6 +47,35 @@
         "type": "github"
       }
     },
+    "mini-pairs-rockspec": {
+      "flake": false,
+      "locked": {
+        "narHash": "sha256-ezp0CSO3UyiiyF1/csgTIni68RNEQkUigoPauifmM/0=",
+        "type": "file",
+        "url": "https://luarocks.org/manifests/neorocks/mini.pairs-0.16.0-1.rockspec"
+      },
+      "original": {
+        "type": "file",
+        "url": "https://luarocks.org/manifests/neorocks/mini.pairs-0.16.0-1.rockspec"
+      }
+    },
+    "mini-pairs-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1743517628,
+        "narHash": "sha256-ORD4ERYhN2F/MRpDlJvuH2wq8pgMsw/NMWiNX2eUcis=",
+        "owner": "echasnovski",
+        "repo": "mini.pairs",
+        "rev": "69864a2efb36c030877421634487fd90db1e4298",
+        "type": "github"
+      },
+      "original": {
+        "owner": "echasnovski",
+        "ref": "refs/tags/v0.16.0",
+        "repo": "mini.pairs",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1754395660,
@@ -67,6 +96,8 @@
         "flake-utils": "flake-utils",
         "mini-indentscope-rockspec": "mini-indentscope-rockspec",
         "mini-indentscope-src": "mini-indentscope-src",
+        "mini-pairs-rockspec": "mini-pairs-rockspec",
+        "mini-pairs-src": "mini-pairs-src",
         "nixpkgs": "nixpkgs"
       }
     },
