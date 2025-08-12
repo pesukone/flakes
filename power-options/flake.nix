@@ -28,7 +28,6 @@
           name = "power-options";
           src = power-options-src;
 
-          useFetchCargoVendor = true;
           cargoHash = "sha256-UBVT50gRpi4a4+6Ta0q/99c4PQmNRIbCETjIMiamMYw=";
 
           nativeBuildInputs = with pkgs; [ pkg-config ];

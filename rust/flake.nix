@@ -34,7 +34,6 @@
           name = "cargo-leptos";
 
           src = cargo-leptos-src;
-          useFetchCargoVendor = true;
           cargoHash = "sha256-KlB4/1cqFF59xzSqQBzqWRiPoClw/uSk4Y9ZJYbm8/M=";
 
           buildInputs = with pkgs; [
@@ -52,7 +51,6 @@
           name = "leptosfmt";
           src = leptosfmt-src;
 
-          useFetchCargoVendor = true;
           cargoHash = "sha256-ihhEeOLNTHi0C8rGIvwiXJRiqIjWGTRRr7JLn6fMtNU=";
         };
       }

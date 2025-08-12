@@ -28,7 +28,6 @@
         packages.qmassa = pkgs.rustPlatform.buildRustPackage {
           name = "qmassa";
           src = qmassa-src;
-          useFetchCargoVendor = true;
           cargoHash = "sha256-Czr5TWtYR6tn0HqZcigCdV66nazCd44tasZ1fZpHNM0=";
 
           nativeBuildInputs = with pkgs; [ pkg-config ];
