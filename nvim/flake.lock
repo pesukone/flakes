@@ -18,6 +18,35 @@
         "type": "github"
       }
     },
+    "mini-base16-rockspec": {
+      "flake": false,
+      "locked": {
+        "narHash": "sha256-WCV2Rq6Hl88v0coRG77YvKTcxGH1RwQEVZOzTGEoZUg=",
+        "type": "file",
+        "url": "https://luarocks.org/manifests/neorocks/mini.base16-0.16.0-1.rockspec"
+      },
+      "original": {
+        "type": "file",
+        "url": "https://luarocks.org/manifests/neorocks/mini.base16-0.16.0-1.rockspec"
+      }
+    },
+    "mini-base16-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1744463553,
+        "narHash": "sha256-f9NyOIDSyMX06uY/DWRRPsAoUKU8vcngHUgKf+ZbCTw=",
+        "owner": "echasnovski",
+        "repo": "mini.base16",
+        "rev": "2eb2d2b889a8c861d1a66ec651bd0edb417d5c7f",
+        "type": "github"
+      },
+      "original": {
+        "owner": "echasnovski",
+        "ref": "refs/tags/v0.16.0",
+        "repo": "mini.base16",
+        "type": "github"
+      }
+    },
     "mini-diff-rockspec": {
       "flake": false,
       "locked": {
@@ -73,6 +102,35 @@
         "owner": "echasnovski",
         "ref": "refs/tags/v0.16.0",
         "repo": "mini-git",
+        "type": "github"
+      }
+    },
+    "mini-hues-rockspec": {
+      "flake": false,
+      "locked": {
+        "narHash": "sha256-QUfMIbyFgj0HGrzGnQ6Y+/HkqG0V8GOTHWFXuOQ/xBI=",
+        "type": "file",
+        "url": "https://luarocks.org/manifests/neorocks/mini.hues-0.16.0-1.rockspec"
+      },
+      "original": {
+        "type": "file",
+        "url": "https://luarocks.org/manifests/neorocks/mini.hues-0.16.0-1.rockspec"
+      }
+    },
+    "mini-hues-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1744463554,
+        "narHash": "sha256-GL9vSkLJmarNOoWUajZa/SZ0i1e/5hk+v5Jki1tIV3k=",
+        "owner": "echasnovski",
+        "repo": "mini.hues",
+        "rev": "f1fa8ad34788eada276f0b8a41d96a15622933de",
+        "type": "github"
+      },
+      "original": {
+        "owner": "echasnovski",
+        "ref": "refs/tags/v0.16.0",
+        "repo": "mini.hues",
         "type": "github"
       }
     },
@@ -181,10 +239,14 @@
     "root": {
       "inputs": {
         "flake-utils": "flake-utils",
+        "mini-base16-rockspec": "mini-base16-rockspec",
+        "mini-base16-src": "mini-base16-src",
         "mini-diff-rockspec": "mini-diff-rockspec",
         "mini-diff-src": "mini-diff-src",
         "mini-git-rockspec": "mini-git-rockspec",
         "mini-git-src": "mini-git-src",
+        "mini-hues-rockspec": "mini-hues-rockspec",
+        "mini-hues-src": "mini-hues-src",
         "mini-icons-rockspec": "mini-icons-rockspec",
         "mini-icons-src": "mini-icons-src",
         "mini-indentscope-rockspec": "mini-indentscope-rockspec",

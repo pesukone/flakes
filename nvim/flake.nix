@@ -47,6 +47,24 @@
       url = "https://luarocks.org/manifests/neorocks/mini.icons-0.16.0-1.rockspec";
       flake = false;
     };
+
+    mini-hues-src = {
+      url = "github:echasnovski/mini.hues?ref=refs/tags/v0.16.0";
+      flake = false;
+    };
+    mini-hues-rockspec = {
+      url = "https://luarocks.org/manifests/neorocks/mini.hues-0.16.0-1.rockspec";
+      flake = false;
+    };
+
+    mini-base16-src = {
+      url = "github:echasnovski/mini.base16?ref=refs/tags/v0.16.0";
+      flake = false;
+    };
+    mini-base16-rockspec = {
+      url = "https://luarocks.org/manifests/neorocks/mini.base16-0.16.0-1.rockspec";
+      flake = false;
+    };
   };
 
   outputs =
@@ -64,6 +82,10 @@
       mini-diff-rockspec,
       mini-icons-src,
       mini-icons-rockspec,
+      mini-hues-src,
+      mini-hues-rockspec,
+      mini-base16-src,
+      mini-base16-rockspec,
     }:
     flake-utils.lib.eachDefaultSystem (
       system:
@@ -74,6 +96,8 @@
         gitRockspec = "mini.git-0.16.0-1.rockspec";
         diffRockspec = "mini.diff-0.16.0-1.rockspec";
         iconsRockspec = "mini.icons-0.16.0-1.rockspec";
+        huesRockspec = "mini.hues-0.16.0-1.rockspec";
+        base16Rockspec = "mini.base16-0.16.0-1.rockspec";
       in
       {
         flakedPkgs = pkgs;
@@ -147,6 +171,36 @@
 
             preInstall = ''
               cp ${mini-icons-rockspec} ${iconsRockspec}
+            '';
+
+            disabled = pkgs.lua.pkgs.luaOlder "5.1";
+          };
+        };
+
+        packages.mini-hues = pkgs.neovimUtils.buildNeovimPlugin {
+          luaAttr = pkgs.lua.pkgs.buildLuarocksPackage {
+            pname = "mini.hues";
+            version = "0.16.0-1";
+            rockspecFilename = huesRockspec;
+            src = mini-hues-src;
+
+            preInstall = ''
+              cp ${mini-hues-rockspec} ${huesRockspec}
+            '';
+
+            disabled = pkgs.lua.pkgs.luaOlder "5.1";
+          };
+        };
+
+        packages.mini-base16 = pkgs.neovimUtils.buildNeovimPlugin {
+          luaAttr = pkgs.lua.pkgs.buildLuarocksPackage {
+            pname = "mini.base16";
+            version = "0.16.0-1";
+            rockspecFilename = base16Rockspec;
+            src = mini-base16-src;
+
+            preInstall = ''
+              cp ${mini-base16-rockspec} ${base16Rockspec}
             '';
 
             disabled = pkgs.lua.pkgs.luaOlder "5.1";
