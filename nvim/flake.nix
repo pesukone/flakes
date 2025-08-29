@@ -49,11 +49,11 @@
     };
 
     mini-hues-src = {
-      url = "github:echasnovski/mini.hues?ref=refs/tags/v0.16.0";
+      url = "github:nvim-mini/mini.hues";
       flake = false;
     };
     mini-hues-rockspec = {
-      url = "https://luarocks.org/manifests/neorocks/mini.hues-0.16.0-1.rockspec";
+      url = "https://luarocks.org/manifests/neorocks/mini.hues-scm-1.rockspec";
       flake = false;
     };
 
@@ -96,7 +96,7 @@
         gitRockspec = "mini.git-0.16.0-1.rockspec";
         diffRockspec = "mini.diff-0.16.0-1.rockspec";
         iconsRockspec = "mini.icons-0.16.0-1.rockspec";
-        huesRockspec = "mini.hues-0.16.0-1.rockspec";
+        huesRockspec = "mini.hues-scm-1.rockspec";
         base16Rockspec = "mini.base16-0.16.0-1.rockspec";
       in
       {
@@ -180,7 +180,7 @@
         packages.mini-hues = pkgs.neovimUtils.buildNeovimPlugin {
           luaAttr = pkgs.lua.pkgs.buildLuarocksPackage {
             pname = "mini.hues";
-            version = "0.16.0-1";
+            version = "scm-1";
             rockspecFilename = huesRockspec;
             src = mini-hues-src;
 

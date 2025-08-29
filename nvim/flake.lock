@@ -108,28 +108,27 @@
     "mini-hues-rockspec": {
       "flake": false,
       "locked": {
-        "narHash": "sha256-QUfMIbyFgj0HGrzGnQ6Y+/HkqG0V8GOTHWFXuOQ/xBI=",
+        "narHash": "sha256-YJqHEbnHJaOrIwTRPidrD0/7ovKDUxZvkK27lCUhCnE=",
         "type": "file",
-        "url": "https://luarocks.org/manifests/neorocks/mini.hues-0.16.0-1.rockspec"
+        "url": "https://luarocks.org/manifests/neorocks/mini.hues-scm-1.rockspec"
       },
       "original": {
         "type": "file",
-        "url": "https://luarocks.org/manifests/neorocks/mini.hues-0.16.0-1.rockspec"
+        "url": "https://luarocks.org/manifests/neorocks/mini.hues-scm-1.rockspec"
       }
     },
     "mini-hues-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1744463554,
-        "narHash": "sha256-GL9vSkLJmarNOoWUajZa/SZ0i1e/5hk+v5Jki1tIV3k=",
-        "owner": "echasnovski",
+        "lastModified": 1756385100,
+        "narHash": "sha256-TTae5Pk73suH6uEPwX2j1w43WojXdJkKQXxUonJUpnM=",
+        "owner": "nvim-mini",
         "repo": "mini.hues",
-        "rev": "f1fa8ad34788eada276f0b8a41d96a15622933de",
+        "rev": "a067598176acfa754ba032c1526f53220249690a",
         "type": "github"
       },
       "original": {
-        "owner": "echasnovski",
-        "ref": "refs/tags/v0.16.0",
+        "owner": "nvim-mini",
         "repo": "mini.hues",
         "type": "github"
       }
