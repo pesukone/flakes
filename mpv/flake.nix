@@ -6,9 +6,7 @@
     flake-utils.url = "github:numtide/flake-utils";
 
     mpv-src = {
-      type = "github";
-      owner = "mpv-player";
-      repo = "mpv";
+      url = "github:mpv-player/mpv";
       flake = false;
     };
     libplacebo-src = {
@@ -16,9 +14,7 @@
       flake = false;
     };
     yt-dlp-src = {
-      type = "github";
-      owner = "yt-dlp";
-      repo = "yt-dlp";
+      url = "github:yt-dlp/yt-dlp";
       flake = false;
     };
     wayland-protocols-src = {
@@ -56,7 +52,7 @@
             pkg-config
             libunwind
             shaderc
-            #glslang
+            glslang
             spirv-headers
             python3Packages.glad2
             vulkan-loader
