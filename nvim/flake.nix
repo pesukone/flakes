@@ -65,6 +65,24 @@
       url = "https://luarocks.org/manifests/neorocks/mini.base16-0.16.0-1.rockspec";
       flake = false;
     };
+
+    mini-snippets-src = {
+      url = "github:nvim-mini/mini.snippets?ref=refs/tags/v0.16.0";
+      flake = false;
+    };
+    mini-snippets-rockspec = {
+      url = "https://luarocks.org/manifests/neorocks/mini.snippets-0.16.0-1.rockspec";
+      flake = false;
+    };
+
+    mini-completion-src = {
+      url = "github:nvim-mini/mini.completion?ref=refs/tags/v0.16.0";
+      flake = false;
+    };
+    mini-completion-rockspec = {
+      url = "https://luarocks.org/manifests/neorocks/mini.completion-0.16.0-1.rockspec";
+      flake = false;
+    };
   };
 
   outputs =
@@ -86,6 +104,10 @@
       mini-hues-rockspec,
       mini-base16-src,
       mini-base16-rockspec,
+      mini-snippets-src,
+      mini-snippets-rockspec,
+      mini-completion-src,
+      mini-completion-rockspec,
     }:
     flake-utils.lib.eachDefaultSystem (
       system:
@@ -98,6 +120,8 @@
         iconsRockspec = "mini.icons-0.16.0-1.rockspec";
         huesRockspec = "mini.hues-scm-1.rockspec";
         base16Rockspec = "mini.base16-0.16.0-1.rockspec";
+        snippetsRockspec = "mini.snippets-0.16.0-1.rockspec";
+        completionRockspec = "mini.completion-0.16.0-1.rockspec";
       in
       {
         flakedPkgs = pkgs;
@@ -201,6 +225,36 @@
 
             preInstall = ''
               cp ${mini-base16-rockspec} ${base16Rockspec}
+            '';
+
+            disabled = pkgs.lua.pkgs.luaOlder "5.1";
+          };
+        };
+
+        packages.mini-snippets = pkgs.neovimUtils.buildNeovimPlugin {
+          luaAttr = pkgs.lua.pkgs.buildLuarocksPackage {
+            pname = "mini.snippets";
+            version = "0.16.0-1";
+            rockspecFilename = snippetsRockspec;
+            src = mini-snippets-src;
+
+            preInstall = ''
+              cp ${mini-snippets-rockspec} ${snippetsRockspec}
+            '';
+
+            disabled = pkgs.lua.pkgs.luaOlder "5.1";
+          };
+        };
+
+        packages.mini-completion = pkgs.neovimUtils.buildNeovimPlugin {
+          luaAttr = pkgs.lua.pkgs.buildLuarocksPackage {
+            pname = "mini.completion";
+            version = "0.16.0-1";
+            rockspecFilename = completionRockspec;
+            src = mini-completion-src;
+
+            preInstall = ''
+              cp ${mini-completion-rockspec} ${completionRockspec}
             '';
 
             disabled = pkgs.lua.pkgs.luaOlder "5.1";

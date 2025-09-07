@@ -47,6 +47,35 @@
         "type": "github"
       }
     },
+    "mini-completion-rockspec": {
+      "flake": false,
+      "locked": {
+        "narHash": "sha256-uOpmHZhzvU2xfDj58Ibxu9aTn0GZVQ0glfATYzc7oMg=",
+        "type": "file",
+        "url": "https://luarocks.org/manifests/neorocks/mini.completion-0.16.0-1.rockspec"
+      },
+      "original": {
+        "type": "file",
+        "url": "https://luarocks.org/manifests/neorocks/mini.completion-0.16.0-1.rockspec"
+      }
+    },
+    "mini-completion-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1746875080,
+        "narHash": "sha256-iX/wxw5S+jmexGrwvpGerRz0FoiYP0fwGTDgyPcE7Ac=",
+        "owner": "nvim-mini",
+        "repo": "mini.completion",
+        "rev": "ea78d31e8164468f0b3a909f863806f2c4cb84c4",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nvim-mini",
+        "ref": "refs/tags/v0.16.0",
+        "repo": "mini.completion",
+        "type": "github"
+      }
+    },
     "mini-diff-rockspec": {
       "flake": false,
       "locked": {
@@ -220,6 +249,35 @@
         "type": "github"
       }
     },
+    "mini-snippets-rockspec": {
+      "flake": false,
+      "locked": {
+        "narHash": "sha256-YwZJhid80fqG9QHY+5DrqJUm3Wc4Ql9vC4lOTLAvNLo=",
+        "type": "file",
+        "url": "https://luarocks.org/manifests/neorocks/mini.snippets-0.16.0-1.rockspec"
+      },
+      "original": {
+        "type": "file",
+        "url": "https://luarocks.org/manifests/neorocks/mini.snippets-0.16.0-1.rockspec"
+      }
+    },
+    "mini-snippets-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1744986074,
+        "narHash": "sha256-HXjCf/w6eVbSkYVAS7OXj7JRMrvENnOpqWZT0N/Htac=",
+        "owner": "nvim-mini",
+        "repo": "mini.snippets",
+        "rev": "d005684e620e76eb2a5fbbbd211a1eba7212b4aa",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nvim-mini",
+        "ref": "refs/tags/v0.16.0",
+        "repo": "mini.snippets",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1757262198,
@@ -240,6 +298,8 @@
         "flake-utils": "flake-utils",
         "mini-base16-rockspec": "mini-base16-rockspec",
         "mini-base16-src": "mini-base16-src",
+        "mini-completion-rockspec": "mini-completion-rockspec",
+        "mini-completion-src": "mini-completion-src",
         "mini-diff-rockspec": "mini-diff-rockspec",
         "mini-diff-src": "mini-diff-src",
         "mini-git-rockspec": "mini-git-rockspec",
@@ -252,6 +312,8 @@
         "mini-indentscope-src": "mini-indentscope-src",
         "mini-pairs-rockspec": "mini-pairs-rockspec",
         "mini-pairs-src": "mini-pairs-src",
+        "mini-snippets-rockspec": "mini-snippets-rockspec",
+        "mini-snippets-src": "mini-snippets-src",
         "nixpkgs": "nixpkgs"
       }
     },
