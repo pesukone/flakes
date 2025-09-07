@@ -4,7 +4,7 @@
     flake-utils.url = "github:numtide/flake-utils";
 
     mini-indentscope-src = {
-      url = "github:echasnovski/mini.indentscope?ref=refs/tags/v0.16.0";
+      url = "github:nvim-mini/mini.indentscope?ref=refs/tags/v0.16.0";
       flake = false;
     };
     mini-indentscope-rockspec = {
@@ -13,7 +13,7 @@
     };
 
     mini-pairs-src = {
-      url = "github:echasnovski/mini.pairs?ref=refs/tags/v0.16.0";
+      url = "github:nvim-mini/mini.pairs?ref=refs/tags/v0.16.0";
       flake = false;
     };
     mini-pairs-rockspec = {
@@ -22,7 +22,7 @@
     };
 
     mini-git-src = {
-      url = "github:echasnovski/mini-git?ref=refs/tags/v0.16.0";
+      url = "github:nvim-mini/mini-git?ref=refs/tags/v0.16.0";
       flake = false;
     };
     mini-git-rockspec = {
@@ -40,7 +40,7 @@
     };
 
     mini-icons-src = {
-      url = "github:echasnovski/mini.icons?ref=refs/tags/v0.16.0";
+      url = "github:nvim-mini/mini.icons?ref=refs/tags/v0.16.0";
       flake = false;
     };
     mini-icons-rockspec = {
@@ -58,7 +58,7 @@
     };
 
     mini-base16-src = {
-      url = "github:echasnovski/mini.base16?ref=refs/tags/v0.16.0";
+      url = "github:nvim-mini/mini.base16?ref=refs/tags/v0.16.0";
       flake = false;
     };
     mini-base16-rockspec = {

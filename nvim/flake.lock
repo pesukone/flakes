@@ -35,13 +35,13 @@
       "locked": {
         "lastModified": 1744463553,
         "narHash": "sha256-f9NyOIDSyMX06uY/DWRRPsAoUKU8vcngHUgKf+ZbCTw=",
-        "owner": "echasnovski",
+        "owner": "nvim-mini",
         "repo": "mini.base16",
         "rev": "2eb2d2b889a8c861d1a66ec651bd0edb417d5c7f",
         "type": "github"
       },
       "original": {
-        "owner": "echasnovski",
+        "owner": "nvim-mini",
         "ref": "refs/tags/v0.16.0",
         "repo": "mini.base16",
         "type": "github"
@@ -93,13 +93,13 @@
       "locked": {
         "lastModified": 1743956237,
         "narHash": "sha256-wlu1LzBwyB12inqGP+Vp2Wbf2Dyy00fVVcF5EI72wG0=",
-        "owner": "echasnovski",
+        "owner": "nvim-mini",
         "repo": "mini-git",
         "rev": "a0ddc6302f654523053c28109e8b6dbbf05c08f8",
         "type": "github"
       },
       "original": {
-        "owner": "echasnovski",
+        "owner": "nvim-mini",
         "ref": "refs/tags/v0.16.0",
         "repo": "mini-git",
         "type": "github"
@@ -108,7 +108,7 @@
     "mini-hues-rockspec": {
       "flake": false,
       "locked": {
-        "narHash": "sha256-YJqHEbnHJaOrIwTRPidrD0/7ovKDUxZvkK27lCUhCnE=",
+        "narHash": "sha256-nWwr1t9wJSW1doWq2Oq8uK2Gup8yS5e9DpZsv/zKObw=",
         "type": "file",
         "url": "https://luarocks.org/manifests/neorocks/mini.hues-scm-1.rockspec"
       },
@@ -120,11 +120,11 @@
     "mini-hues-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1756385100,
-        "narHash": "sha256-TTae5Pk73suH6uEPwX2j1w43WojXdJkKQXxUonJUpnM=",
+        "lastModified": 1757077367,
+        "narHash": "sha256-q3K3lrXbH6rDf36S6slf39Hq1KBtaT5bsIpLIBNbsP8=",
         "owner": "nvim-mini",
         "repo": "mini.hues",
-        "rev": "a067598176acfa754ba032c1526f53220249690a",
+        "rev": "793d883cf07ec2b01c3337eaf68feac957e4b486",
         "type": "github"
       },
       "original": {
@@ -150,13 +150,13 @@
       "locked": {
         "lastModified": 1743517626,
         "narHash": "sha256-/sdLtMOOGeVvFDBB9N4CyUHpGXtUi1ZJ9dIpvxZ9C4Q=",
-        "owner": "echasnovski",
+        "owner": "nvim-mini",
         "repo": "mini.icons",
         "rev": "397ed3807e96b59709ef3292f0a3e253d5c1dc0a",
         "type": "github"
       },
       "original": {
-        "owner": "echasnovski",
+        "owner": "nvim-mini",
         "ref": "refs/tags/v0.16.0",
         "repo": "mini.icons",
         "type": "github"
@@ -179,13 +179,13 @@
       "locked": {
         "lastModified": 1743517626,
         "narHash": "sha256-Ptd+oTWrZ0bgkDljEoM72OTp7PnCmX1DRgyyl+gKY/Y=",
-        "owner": "echasnovski",
+        "owner": "nvim-mini",
         "repo": "mini.indentscope",
         "rev": "8af2569a7d7fd37300dfa760e44e71efbbf322fd",
         "type": "github"
       },
       "original": {
-        "owner": "echasnovski",
+        "owner": "nvim-mini",
         "ref": "refs/tags/v0.16.0",
         "repo": "mini.indentscope",
         "type": "github"
@@ -208,13 +208,13 @@
       "locked": {
         "lastModified": 1743517628,
         "narHash": "sha256-ORD4ERYhN2F/MRpDlJvuH2wq8pgMsw/NMWiNX2eUcis=",
-        "owner": "echasnovski",
+        "owner": "nvim-mini",
         "repo": "mini.pairs",
         "rev": "69864a2efb36c030877421634487fd90db1e4298",
         "type": "github"
       },
       "original": {
-        "owner": "echasnovski",
+        "owner": "nvim-mini",
         "ref": "refs/tags/v0.16.0",
         "repo": "mini.pairs",
         "type": "github"
@@ -222,11 +222,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1754395660,
-        "narHash": "sha256-rSSSMj19DLAzrfY/PAoy0HJQtB5OddjaDHUHoJXhP6M=",
+        "lastModified": 1757262198,
+        "narHash": "sha256-3qzH/h9DNIDUoiCjcPUG0oJ5XJGwruukQ+7YrZZkaEg=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "5ffee1fd595b9b86dfa1ea3c13a47358284a5f29",
+        "rev": "0b9193275da059de5d836db9aa69bf452bc8ca51",
         "type": "github"
       },
       "original": {
