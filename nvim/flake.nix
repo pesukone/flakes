@@ -83,6 +83,15 @@
       url = "https://luarocks.org/manifests/neorocks/mini.completion-0.16.0-1.rockspec";
       flake = false;
     };
+
+    mini-keymap-src = {
+      url = "github:nvim-mini/mini.keymap?ref=refs/tags/v0.16.0";
+      flake = false;
+    };
+    mini-keymap-rockspec = {
+      url = "https://luarocks.org/manifests/neorocks/mini.keymap-0.16.0-1.rockspec";
+      flake = false;
+    };
   };
 
   outputs =
@@ -108,6 +117,8 @@
       mini-snippets-rockspec,
       mini-completion-src,
       mini-completion-rockspec,
+      mini-keymap-src,
+      mini-keymap-rockspec,
     }:
     flake-utils.lib.eachDefaultSystem (
       system:
@@ -122,6 +133,7 @@
         base16Rockspec = "mini.base16-0.16.0-1.rockspec";
         snippetsRockspec = "mini.snippets-0.16.0-1.rockspec";
         completionRockspec = "mini.completion-0.16.0-1.rockspec";
+        keymapRockspec = "mini.keymap-0.16.0-1.rockspec";
       in
       {
         flakedPkgs = pkgs;
@@ -255,6 +267,21 @@
 
             preInstall = ''
               cp ${mini-completion-rockspec} ${completionRockspec}
+            '';
+
+            disabled = pkgs.lua.pkgs.luaOlder "5.1";
+          };
+        };
+
+        packages.mini-keymap = pkgs.neovimUtils.buildNeovimPlugin {
+          luaAttr = pkgs.lua.pkgs.buildLuarocksPackage {
+            pname = "mini.keymap";
+            version = "0.16.0-1";
+            rockspecFilename = keymapRockspec;
+            src = mini-keymap-src;
+
+            preInstall = ''
+              cp ${mini-keymap-rockspec} ${keymapRockspec}
             '';
 
             disabled = pkgs.lua.pkgs.luaOlder "5.1";

@@ -220,6 +220,35 @@
         "type": "github"
       }
     },
+    "mini-keymap-rockspec": {
+      "flake": false,
+      "locked": {
+        "narHash": "sha256-UBlmS1g9QuFlrQheCQgbYFwUYKUX15u9kmDlg0//wH4=",
+        "type": "file",
+        "url": "https://luarocks.org/manifests/neorocks/mini.keymap-0.16.0-1.rockspec"
+      },
+      "original": {
+        "type": "file",
+        "url": "https://luarocks.org/manifests/neorocks/mini.keymap-0.16.0-1.rockspec"
+      }
+    },
+    "mini-keymap-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1747746162,
+        "narHash": "sha256-CKQV5ZitfEP61T+FjMOBCiuCCNWMUEClF7xu6cOqSqM=",
+        "owner": "nvim-mini",
+        "repo": "mini.keymap",
+        "rev": "2aa0a66d6cbf15c9cea331d976ac4d4b9f01621e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nvim-mini",
+        "ref": "refs/tags/v0.16.0",
+        "repo": "mini.keymap",
+        "type": "github"
+      }
+    },
     "mini-pairs-rockspec": {
       "flake": false,
       "locked": {
@@ -310,6 +339,8 @@
         "mini-icons-src": "mini-icons-src",
         "mini-indentscope-rockspec": "mini-indentscope-rockspec",
         "mini-indentscope-src": "mini-indentscope-src",
+        "mini-keymap-rockspec": "mini-keymap-rockspec",
+        "mini-keymap-src": "mini-keymap-src",
         "mini-pairs-rockspec": "mini-pairs-rockspec",
         "mini-pairs-src": "mini-pairs-src",
         "mini-snippets-rockspec": "mini-snippets-rockspec",
