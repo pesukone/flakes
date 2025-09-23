@@ -35,6 +35,23 @@
         "type": "github"
       }
     },
+    "ghokin-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1754255285,
+        "narHash": "sha256-tM22eJi5IKlNSP/0oCQAeusfRPKPRlXoo68ZoJ40l0c=",
+        "owner": "antham",
+        "repo": "ghokin",
+        "rev": "776e75c6e36ea52b67186123c910f6fdd85c3f8d",
+        "type": "github"
+      },
+      "original": {
+        "owner": "antham",
+        "ref": "refs/tags/v3.8.1",
+        "repo": "ghokin",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1758551326,
@@ -54,6 +71,7 @@
       "inputs": {
         "cucumber-language-server-src": "cucumber-language-server-src",
         "flake-utils": "flake-utils",
+        "ghokin-src": "ghokin-src",
         "nixpkgs": "nixpkgs"
       }
     },
