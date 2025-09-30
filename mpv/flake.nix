@@ -66,7 +66,7 @@
           mesonFlags = [
             (pkgs.lib.mesonEnable "glslang" false)
             (pkgs.lib.mesonEnable "shaderc" true)
-            (pkgs.lib.mesonEnable "vulkan" false)
+            (pkgs.lib.mesonEnable "vulkan" true)
             (pkgs.lib.mesonEnable "vk-proc-addr" false)
             (pkgs.lib.mesonEnable "opengl" true)
             (pkgs.lib.mesonEnable "d3d11" false)
@@ -146,7 +146,7 @@
 
           mesonFlags = [
             (pkgs.lib.mesonEnable "lua" true)
-            (pkgs.lib.mesonEnable "vulkan" false)
+            (pkgs.lib.mesonEnable "vulkan" true)
             (pkgs.lib.mesonEnable "wayland" true)
             (pkgs.lib.mesonEnable "egl-wayland" true)
             (pkgs.lib.mesonEnable "vaapi" true)
@@ -187,6 +187,7 @@
             requests
             urllib3
             websockets
+            pkgs.deno
           ];
         };
 
