@@ -1,0 +1,61 @@
+{
+  "nodes": {
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1759261913,
+        "narHash": "sha256-8Zk94uZDaq10GiHY9B7ssk8pMHeTTLGWHfu/L/ZicfI=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "a306114fe136282dee70782bd05e52f20315a700",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "rkbin-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1749809222,
+        "narHash": "sha256-gNCZwJd9pjisk6vmvtRNyGSBFfAYOADTa5Nd6Zk+qEk=",
+        "owner": "rockchip-linux",
+        "repo": "rkbin",
+        "rev": "74213af1e952c4683d2e35952507133b61394862",
+        "type": "github"
+      },
+      "original": {
+        "owner": "rockchip-linux",
+        "repo": "rkbin",
+        "type": "github"
+      }
+    },
+    "root": {
+      "inputs": {
+        "nixpkgs": "nixpkgs",
+        "rkbin-src": "rkbin-src",
+        "uboot-src": "uboot-src"
+      }
+    },
+    "uboot-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1751903308,
+        "narHash": "sha256-X+JhVkDudkvQo08hGwAChOeMZZR+iunT9aU6tSAuMmg=",
+        "owner": "u-boot",
+        "repo": "u-boot",
+        "rev": "e37de002fac3895e8d0b60ae2015e17bb33e2b5b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "u-boot",
+        "ref": "refs/tags/v2025.07",
+        "repo": "u-boot",
+        "type": "github"
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}
