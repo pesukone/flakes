@@ -67,7 +67,7 @@
             (pkgs.lib.mesonEnable "glslang" false)
             (pkgs.lib.mesonEnable "shaderc" true)
             (pkgs.lib.mesonEnable "vulkan" true)
-            (pkgs.lib.mesonEnable "vk-proc-addr" false)
+            (pkgs.lib.mesonEnable "vk-proc-addr" true)
             (pkgs.lib.mesonEnable "opengl" true)
             (pkgs.lib.mesonEnable "d3d11" false)
           ];
