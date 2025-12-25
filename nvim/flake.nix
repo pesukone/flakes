@@ -4,92 +4,92 @@
     flake-utils.url = "github:numtide/flake-utils";
 
     mini-indentscope-src = {
-      url = "github:nvim-mini/mini.indentscope?ref=refs/tags/v0.16.0";
+      url = "github:nvim-mini/mini.indentscope?ref=refs/tags/v0.17.0";
       flake = false;
     };
     mini-indentscope-rockspec = {
-      url = "https://luarocks.org/manifests/neorocks/mini.indentscope-0.16.0-1.rockspec";
+      url = "https://luarocks.org/manifests/neorocks/mini.indentscope-0.17.0-1.rockspec";
       flake = false;
     };
 
     mini-pairs-src = {
-      url = "github:nvim-mini/mini.pairs?ref=refs/tags/v0.16.0";
+      url = "github:nvim-mini/mini.pairs?ref=refs/tags/v0.17.0";
       flake = false;
     };
     mini-pairs-rockspec = {
-      url = "https://luarocks.org/manifests/neorocks/mini.pairs-0.16.0-1.rockspec";
+      url = "https://luarocks.org/manifests/neorocks/mini.pairs-0.17.0-1.rockspec";
       flake = false;
     };
 
     mini-git-src = {
-      url = "github:nvim-mini/mini-git?ref=refs/tags/v0.16.0";
+      url = "github:nvim-mini/mini-git?ref=refs/tags/v0.17.0";
       flake = false;
     };
     mini-git-rockspec = {
-      url = "https://luarocks.org/manifests/neorocks/mini.git-0.16.0-1.rockspec";
+      url = "https://luarocks.org/manifests/neorocks/mini.git-0.17.0-1.rockspec";
       flake = false;
     };
 
     mini-diff-src = {
-      url = "github:echasnovski/mini.diff?ref=refs/tags/v0.16.0";
+      url = "github:echasnovski/mini.diff?ref=refs/tags/v0.17.0";
       flake = false;
     };
     mini-diff-rockspec = {
-      url = "https://luarocks.org/manifests/neorocks/mini.diff-0.16.0-1.rockspec";
+      url = "https://luarocks.org/manifests/neorocks/mini.diff-0.17.0-1.rockspec";
       flake = false;
     };
 
     mini-icons-src = {
-      url = "github:nvim-mini/mini.icons?ref=refs/tags/v0.16.0";
+      url = "github:nvim-mini/mini.icons?ref=refs/tags/v0.17.0";
       flake = false;
     };
     mini-icons-rockspec = {
-      url = "https://luarocks.org/manifests/neorocks/mini.icons-0.16.0-1.rockspec";
+      url = "https://luarocks.org/manifests/neorocks/mini.icons-0.17.0-1.rockspec";
       flake = false;
     };
 
     mini-hues-src = {
-      url = "github:nvim-mini/mini.hues";
+      url = "github:nvim-mini/mini.hues?ref=refs/tags/v0.17.0";
       flake = false;
     };
     mini-hues-rockspec = {
-      url = "https://luarocks.org/manifests/neorocks/mini.hues-scm-1.rockspec";
+      url = "https://luarocks.org/manifests/neorocks/mini.hues-0.17.0-1.rockspec";
       flake = false;
     };
 
     mini-base16-src = {
-      url = "github:nvim-mini/mini.base16?ref=refs/tags/v0.16.0";
+      url = "github:nvim-mini/mini.base16?ref=refs/tags/v0.17.0";
       flake = false;
     };
     mini-base16-rockspec = {
-      url = "https://luarocks.org/manifests/neorocks/mini.base16-0.16.0-1.rockspec";
+      url = "https://luarocks.org/manifests/neorocks/mini.base16-0.17.0-1.rockspec";
       flake = false;
     };
 
     mini-snippets-src = {
-      url = "github:nvim-mini/mini.snippets?ref=refs/tags/v0.16.0";
+      url = "github:nvim-mini/mini.snippets?ref=refs/tags/v0.17.0";
       flake = false;
     };
     mini-snippets-rockspec = {
-      url = "https://luarocks.org/manifests/neorocks/mini.snippets-0.16.0-1.rockspec";
+      url = "https://luarocks.org/manifests/neorocks/mini.snippets-0.17.0-1.rockspec";
       flake = false;
     };
 
     mini-completion-src = {
-      url = "github:nvim-mini/mini.completion?ref=refs/tags/v0.16.0";
+      url = "github:nvim-mini/mini.completion?ref=refs/tags/v0.17.0";
       flake = false;
     };
     mini-completion-rockspec = {
-      url = "https://luarocks.org/manifests/neorocks/mini.completion-0.16.0-1.rockspec";
+      url = "https://luarocks.org/manifests/neorocks/mini.completion-0.17.0-1.rockspec";
       flake = false;
     };
 
     mini-keymap-src = {
-      url = "github:nvim-mini/mini.keymap?ref=refs/tags/v0.16.0";
+      url = "github:nvim-mini/mini.keymap?ref=refs/tags/v0.17.0";
       flake = false;
     };
     mini-keymap-rockspec = {
-      url = "https://luarocks.org/manifests/neorocks/mini.keymap-0.16.0-1.rockspec";
+      url = "https://luarocks.org/manifests/neorocks/mini.keymap-0.17.0-1.rockspec";
       flake = false;
     };
   };
@@ -124,16 +124,16 @@
       system:
       let
         pkgs = nixpkgs.legacyPackages.${system};
-        indentscopeRockspec = "mini.indentscope-0.16.0-1.rockspec";
-        pairsRockspec = "mini.pairs-0.16.0-1.rockspec";
-        gitRockspec = "mini.git-0.16.0-1.rockspec";
-        diffRockspec = "mini.diff-0.16.0-1.rockspec";
-        iconsRockspec = "mini.icons-0.16.0-1.rockspec";
-        huesRockspec = "mini.hues-scm-1.rockspec";
-        base16Rockspec = "mini.base16-0.16.0-1.rockspec";
-        snippetsRockspec = "mini.snippets-0.16.0-1.rockspec";
-        completionRockspec = "mini.completion-0.16.0-1.rockspec";
-        keymapRockspec = "mini.keymap-0.16.0-1.rockspec";
+        indentscopeRockspec = "mini.indentscope-0.17.0-1.rockspec";
+        pairsRockspec = "mini.pairs-0.17.0-1.rockspec";
+        gitRockspec = "mini.git-0.17.0-1.rockspec";
+        diffRockspec = "mini.diff-0.17.0-1.rockspec";
+        iconsRockspec = "mini.icons-0.17.0-1.rockspec";
+        huesRockspec = "mini.hues-0.17.0-1.rockspec";
+        base16Rockspec = "mini.base16-0.17.0-1.rockspec";
+        snippetsRockspec = "mini.snippets-0.17.0-1.rockspec";
+        completionRockspec = "mini.completion-0.17.0-1.rockspec";
+        keymapRockspec = "mini.keymap-0.17.0-1.rockspec";
       in
       {
         flakedPkgs = pkgs;
@@ -141,7 +141,7 @@
         packages.mini-indentscope = pkgs.neovimUtils.buildNeovimPlugin {
           luaAttr = pkgs.lua.pkgs.buildLuarocksPackage {
             pname = "mini.indentscope";
-            version = "0.16.0-1";
+            version = "0.17.0-1";
             rockspecFilename = indentscopeRockspec;
             src = mini-indentscope-src;
 
@@ -156,7 +156,7 @@
         packages.mini-pairs = pkgs.neovimUtils.buildNeovimPlugin {
           luaAttr = pkgs.lua.pkgs.buildLuarocksPackage {
             pname = "mini.pairs";
-            version = "0.16.0-1";
+            version = "0.17.0-1";
             rockspecFilename = pairsRockspec;
             src = mini-pairs-src;
 
@@ -171,7 +171,7 @@
         packages.mini-git = pkgs.neovimUtils.buildNeovimPlugin {
           luaAttr = pkgs.lua.pkgs.buildLuarocksPackage {
             pname = "mini.git";
-            version = "0.16.0-1";
+            version = "0.17.0-1";
             rockspecFilename = gitRockspec;
             src = mini-git-src;
 
@@ -186,7 +186,7 @@
         packages.mini-diff = pkgs.neovimUtils.buildNeovimPlugin {
           luaAttr = pkgs.lua.pkgs.buildLuarocksPackage {
             pname = "mini.diff";
-            version = "0.16.0-1";
+            version = "0.17.0-1";
             rockspecFilename = diffRockspec;
             src = mini-diff-src;
 
@@ -201,7 +201,7 @@
         packages.mini-icons = pkgs.neovimUtils.buildNeovimPlugin {
           luaAttr = pkgs.lua.pkgs.buildLuarocksPackage {
             pname = "mini.icons";
-            version = "0.16.0-1";
+            version = "0.17.0-1";
             rockspecFilename = iconsRockspec;
             src = mini-icons-src;
 
@@ -216,7 +216,7 @@
         packages.mini-hues = pkgs.neovimUtils.buildNeovimPlugin {
           luaAttr = pkgs.lua.pkgs.buildLuarocksPackage {
             pname = "mini.hues";
-            version = "scm-1";
+            version = "0.17.0-1";
             rockspecFilename = huesRockspec;
             src = mini-hues-src;
 
@@ -231,7 +231,7 @@
         packages.mini-base16 = pkgs.neovimUtils.buildNeovimPlugin {
           luaAttr = pkgs.lua.pkgs.buildLuarocksPackage {
             pname = "mini.base16";
-            version = "0.16.0-1";
+            version = "0.17.0-1";
             rockspecFilename = base16Rockspec;
             src = mini-base16-src;
 
@@ -246,7 +246,7 @@
         packages.mini-snippets = pkgs.neovimUtils.buildNeovimPlugin {
           luaAttr = pkgs.lua.pkgs.buildLuarocksPackage {
             pname = "mini.snippets";
-            version = "0.16.0-1";
+            version = "0.17.0-1";
             rockspecFilename = snippetsRockspec;
             src = mini-snippets-src;
 
@@ -261,7 +261,7 @@
         packages.mini-completion = pkgs.neovimUtils.buildNeovimPlugin {
           luaAttr = pkgs.lua.pkgs.buildLuarocksPackage {
             pname = "mini.completion";
-            version = "0.16.0-1";
+            version = "0.17.0-1";
             rockspecFilename = completionRockspec;
             src = mini-completion-src;
 
@@ -276,7 +276,7 @@
         packages.mini-keymap = pkgs.neovimUtils.buildNeovimPlugin {
           luaAttr = pkgs.lua.pkgs.buildLuarocksPackage {
             pname = "mini.keymap";
-            version = "0.16.0-1";
+            version = "0.17.0-1";
             rockspecFilename = keymapRockspec;
             src = mini-keymap-src;
 
