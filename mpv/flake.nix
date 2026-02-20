@@ -118,13 +118,13 @@
             wayland
             wayland-protocols
             libxkbcommon
-            xorg.libX11
-            xorg.libXScrnSaver
-            xorg.libXext
-            xorg.libXpresent
-            xorg.libXrandr
-            xorg.libXv
-            xorg.libXfixes
+            libX11
+            libXScrnSaver
+            libXext
+            libXpresent
+            libXrandr
+            libXv
+            libXfixes
             vulkan-loader
             vulkan-headers
             shaderc

@@ -41,17 +41,19 @@
     };
   };
 
-  outputs = {
-    self,
-    nixpkgs,
-    flake-utils,
-    openmw-src,
-    bullet-src,
-    mygui-src,
-    osg-src,
-    collada-src
-  }:
-    flake-utils.lib.eachDefaultSystem (system:
+  outputs =
+    {
+      self,
+      nixpkgs,
+      flake-utils,
+      openmw-src,
+      bullet-src,
+      mygui-src,
+      osg-src,
+      collada-src,
+    }:
+    flake-utils.lib.eachDefaultSystem (
+      system:
       let
         pkgs = nixpkgs.legacyPackages.${system};
         config = pkgs.writeTextDir "openmw.cfg" ''
@@ -64,7 +66,8 @@
           fallback-archive=Bloodmoon.bsa
         '';
 
-      in rec {
+      in
+      rec {
         packages.bullet3 = pkgs.stdenv.mkDerivation {
           name = "bullet3";
           src = bullet-src;
@@ -100,7 +103,7 @@
             SDL2.dev
             boost
             ois
-            xorg.libX11.dev
+            libX11.dev
           ];
 
           cmakeFlags = [
@@ -141,11 +144,11 @@
           buildInputs = with pkgs; [
             libGL.dev
             #libglvnd.dev
-            xorg.libX11.dev
-            #xorg.libxcb.dev
-            xorg.libXdmcp
-            xorg.xrandr
-            xorg.libXinerama.dev
+            libX11.dev
+            #libxcb.dev
+            libXdmcp
+            xrandr
+            libXinerama.dev
             freetype.dev
             libjpeg.dev
             jasper.dev
@@ -204,7 +207,7 @@
             SDL2.dev
             openal
             luajit
-            xorg.libXt.dev
+            libXt.dev
           ];
 
           cmakeFlags = [
@@ -214,7 +217,10 @@
 
         packages.default = pkgs.writeShellApplication {
           name = "launch-openmw";
-          runtimeInputs = [ packages.openmw packages.osg-openmw ];
+          runtimeInputs = [
+            packages.openmw
+            packages.osg-openmw
+          ];
 
           text = ''
             openmw --data ~/roms/morrowind/ --config ${config}

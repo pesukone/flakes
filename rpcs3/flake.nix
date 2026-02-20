@@ -11,16 +11,20 @@
     };
   };
 
-  outputs = {
-    self,
-    nixpkgs,
-    flake-utils,
-    rpcs3-src
-  }:
-    flake-utils.lib.eachDefaultSystem (system:
-      let pkgs = nixpkgs.legacyPackages.${system};
+  outputs =
+    {
+      self,
+      nixpkgs,
+      flake-utils,
+      rpcs3-src,
+    }:
+    flake-utils.lib.eachDefaultSystem (
+      system:
+      let
+        pkgs = nixpkgs.legacyPackages.${system};
 
-      in rec {
+      in
+      rec {
         packages.rpcs3 = pkgs.stdenv.mkDerivation {
           name = "rpcs3";
           src = rpcs3-src;
@@ -41,7 +45,7 @@
             curl.dev
             qt6.full
             wayland.dev
-            xorg.libX11.dev
+            libX11.dev
             vulkan-headers
             vulkan-validation-layers
             SDL2.dev

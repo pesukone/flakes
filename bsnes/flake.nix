@@ -12,11 +12,20 @@
     };
   };
 
-  outputs = { self, nixpkgs, flake-utils, bsnes-src }:
-    flake-utils.lib.eachDefaultSystem (system:
-      let pkgs = nixpkgs.legacyPackages.${system};
+  outputs =
+    {
+      self,
+      nixpkgs,
+      flake-utils,
+      bsnes-src,
+    }:
+    flake-utils.lib.eachDefaultSystem (
+      system:
+      let
+        pkgs = nixpkgs.legacyPackages.${system};
 
-      in rec {
+      in
+      rec {
         flakedPkgs = pkgs;
 
         packages.bsnes = pkgs.stdenv.mkDerivation {
@@ -29,13 +38,13 @@
           ];
 
           buildInputs = with pkgs; [
-            xorg.libX11.dev
+            libX11.dev
             cairo
             openal
             pulseaudio.dev
             SDL2.dev
             gtk3.dev
-            xorg.libXv.dev
+            libXv.dev
             alsa-lib.dev
           ];
 

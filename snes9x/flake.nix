@@ -10,11 +10,20 @@
     };
   };
 
-  outputs = { self, nixpkgs, flake-utils, snes9x-src }:
-    flake-utils.lib.eachDefaultSystem (system:
-      let pkgs = nixpkgs.legacyPackages.${system};
+  outputs =
+    {
+      self,
+      nixpkgs,
+      flake-utils,
+      snes9x-src,
+    }:
+    flake-utils.lib.eachDefaultSystem (
+      system:
+      let
+        pkgs = nixpkgs.legacyPackages.${system};
 
-      in rec {
+      in
+      rec {
         flakedPkgs = pkgs;
 
         packages.snes9x = pkgs.stdenv.mkDerivation {
@@ -34,18 +43,18 @@
             SDL2.dev
             gtkmm3.dev
             libpng.dev
-            xorg.libXv.dev
-            xorg.libXdmcp
+            libXv.dev
+            libXdmcp
             libsysprof-capture
             spirv-tools
             pulseaudio.dev
             portaudio
             alsa-lib.dev
             libepoxy.dev
-            xorg.libX11.dev
+            libX11.dev
             minizip
             zlib.dev
-            xorg.libXrandr.dev
+            libXrandr.dev
             pcre2.dev
           ];
 
