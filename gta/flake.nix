@@ -6,28 +6,31 @@
     flake-utils.url = "github:numtide/flake-utils";
 
     gta3-src = {
-      url = "git+https://github.com/halpz/re3?submodules=1";
+      url = "git+https://github.com/Hezkore/hez-gta-re3?submodules=1";
       flake = false;
     };
 
     vc-src = {
-      url = "git+https://github.com/halpz/re3?submodules=1&ref=miami";
+      url = "git+https://github.com/Hezkore/hez-gta-re3?submodules=1&ref=miami";
       flake = false;
     };
   };
 
-  outputs = {
-    self,
-    nixpkgs,
-    flake-utils,
-    gta3-src,
-    vc-src
-  }:
-    flake-utils.lib.eachDefaultSystem (system:
+  outputs =
+    {
+      self,
+      nixpkgs,
+      flake-utils,
+      gta3-src,
+      vc-src,
+    }:
+    flake-utils.lib.eachDefaultSystem (
+      system:
       let
         pkgs = nixpkgs.legacyPackages.${system};
 
-      in rec {
+      in
+      rec {
         packages.gta3-bin = pkgs.multiStdenv.mkDerivation {
           name = "gta3-bin";
           src = gta3-src;
@@ -68,7 +71,10 @@
           name = "gta3-assets";
           src = gta3-src;
 
-          phases = [ "unpackPhase" "installPhase" ];
+          phases = [
+            "unpackPhase"
+            "installPhase"
+          ];
 
           installPhase = ''
             mkdir $out
@@ -78,7 +84,10 @@
 
         packages.gta3 = pkgs.writeShellApplication {
           name = "gta3";
-          runtimeInputs = [ packages.gta3-bin packages.gta3-assets ];
+          runtimeInputs = [
+            packages.gta3-bin
+            packages.gta3-assets
+          ];
 
           text = ''
             cd ~/roms/gta3
@@ -131,7 +140,10 @@
           name = "vc-assets";
           src = vc-src;
 
-          phases = [ "unpackPhase" "installPhase" ];
+          phases = [
+            "unpackPhase"
+            "installPhase"
+          ];
 
           installPhase = ''
             mkdir $out
@@ -141,7 +153,10 @@
 
         packages.gta-vc = pkgs.writeShellApplication {
           name = "gta-vc";
-          runtimeInputs = [ packages.vc-bin packages.vc-assets ];
+          runtimeInputs = [
+            packages.vc-bin
+            packages.vc-assets
+          ];
 
           text = ''
             cd ~/roms/gta-vc

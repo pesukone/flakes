@@ -5,11 +5,11 @@
         "systems": "systems"
       },
       "locked": {
-        "lastModified": 1710146030,
-        "narHash": "sha256-SZ5L6eA7HJ/nmkzGG7/ISclqe6oZdOZTNoesiInkXPQ=",
+        "lastModified": 1731533236,
+        "narHash": "sha256-l0KFg5HjrsfsO/JpG+r7fRrqm12kzFHyUHqHCVpMMbI=",
         "owner": "numtide",
         "repo": "flake-utils",
-        "rev": "b1d9ab70662946ef0850d488da1c9019f3a9752a",
+        "rev": "11707dc2f618dd54ca8739b309ec4fc024de578b",
         "type": "github"
       },
       "original": {
@@ -21,28 +21,28 @@
     "gta3-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1642157737,
-        "narHash": "sha256-/6VRXYT0fA7PitwK4GecpHPQiuLjDpMURfGUmjz8r0k=",
+        "lastModified": 1637340825,
+        "narHash": "sha256-yIu2KTg0do5RAtv2zraoZMnyyice+xFbFyO14zCBgaY=",
         "ref": "refs/heads/master",
-        "rev": "310dd8637147c4db643107b69d603902abc78141",
-        "revCount": 3169,
+        "rev": "ae51f0cf0929c96c4fedd9e2ffadbc2cfd7f249b",
+        "revCount": 3178,
         "submodules": true,
         "type": "git",
-        "url": "https://github.com/halpz/re3"
+        "url": "https://github.com/Hezkore/hez-gta-re3"
       },
       "original": {
         "submodules": true,
         "type": "git",
-        "url": "https://github.com/halpz/re3"
+        "url": "https://github.com/Hezkore/hez-gta-re3"
       }
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1724691153,
-        "narHash": "sha256-eWPRhbOTX3haZcqQ/Fk69kLYUUYxQXz31iZLhLBFAjQ=",
+        "lastModified": 1775122944,
+        "narHash": "sha256-ZNsGK5DbLo1D3zGRTVQltVfhkQG+tpYFOHcXtofTxDc=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "e8788303bb8051fe139eeb0b8721a0af5f34b192",
+        "rev": "8d4ac3a959da88fa03784bddcb64f007f931e7d1",
         "type": "github"
       },
       "original": {
@@ -77,20 +77,20 @@
     "vc-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1700067283,
-        "narHash": "sha256-PxibZrB9dzGfoJRwdw3XFgoNjwd4njb0Z5PlVYz5ANo=",
+        "lastModified": 1630599770,
+        "narHash": "sha256-8MPpGKZazA+Re/OqS7bNvZnJwvcnDEBPWJYpg0RspRM=",
         "ref": "miami",
-        "rev": "37e9ec0d19cbd3cd25823089380fcdae558bee0b",
-        "revCount": 5089,
+        "rev": "a16fcd8d6a79e433c1c6e73d540f1bbe27e14164",
+        "revCount": 5087,
         "submodules": true,
         "type": "git",
-        "url": "https://github.com/halpz/re3"
+        "url": "https://github.com/Hezkore/hez-gta-re3"
       },
       "original": {
         "ref": "miami",
         "submodules": true,
         "type": "git",
-        "url": "https://github.com/halpz/re3"
+        "url": "https://github.com/Hezkore/hez-gta-re3"
       }
     }
   },
