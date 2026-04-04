@@ -1,0 +1,79 @@
+{
+  "nodes": {
+    "dolphin-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1775321350,
+        "narHash": "sha256-SNFVLFT/3+EU+pEWmxOBOg6D6JzzFgKoDAKYE8fYu1k=",
+        "ref": "refs/heads/master",
+        "rev": "c4e99cef61191248f80cb235b6cee1fad16d2c2b",
+        "revCount": 45497,
+        "submodules": true,
+        "type": "git",
+        "url": "https://github.com/dolphin-emu/dolphin"
+      },
+      "original": {
+        "submodules": true,
+        "type": "git",
+        "url": "https://github.com/dolphin-emu/dolphin"
+      }
+    },
+    "flake-utils": {
+      "inputs": {
+        "systems": "systems"
+      },
+      "locked": {
+        "lastModified": 1731533236,
+        "narHash": "sha256-l0KFg5HjrsfsO/JpG+r7fRrqm12kzFHyUHqHCVpMMbI=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "11707dc2f618dd54ca8739b309ec4fc024de578b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "type": "github"
+      }
+    },
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1775321817,
+        "narHash": "sha256-HigqQ9qjKF9RIij+7uJs87WLPXlYkCE7gTG6wicr4Ck=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "bdab6d6d27074f1ca86a4923279c1b606f391f88",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "root": {
+      "inputs": {
+        "dolphin-src": "dolphin-src",
+        "flake-utils": "flake-utils",
+        "nixpkgs": "nixpkgs"
+      }
+    },
+    "systems": {
+      "locked": {
+        "lastModified": 1681028828,
+        "narHash": "sha256-Vy1rq5AaRuLzOxct8nz4T6wlgyUR7zLU309k9mBC768=",
+        "owner": "nix-systems",
+        "repo": "default",
+        "rev": "da67096a3b9bf56a91d16901293e51ba5b49a27e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-systems",
+        "repo": "default",
+        "type": "github"
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}

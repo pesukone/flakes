@@ -1,0 +1,174 @@
+{
+  "nodes": {
+    "dr-libs-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1768604813,
+        "narHash": "sha256-JC75TEqgj4SdvRlUxO0cYO3BkviPg5uo64MadccquAg=",
+        "ref": "refs/heads/master",
+        "rev": "5690d4671d7ad07ae6021756d7222eb159745f06",
+        "revCount": 2568,
+        "submodules": true,
+        "type": "git",
+        "url": "https://github.com/mackron/dr_libs"
+      },
+      "original": {
+        "submodules": true,
+        "type": "git",
+        "url": "https://github.com/mackron/dr_libs"
+      }
+    },
+    "flake-utils": {
+      "inputs": {
+        "systems": "systems"
+      },
+      "locked": {
+        "lastModified": 1731533236,
+        "narHash": "sha256-l0KFg5HjrsfsO/JpG+r7fRrqm12kzFHyUHqHCVpMMbI=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "11707dc2f618dd54ca8739b309ec4fc024de578b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "type": "github"
+      }
+    },
+    "ghostship-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1771617780,
+        "narHash": "sha256-d5TNzsFjEg4K0SvbgpsOOaDUOU9hd02NYU24QttuFKM=",
+        "ref": "refs/heads/develop",
+        "rev": "4ff19c5ada35039fba682e5a34e9f6402f68cb94",
+        "revCount": 504,
+        "submodules": true,
+        "type": "git",
+        "url": "https://github.com/HarbourMasters/Ghostship"
+      },
+      "original": {
+        "submodules": true,
+        "type": "git",
+        "url": "https://github.com/HarbourMasters/Ghostship"
+      }
+    },
+    "harkinian2-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1771088611,
+        "narHash": "sha256-NOQR2N0rsGACN6clK/F8R61OPIC4rYdL6EUAYc8QceA=",
+        "ref": "refs/heads/develop",
+        "rev": "4f2548d9d6a97e18a371ef01ba6960bc36006e08",
+        "revCount": 4339,
+        "submodules": true,
+        "type": "git",
+        "url": "https://github.com/HarbourMasters/2ship2harkinian"
+      },
+      "original": {
+        "submodules": true,
+        "type": "git",
+        "url": "https://github.com/HarbourMasters/2ship2harkinian"
+      }
+    },
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1771613462,
+        "narHash": "sha256-bOErT5THMgmq/6WxwWpQwTdBngrTMtaiGmDwjx+KpZ4=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "cd3ece3061f5923097bd2ecd917e1d4b64801039",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "root": {
+      "inputs": {
+        "dr-libs-src": "dr-libs-src",
+        "flake-utils": "flake-utils",
+        "ghostship-src": "ghostship-src",
+        "harkinian2-src": "harkinian2-src",
+        "nixpkgs": "nixpkgs",
+        "shipwright-src": "shipwright-src",
+        "spaghettikart-src": "spaghettikart-src",
+        "starship-src": "starship-src"
+      }
+    },
+    "shipwright-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1771358886,
+        "narHash": "sha256-YjTzHeNV5E/2X3/A5SLjPV60u8NnEOMB40JBbujzHQI=",
+        "ref": "refs/heads/develop",
+        "rev": "d9ebce9f9f895b392f645130bffc75bcae328ee5",
+        "revCount": 3627,
+        "submodules": true,
+        "type": "git",
+        "url": "https://github.com/HarbourMasters/Shipwright"
+      },
+      "original": {
+        "submodules": true,
+        "type": "git",
+        "url": "https://github.com/HarbourMasters/Shipwright"
+      }
+    },
+    "spaghettikart-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1770957085,
+        "narHash": "sha256-pbELdcZx0QdSpjgtnAjsCHSbWItCZCgZSKYkFIhFShI=",
+        "ref": "refs/heads/main",
+        "rev": "75c8d7dc9fc4f26509cadc65e8c8b8ab2a067738",
+        "revCount": 1177,
+        "submodules": true,
+        "type": "git",
+        "url": "https://github.com/HarbourMasters/SpaghettiKart"
+      },
+      "original": {
+        "submodules": true,
+        "type": "git",
+        "url": "https://github.com/HarbourMasters/SpaghettiKart"
+      }
+    },
+    "starship-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1770479406,
+        "narHash": "sha256-TDll03zdixgKs3uk1w+EiawtEByJqM8YtL4e70dNXrQ=",
+        "ref": "refs/heads/main",
+        "rev": "5019c5a644bfe6b104531723e6abe6b0d6743ede",
+        "revCount": 1603,
+        "submodules": true,
+        "type": "git",
+        "url": "https://github.com/HarbourMasters/Starship"
+      },
+      "original": {
+        "submodules": true,
+        "type": "git",
+        "url": "https://github.com/HarbourMasters/Starship"
+      }
+    },
+    "systems": {
+      "locked": {
+        "lastModified": 1681028828,
+        "narHash": "sha256-Vy1rq5AaRuLzOxct8nz4T6wlgyUR7zLU309k9mBC768=",
+        "owner": "nix-systems",
+        "repo": "default",
+        "rev": "da67096a3b9bf56a91d16901293e51ba5b49a27e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-systems",
+        "repo": "default",
+        "type": "github"
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}
