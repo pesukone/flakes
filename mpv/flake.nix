@@ -58,7 +58,7 @@
             vulkan-loader
             lcms
             libdovi
-            xxHash
+            xxhash
             python3Packages.jinja2
             jinja2-cli
           ];

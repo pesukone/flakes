@@ -46,7 +46,7 @@
             glslang
             pugixml
             enet
-            xxHash
+            xxhash
             bzip2
             zstd
             zlib
