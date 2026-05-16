@@ -31,6 +31,11 @@
       flake = false;
     };
 
+    italo-zip = {
+      url = "https://ftpmirror1.infania.net/pub/idgames/levels/doom2/Ports/megawads/italo.zip";
+      flake = false;
+    };
+
     soundfont = {
       url = "https://archive.org/download/SC55EmperorGrieferus/Roland%20SC-55%20v3.7.sf2";
       flake = false;
@@ -52,6 +57,7 @@
       deutex-src,
       soundfont,
       sunlust-zip,
+      italo-zip,
       plutonia-midi-pack-zip,
     }:
     flake-utils.lib.eachDefaultSystem (
@@ -83,6 +89,7 @@
             libzip
             SDL2
             SDL2_mixer
+            libsndfile
           ];
 
           sourceRoot = "source/prboom2";
@@ -208,6 +215,15 @@
 
           text = ''
             dsda-doom -config ${config} -iwad ~/roms/doom/doom2.wad -file ${sunlust-zip}/sunlust.wad -complevel 9
+          '';
+        };
+
+        packages.italo-doom = pkgs.writeShellApplication {
+          name = "italo-doom";
+          runtimeInputs = [ packages.dsda-doom ];
+
+          text = ''
+            dsda-doom -config ${config} -iwad ~/roms/doom/doom2.wad -file ${italo-zip}/italo.wad -complevel 9
           '';
         };
 

@@ -19,11 +19,11 @@
     "dsda-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1746224196,
-        "narHash": "sha256-rwkdqM+aGeeDajTVW1G+ugfLmpWyilnzslvIFt93AO4=",
+        "lastModified": 1778263614,
+        "narHash": "sha256-s9N6n20Egh0A0Zya0CqPjSf87wWXXgWCVqJA0GABNg0=",
         "owner": "kraflab",
         "repo": "dsda-doom",
-        "rev": "267eb7e25a1ab05338945e1b48f6e05f6bd40e91",
+        "rev": "d71c50c7160ea73d3c6f9b815383b39bc0fb865c",
         "type": "github"
       },
       "original": {
@@ -53,11 +53,11 @@
     "freedoom-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1739221830,
-        "narHash": "sha256-scV3ok2g6ELXTAVEjwGVwHjQvJp4rL/gMI9CJgHTmT8=",
+        "lastModified": 1765036198,
+        "narHash": "sha256-BgX/qTA2xYa5NS9Y3CehSE+bj9YuM92crARE2U8T0SY=",
         "owner": "freedoom",
         "repo": "freedoom",
-        "rev": "4f756816e53fb957ea241600ad643196423464cc",
+        "rev": "d7ad12f26d644aedc4d94b598087223d3e4a38dd",
         "type": "github"
       },
       "original": {
@@ -66,13 +66,26 @@
         "type": "github"
       }
     },
+    "italo-zip": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1452615731,
+        "narHash": "sha256-+gyb3aG1Lyx/b2LeoJ4DV/qlnSQLCasNoO/tKkDDwjg=",
+        "type": "tarball",
+        "url": "https://ftpmirror1.infania.net/pub/idgames/levels/doom2/Ports/megawads/italo.zip"
+      },
+      "original": {
+        "type": "tarball",
+        "url": "https://ftpmirror1.infania.net/pub/idgames/levels/doom2/Ports/megawads/italo.zip"
+      }
+    },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1746291635,
-        "narHash": "sha256-n25UfYR4ZDzlCQif6XKAqUBBorkx3+GI5Z8PYOZM88E=",
+        "lastModified": 1778937217,
+        "narHash": "sha256-XDEG7P/NGWnhBAd0bbcrW3mkG5IsL4C8VEoczVDFcQY=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "a0844d7d9273fc4a13cd801432d8eabdd326f7a1",
+        "rev": "0bcb7b87583fc0c52cc1b8e1d924b056900aef0c",
         "type": "github"
       },
       "original": {
@@ -100,6 +113,7 @@
         "dsda-src": "dsda-src",
         "flake-utils": "flake-utils",
         "freedoom-src": "freedoom-src",
+        "italo-zip": "italo-zip",
         "nixpkgs": "nixpkgs",
         "plutonia-midi-pack-zip": "plutonia-midi-pack-zip",
         "soundfont": "soundfont",
