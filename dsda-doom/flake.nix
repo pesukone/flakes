@@ -237,6 +237,15 @@
           '';
         };
 
+        packages.ancient-aliens = pkgs.writeShellApplication {
+          name = "ancient-aliens";
+          runtimeInputs = [ packages.dsda-doom ];
+
+          text = ''
+            dsda-doom -config ${config} -iwad ~/roms/doom/doom2.wad -file ~/roms/doom/aaliens_v1_5_umapinfo.wad -complevel 21
+          '';
+        };
+
         packages.heretic = pkgs.writeShellApplication {
           name = "heretic";
           runtimeInputs = [ packages.dsda-doom ];
