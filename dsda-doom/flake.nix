@@ -36,10 +36,12 @@
       flake = false;
     };
 
-    soundfont = {
-      url = "https://archive.org/download/SC55EmperorGrieferus/Roland%20SC-55%20v3.7.sf2";
-      flake = false;
-    };
+    /*
+        soundfont = {
+          url = "https://archive.org/download/SC55EmperorGrieferus/Roland%20SC-55%20v3.7.sf2";
+          flake = false;
+        };
+    */
 
     plutonia-midi-pack-zip = {
       url = "https://ftpmirror1.infania.net/pub/idgames/music/plutmidi.zip";
@@ -55,7 +57,7 @@
       dsda-src,
       freedoom-src,
       deutex-src,
-      soundfont,
+      #soundfont,
       sunlust-zip,
       italo-zip,
       plutonia-midi-pack-zip,
@@ -65,7 +67,14 @@
       let
         pkgs = nixpkgs.legacyPackages.${system};
         config = pkgs.writeText "dsda-doom.conf" ''
-          snd_soundfont "${soundfont}"
+          #snd_soundfont "{soundfont}"
+          snd_midiplayer "portmidi"
+          snd_mididev "CH345"
+          mus_portmidi_reset_type "gm"
+          mus_portmidi_reset_delay 0
+          mus_portmidi_filter_sysex 1
+          mus_portmidi_reverb_level 40
+          mus_portmidi_chorus_level 0
 
           videomode "Software"
           use_fullscreen 1
@@ -90,6 +99,7 @@
             SDL2
             SDL2_mixer
             libsndfile
+            portmidi
           ];
 
           sourceRoot = "source/prboom2";

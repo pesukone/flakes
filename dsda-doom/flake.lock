@@ -81,11 +81,25 @@
     },
     "nixpkgs": {
       "locked": {
+<<<<<<< HEAD
         "lastModified": 1778937217,
         "narHash": "sha256-XDEG7P/NGWnhBAd0bbcrW3mkG5IsL4C8VEoczVDFcQY=",
+||||||| parent of 95cb51b (configure midi for dsda-doom)
+        "lastModified": 1746291635,
+        "narHash": "sha256-n25UfYR4ZDzlCQif6XKAqUBBorkx3+GI5Z8PYOZM88E=",
+=======
+        "lastModified": 1779964730,
+        "narHash": "sha256-nlJvR5UrZIgH1wD4tHUrPfFcKkVjfBd6qqqnOt7ibe4=",
+>>>>>>> 95cb51b (configure midi for dsda-doom)
         "owner": "nixos",
         "repo": "nixpkgs",
+<<<<<<< HEAD
         "rev": "0bcb7b87583fc0c52cc1b8e1d924b056900aef0c",
+||||||| parent of 95cb51b (configure midi for dsda-doom)
+        "rev": "a0844d7d9273fc4a13cd801432d8eabdd326f7a1",
+=======
+        "rev": "22699b13158ae5429b233ce7b530113318b00755",
+>>>>>>> 95cb51b (configure midi for dsda-doom)
         "type": "github"
       },
       "original": {
@@ -116,20 +130,7 @@
         "italo-zip": "italo-zip",
         "nixpkgs": "nixpkgs",
         "plutonia-midi-pack-zip": "plutonia-midi-pack-zip",
-        "soundfont": "soundfont",
         "sunlust-zip": "sunlust-zip"
-      }
-    },
-    "soundfont": {
-      "flake": false,
-      "locked": {
-        "narHash": "sha256-llKV2cIsD6tjVJSi5NoIKfkjab30xGQPm5avJ4fVdAs=",
-        "type": "file",
-        "url": "https://archive.org/download/SC55EmperorGrieferus/Roland%20SC-55%20v3.7.sf2"
-      },
-      "original": {
-        "type": "file",
-        "url": "https://archive.org/download/SC55EmperorGrieferus/Roland%20SC-55%20v3.7.sf2"
       }
     },
     "sunlust-zip": {
