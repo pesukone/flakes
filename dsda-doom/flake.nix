@@ -69,7 +69,7 @@
         config = pkgs.writeText "dsda-doom.conf" ''
           #snd_soundfont "{soundfont}"
           snd_midiplayer "portmidi"
-          snd_mididev "CH345"
+          snd_mididev "UM-ONE"
           mus_portmidi_reset_type "gm"
           mus_portmidi_reset_delay 0
           mus_portmidi_filter_sysex 1
@@ -80,9 +80,12 @@
           use_fullscreen 1
           exclusive_fullscreen 1
           gl_exclusive_fullscreen 1
+          screen_resolution "2560x1440"
 
-          dsda_show_fps 1
+          dsda_show_fps 0
           dsda_exhud 1
+
+          mouse_sensitivity_horiz 35
         '';
 
       in
