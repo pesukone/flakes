@@ -44,6 +44,8 @@
             vulkan-headers
             vulkan-loader
             shaderc
+            openvino
+            onetbb
           ];
 
           cmakeFlags = [
@@ -59,6 +61,7 @@
             (pkgs.lib.strings.cmakeBool "GGML_RPC" true)
             (pkgs.lib.strings.cmakeBool "GGML_VULKAN" true)
             (pkgs.lib.strings.cmakeBool "GGML_BACKEND_DL" true)
+            (pkgs.lib.strings.cmakeBool "GGML_OPENVINO" true)
             (pkgs.lib.strings.cmakeFeature "CMAKE_HIP_COMPILER" "${pkgs.rocmPackages.llvm.clang}/bin/clang")
             (pkgs.lib.strings.cmakeFeature "CMAKE_HIP_ARCHITECTURES" "gfx1201;gfx1030")
           ];
@@ -66,6 +69,8 @@
           env = {
             ROCM_PATH = "${pkgs.rocmPackages.clr}";
             HIP_DEVICE_LIB_PATH = "${pkgs.rocmPackages.rocm-device-libs}/amdgcn/bitcode";
+            INTEL_OPENVINO_DIR = "${pkgs.openvino}";
+            OpenVINO_DIR = "${pkgs.openvino}/runtime/cmake";
           };
         };
 
