@@ -34,6 +34,19 @@
         "type": "github"
       }
     },
+    "llama-ui-assets": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1783009419,
+        "narHash": "sha256-cwzlagOYopjY35tiU2E821xdqgW5ZSClRuUp5w5c61s=",
+        "type": "tarball",
+        "url": "https://github.com/ggml-org/llama.cpp/releases/download/b9860/llama-b9860-ui.tar.gz"
+      },
+      "original": {
+        "type": "tarball",
+        "url": "https://github.com/ggml-org/llama.cpp/releases/download/b9860/llama-b9860-ui.tar.gz"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1782977200,
@@ -53,6 +66,7 @@
       "inputs": {
         "flake-utils": "flake-utils",
         "llama-src": "llama-src",
+        "llama-ui-assets": "llama-ui-assets",
         "nixpkgs": "nixpkgs"
       }
     },

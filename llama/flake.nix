@@ -9,6 +9,11 @@
       url = "github:ggml-org/llama.cpp";
       flake = false;
     };
+
+    llama-ui-assets = {
+      url = "https://github.com/ggml-org/llama.cpp/releases/download/b9860/llama-b9860-ui.tar.gz";
+      flake = false;
+    };
   };
 
   outputs =
@@ -17,6 +22,7 @@
       nixpkgs,
       flake-utils,
       llama-src,
+      llama-ui-assets,
     }:
     flake-utils.lib.eachDefaultSystem (
       system:
@@ -46,6 +52,7 @@
             shaderc
             openvino
             onetbb
+            openssl
           ];
 
           cmakeFlags = [
@@ -53,8 +60,9 @@
             (pkgs.lib.strings.cmakeBool "GGML_NATIVE" false)
             (pkgs.lib.strings.cmakeBool "LLAMA_BUILD_EXAMPLES" false)
             (pkgs.lib.strings.cmakeBool "LLAMA_BUILD_SERVER" true)
+            (pkgs.lib.strings.cmakeBool "LLAMA_BUILD_UI" true)
             (pkgs.lib.strings.cmakeBool "LLAMA_BUILD_TESTS" false)
-            (pkgs.lib.strings.cmakeBool "LLAMA_BUILD_OPENSSL" true)
+            (pkgs.lib.strings.cmakeBool "LLAMA_OPENSSL" true)
             (pkgs.lib.strings.cmakeBool "GGML_BLAS" true)
             (pkgs.lib.strings.cmakeBool "GGML_HIP" true)
             #(pkgs.lib.strings.cmakeBool "GGML_HIP_ROCWMMA_FATTN" true)
@@ -72,9 +80,18 @@
             INTEL_OPENVINO_DIR = "${pkgs.openvino}";
             OpenVINO_DIR = "${pkgs.openvino}/runtime/cmake";
           };
+
+          postConfigure = ''
+            mkdir tools/ui/dist
+            cp -r ${llama-ui-assets}/* tools/ui/dist/
+          '';
         };
 
         packages.default = packages.llama;
+
+        devShell = pkgs.mkShell {
+          inputsFrom = [ packages.llama ];
+        };
       }
     );
 }
