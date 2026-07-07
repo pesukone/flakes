@@ -45,7 +45,7 @@
             rocmPackages.clr
             rocmPackages.rocblas
             rocmPackages.hipblas
-            #rocmPackages.rocwmma
+            rocmPackages.rocwmma
             openblas
             vulkan-headers
             vulkan-loader
@@ -65,13 +65,14 @@
             (pkgs.lib.strings.cmakeBool "LLAMA_OPENSSL" true)
             (pkgs.lib.strings.cmakeBool "GGML_BLAS" true)
             (pkgs.lib.strings.cmakeBool "GGML_HIP" true)
-            #(pkgs.lib.strings.cmakeBool "GGML_HIP_ROCWMMA_FATTN" true)
+            (pkgs.lib.strings.cmakeBool "GGML_HIP_ROCWMMA_FATTN" true)
             (pkgs.lib.strings.cmakeBool "GGML_RPC" true)
             (pkgs.lib.strings.cmakeBool "GGML_VULKAN" true)
             (pkgs.lib.strings.cmakeBool "GGML_BACKEND_DL" true)
             (pkgs.lib.strings.cmakeBool "GGML_OPENVINO" true)
             (pkgs.lib.strings.cmakeFeature "CMAKE_HIP_COMPILER" "${pkgs.rocmPackages.llvm.clang}/bin/clang")
             (pkgs.lib.strings.cmakeFeature "CMAKE_HIP_ARCHITECTURES" "gfx1201;gfx1030")
+            (pkgs.lib.strings.cmakeFeature "CMAKE_HIP_FLAGS" "-I${pkgs.rocmPackages.rocwmma}/include")
           ];
 
           env = {

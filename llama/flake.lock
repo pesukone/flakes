@@ -21,11 +21,11 @@
     "llama-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1782926962,
-        "narHash": "sha256-ecPtU/6kdUmJkzs1pVUV5hFLvQFnoLTTPlrm9NuoXzs=",
+        "lastModified": 1783423670,
+        "narHash": "sha256-+TTm93CPmeHSoxBsdhlhHB2O7d80gUWUKAoOlH3X9xQ=",
         "owner": "ggml-org",
         "repo": "llama.cpp",
-        "rev": "4fc4ec5541b243957ae5099edb67372f8f3b550e",
+        "rev": "33ca0dcb9d78c7c3a3b543db4c5fc9182abfe519",
         "type": "github"
       },
       "original": {
@@ -49,11 +49,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1782977200,
-        "narHash": "sha256-JTqFKv1lM6GiUrd8qOl/zEqUPAZzF4ULkgoDUPz6iB4=",
+        "lastModified": 1783427417,
+        "narHash": "sha256-OLg5lbgv9nc+IShDS2WrrnIY9DCfRXWD5hxfS4x1Huk=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "404cf789ed9910a07f08f66e4544c45cc270a644",
+        "rev": "1350febcfa4d9894e2254f42ab903859b2cad193",
         "type": "github"
       },
       "original": {
