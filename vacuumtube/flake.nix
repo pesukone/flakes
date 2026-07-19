@@ -24,35 +24,42 @@
       rec {
         packages.vacuumtube = pkgs.buildNpmPackage (finalAttrs: {
           pname = "vacuumtube";
-          version = "1.8.0";
+          version = "1.8.1";
 
           env.ELECTRON_SKIP_BINARY_DOWNLOAD = 1;
 
           src = vacuumtube-src;
-          npmDepsHash = "sha256-hbSN5I3LG4+y0Ggkv5C1zsaLYbrFjGXiwURfc51d0Kk=";
+          npmDepsHash = "sha256-Q/E+Rc9CuaN2cN6AKKT3EHiR97sdLAAnks5DYBQK24I=";
+
+          buildInputs = with pkgs; [
+            glib
+            ffmpeg
+          ];
 
           buildPhase = ''
             runHook preBuild
 
             npm exec electron-builder -- \
             --dir \
-            -c.electronDist=${pkgs.electron.dist} \
-            -c.electronVersion=${pkgs.electron.version}
+            -c.electronDist=${pkgs.electron_42.dist} \
+            -c.electronVersion=${pkgs.electron_42.version}
 
             runHook postBuild
           '';
 
-          desktopItems = [
-            (pkgs.makeDesktopItem {
-              name = finalAttrs.pname;
-              desktopName = "VacuumTube";
-              genericName = "Video Player";
-              comment = finalAttrs.meta.description;
-              icon = "vacuumtube";
-              exec = finalAttrs.meta.mainProgram;
-              terminal = false;
-            })
-          ];
+          /*
+                    desktopItems = [
+                      (pkgs.makeDesktopItem {
+                        name = finalAttrs.pname;
+                        desktopName = "VacuumTube";
+                        genericName = "Video Player";
+                        comment = finalAttrs.meta.description;
+                        icon = "vacuumtube";
+                        exec = finalAttrs.meta.mainProgram;
+                        terminal = false;
+                      })
+                    ];
+          */
 
           installPhase = ''
             runHook preInstall
@@ -61,15 +68,12 @@
               install -Dm644 "assets/icons/$i"x"$i.png" "$out/share/icons/hicolor/$i"x"$i/apps/vacuumtube.png"
             done
 
-            cp -r dist/linux-unpacked "$out/share/vacuumtube";
+            cp -r dist/linux-unpacked "$out/share/vacuumtube/";
+            makeWrapper "$out/share/vacuumtube/vacuumtube" "$out/bin/vacuumtube" \
+              --set LD_LIBRARY_PATH "$out/share/vacuumtube" \
+              --add-flags "--no-sandbox" #--disable-gpu"
 
             runHook postInstall
-          '';
-
-          postFixup = ''
-            patchelf \
-              --set-interpreter "$(cat $NIX_CC/nix-support/dynamic-linker)" \
-              --set-rpath ""
           '';
 
           meta = {
