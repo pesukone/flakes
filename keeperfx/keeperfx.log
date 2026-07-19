@@ -1,0 +1,14 @@
+Dungeon Keeper FX ver 1.4.0.0 Prototype (standard release) git:
+LOG CREATED  @ 02:21:28  14-07-2026
+
+Sync: [0] LbMouseChangeMoveRatio: New ratio 256x256
+Sync: CPU GenuineIntel type 0 family 6 model 140 stepping 1 features bfebfbff
+Sync: 11th Gen Intel(R) Core(TM) i7-1185G7 @ 3.00GHz
+Sync: Build image base: (nil)
+Sync: Operating System: Linux
+Warning: Mods order file "mods/load_order.cfg" doesn't exist or is too small.
+Warning: Base config file "keeperfx.cfg" doesn't exist or is too small.
+Error: [0] setup_game: Configuration load error.
+Error: In source LbBullfrogMain:
+     2 - Setting up game failed.
+
