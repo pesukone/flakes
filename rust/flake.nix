@@ -34,13 +34,14 @@
           name = "cargo-leptos";
 
           src = cargo-leptos-src;
-          cargoHash = "sha256-KlB4/1cqFF59xzSqQBzqWRiPoClw/uSk4Y9ZJYbm8/M=";
+          cargoHash = "sha256-bGOg5FfnykvzmATHLj9B02p7LHJ58waWdDarkFPx09k=";
 
           buildInputs = with pkgs; [
-            openssl.dev
+            openssl
           ];
           nativeBuildInputs = with pkgs; [
             pkg-config
+            perl
           ];
 
           buildFeatures = [ "no_downloads" ];

@@ -3,11 +3,11 @@
     "cargo-leptos-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1741740520,
-        "narHash": "sha256-vr1wBON1Mtuqowu0zRNjmdcCl6MfB1mgkqb8BRSalPY=",
+        "lastModified": 1783101585,
+        "narHash": "sha256-HQAEhI6fHSSwzScfxE85lfibFaxKVz6juF1DHb6pkJs=",
         "owner": "leptos-rs",
         "repo": "cargo-leptos",
-        "rev": "462d59d1dbabadcecd06eda5b1dd3c7af70839f9",
+        "rev": "00fa55c32817f0a4952031d46803b29ade209a81",
         "type": "github"
       },
       "original": {
@@ -37,11 +37,11 @@
     "leptosfmt-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1738584774,
-        "narHash": "sha256-HxLPweUIyFzghhq+r3ZRsIMVMJ5b4pmTOIKK3EukvoE=",
+        "lastModified": 1742528219,
+        "narHash": "sha256-F06Ag99rCn3qZywdxyP7ULOgyhbSzWNe+drBDZJWVxo=",
         "ref": "refs/heads/main",
-        "rev": "1b6d9ada37655856a81cdb361b43b3bde10bbe1a",
-        "revCount": 227,
+        "rev": "8b4194ba33eee417ababdd15498940014fd6d237",
+        "revCount": 229,
         "submodules": true,
         "type": "git",
         "url": "https://github.com/bram209/leptosfmt"
@@ -54,11 +54,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1741785027,
-        "narHash": "sha256-mM1qXDKuWmtrddyDqwB2e5HlzAbDMtvNJIHOuR6sIgI=",
+        "lastModified": 1784662432,
+        "narHash": "sha256-QJA5whNaBTlwi4a+grYo33R2NW9HaclTtadNYhk8Csg=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "b97cce1538cc03ffe511dbcbf0ec8fe0f2c8a269",
+        "rev": "b0d3a6a903b318e40064953c39f2055988f34969",
         "type": "github"
       },
       "original": {

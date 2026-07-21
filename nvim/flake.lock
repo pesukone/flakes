@@ -21,28 +21,28 @@
     "mini-base16-rockspec": {
       "flake": false,
       "locked": {
-        "narHash": "sha256-WCV2Rq6Hl88v0coRG77YvKTcxGH1RwQEVZOzTGEoZUg=",
+        "narHash": "sha256-2K2/O4uRNfqdSVOBzme0VoYasZRYqnBZSwA0T3eWVXg=",
         "type": "file",
-        "url": "https://luarocks.org/manifests/neorocks/mini.base16-0.16.0-1.rockspec"
+        "url": "https://luarocks.org/manifests/neorocks/mini.base16-0.18.0-1.rockspec"
       },
       "original": {
         "type": "file",
-        "url": "https://luarocks.org/manifests/neorocks/mini.base16-0.16.0-1.rockspec"
+        "url": "https://luarocks.org/manifests/neorocks/mini.base16-0.18.0-1.rockspec"
       }
     },
     "mini-base16-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1744463553,
-        "narHash": "sha256-f9NyOIDSyMX06uY/DWRRPsAoUKU8vcngHUgKf+ZbCTw=",
+        "lastModified": 1781885995,
+        "narHash": "sha256-Q038ztqiCjX9WAqlcKC4auNNeRtC+hOV6BvMml/Tdp8=",
         "owner": "nvim-mini",
         "repo": "mini.base16",
-        "rev": "2eb2d2b889a8c861d1a66ec651bd0edb417d5c7f",
+        "rev": "ecbcb4e363169a663ece476f35fd87870c6d6a8b",
         "type": "github"
       },
       "original": {
         "owner": "nvim-mini",
-        "ref": "refs/tags/v0.16.0",
+        "ref": "refs/tags/v0.18.0",
         "repo": "mini.base16",
         "type": "github"
       }
@@ -50,28 +50,28 @@
     "mini-completion-rockspec": {
       "flake": false,
       "locked": {
-        "narHash": "sha256-uOpmHZhzvU2xfDj58Ibxu9aTn0GZVQ0glfATYzc7oMg=",
+        "narHash": "sha256-ghatzEagIPAUpMk1rpdjVhVXZ0Qynnlb2LV67COdxuI=",
         "type": "file",
-        "url": "https://luarocks.org/manifests/neorocks/mini.completion-0.16.0-1.rockspec"
+        "url": "https://luarocks.org/manifests/neorocks/mini.completion-0.18.0-1.rockspec"
       },
       "original": {
         "type": "file",
-        "url": "https://luarocks.org/manifests/neorocks/mini.completion-0.16.0-1.rockspec"
+        "url": "https://luarocks.org/manifests/neorocks/mini.completion-0.18.0-1.rockspec"
       }
     },
     "mini-completion-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1746875080,
-        "narHash": "sha256-iX/wxw5S+jmexGrwvpGerRz0FoiYP0fwGTDgyPcE7Ac=",
+        "lastModified": 1781885996,
+        "narHash": "sha256-GD6s5qDvKrGk3qM+rk5L8fp7SmvhfKrZO+B6h7cwpAg=",
         "owner": "nvim-mini",
         "repo": "mini.completion",
-        "rev": "ea78d31e8164468f0b3a909f863806f2c4cb84c4",
+        "rev": "0aeee1231b90d70563e24facc238ab4359b8d5fc",
         "type": "github"
       },
       "original": {
         "owner": "nvim-mini",
-        "ref": "refs/tags/v0.16.0",
+        "ref": "refs/tags/v0.18.0",
         "repo": "mini.completion",
         "type": "github"
       }
@@ -79,28 +79,28 @@
     "mini-diff-rockspec": {
       "flake": false,
       "locked": {
-        "narHash": "sha256-gEh7bvho6JeUvbPvKfGx4Hlz16gbJlgKbT6MnpDiqgg=",
+        "narHash": "sha256-a58PoNpRmGFXXh/K1PzqYs8Ync7DjV0tuyVojx7MBLM=",
         "type": "file",
-        "url": "https://luarocks.org/manifests/neorocks/mini.diff-0.16.0-1.rockspec"
+        "url": "https://luarocks.org/manifests/neorocks/mini.diff-0.18.0-1.rockspec"
       },
       "original": {
         "type": "file",
-        "url": "https://luarocks.org/manifests/neorocks/mini.diff-0.16.0-1.rockspec"
+        "url": "https://luarocks.org/manifests/neorocks/mini.diff-0.18.0-1.rockspec"
       }
     },
     "mini-diff-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1746531063,
-        "narHash": "sha256-5FnfQGz/HiVTwWPfWZqWpHkB2sjCemjPtDP6ulGhZb0=",
+        "lastModified": 1781885997,
+        "narHash": "sha256-ZhCsTAzuVRMbVSWWepsA8qrS1GTPNokm0NxXn3hYEoM=",
         "owner": "echasnovski",
         "repo": "mini.diff",
-        "rev": "ec8a5ae365c5d15920721ea42b1351dbc9e61f2d",
+        "rev": "0743d26bd858ebe32efcf5c86a91a422a000f273",
         "type": "github"
       },
       "original": {
         "owner": "echasnovski",
-        "ref": "refs/tags/v0.16.0",
+        "ref": "refs/tags/v0.18.0",
         "repo": "mini.diff",
         "type": "github"
       }
@@ -108,28 +108,28 @@
     "mini-git-rockspec": {
       "flake": false,
       "locked": {
-        "narHash": "sha256-CMYr3xKL3Lr1cGp7deHg7KURtEU0zFGWrRgxI1SwjO4=",
+        "narHash": "sha256-4dOTNyVZePJSLS/MMsm5gT030SE1NSs77clhVgt5yHw=",
         "type": "file",
-        "url": "https://luarocks.org/manifests/neorocks/mini.git-0.16.0-1.rockspec"
+        "url": "https://luarocks.org/manifests/neorocks/mini.git-0.18.0-1.rockspec"
       },
       "original": {
         "type": "file",
-        "url": "https://luarocks.org/manifests/neorocks/mini.git-0.16.0-1.rockspec"
+        "url": "https://luarocks.org/manifests/neorocks/mini.git-0.18.0-1.rockspec"
       }
     },
     "mini-git-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1743956237,
-        "narHash": "sha256-wlu1LzBwyB12inqGP+Vp2Wbf2Dyy00fVVcF5EI72wG0=",
+        "lastModified": 1781885997,
+        "narHash": "sha256-Xu3yiQU1ibvq1skFiyie5IkHWGU7UQ46jChyO3hrgZw=",
         "owner": "nvim-mini",
         "repo": "mini-git",
-        "rev": "a0ddc6302f654523053c28109e8b6dbbf05c08f8",
+        "rev": "96db7676696e53add56726e9e80f92dff9f63d17",
         "type": "github"
       },
       "original": {
         "owner": "nvim-mini",
-        "ref": "refs/tags/v0.16.0",
+        "ref": "refs/tags/v0.18.0",
         "repo": "mini-git",
         "type": "github"
       }
@@ -137,28 +137,28 @@
     "mini-hues-rockspec": {
       "flake": false,
       "locked": {
-        "narHash": "sha256-e8bJ5dwFDo5lB4Xz9/GAc9NVlbiEoJA966hppqkL1aY=",
+        "narHash": "sha256-q0ntFCahsI/AIug2HtFihGBsnLpSW+t6G2WgdYlao8Y=",
         "type": "file",
-        "url": "https://luarocks.org/manifests/neorocks/mini.hues-0.17.0-1.rockspec"
+        "url": "https://luarocks.org/manifests/neorocks/mini.hues-0.18.0-1.rockspec"
       },
       "original": {
         "type": "file",
-        "url": "https://luarocks.org/manifests/neorocks/mini.hues-0.17.0-1.rockspec"
+        "url": "https://luarocks.org/manifests/neorocks/mini.hues-0.18.0-1.rockspec"
       }
     },
     "mini-hues-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1765122998,
-        "narHash": "sha256-2WBx5r1YjnhkbhOwZWUUxbUMMhSE9kNtw+KGEzzprfI=",
+        "lastModified": 1781885998,
+        "narHash": "sha256-x//2b2QUSmHP7HgjG1Ri31vwJ0acDkI6Pr75927wNrI=",
         "owner": "nvim-mini",
         "repo": "mini.hues",
-        "rev": "8fb10472cc40a1aad428a82a90270c0e87981fe7",
+        "rev": "38e6aec74052818aef0ed4b8a24ea7113125f9ad",
         "type": "github"
       },
       "original": {
         "owner": "nvim-mini",
-        "ref": "refs/tags/v0.17.0",
+        "ref": "refs/tags/v0.18.0",
         "repo": "mini.hues",
         "type": "github"
       }
@@ -166,28 +166,28 @@
     "mini-icons-rockspec": {
       "flake": false,
       "locked": {
-        "narHash": "sha256-kv3WjA+uJFwja7yTxWf4R7XlXxY1vG0VHuttEugHwFI=",
+        "narHash": "sha256-uc0I/McpnWXJPORasO6SVUx++N7hgdCWdFkne8NqaiE=",
         "type": "file",
-        "url": "https://luarocks.org/manifests/neorocks/mini.icons-0.16.0-1.rockspec"
+        "url": "https://luarocks.org/manifests/neorocks/mini.icons-0.18.0-1.rockspec"
       },
       "original": {
         "type": "file",
-        "url": "https://luarocks.org/manifests/neorocks/mini.icons-0.16.0-1.rockspec"
+        "url": "https://luarocks.org/manifests/neorocks/mini.icons-0.18.0-1.rockspec"
       }
     },
     "mini-icons-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1743517626,
-        "narHash": "sha256-/sdLtMOOGeVvFDBB9N4CyUHpGXtUi1ZJ9dIpvxZ9C4Q=",
+        "lastModified": 1781885998,
+        "narHash": "sha256-Lr5/aHSnwfDAidvGTIOfEvp0lNpnp5kFNnIUSssnaOw=",
         "owner": "nvim-mini",
         "repo": "mini.icons",
-        "rev": "397ed3807e96b59709ef3292f0a3e253d5c1dc0a",
+        "rev": "e56797f90192d81f1fda02e662fc3e8e3d775027",
         "type": "github"
       },
       "original": {
         "owner": "nvim-mini",
-        "ref": "refs/tags/v0.16.0",
+        "ref": "refs/tags/v0.18.0",
         "repo": "mini.icons",
         "type": "github"
       }
@@ -195,28 +195,28 @@
     "mini-indentscope-rockspec": {
       "flake": false,
       "locked": {
-        "narHash": "sha256-CwOssdQvK0iHabDCLqbaKNiYSap/tScGQwODUMXsyTk=",
+        "narHash": "sha256-vkV9G05ecd3Ii3ZmMctsbpQSk2QvpW2YUoK0p0GubrA=",
         "type": "file",
-        "url": "https://luarocks.org/manifests/neorocks/mini.indentscope-0.16.0-1.rockspec"
+        "url": "https://luarocks.org/manifests/neorocks/mini.indentscope-0.18.0-1.rockspec"
       },
       "original": {
         "type": "file",
-        "url": "https://luarocks.org/manifests/neorocks/mini.indentscope-0.16.0-1.rockspec"
+        "url": "https://luarocks.org/manifests/neorocks/mini.indentscope-0.18.0-1.rockspec"
       }
     },
     "mini-indentscope-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1743517626,
-        "narHash": "sha256-Ptd+oTWrZ0bgkDljEoM72OTp7PnCmX1DRgyyl+gKY/Y=",
+        "lastModified": 1781885998,
+        "narHash": "sha256-ahA7Ud+f55wpEK7Lp0Zuf1djB8NcIpqmvwFPO2r6EPs=",
         "owner": "nvim-mini",
         "repo": "mini.indentscope",
-        "rev": "8af2569a7d7fd37300dfa760e44e71efbbf322fd",
+        "rev": "d3f955f09b1a05d25d5a7740338fba2baaee41a3",
         "type": "github"
       },
       "original": {
         "owner": "nvim-mini",
-        "ref": "refs/tags/v0.16.0",
+        "ref": "refs/tags/v0.18.0",
         "repo": "mini.indentscope",
         "type": "github"
       }
@@ -224,28 +224,28 @@
     "mini-keymap-rockspec": {
       "flake": false,
       "locked": {
-        "narHash": "sha256-UBlmS1g9QuFlrQheCQgbYFwUYKUX15u9kmDlg0//wH4=",
+        "narHash": "sha256-h368frdwvwtA8dlWBO/ZlIZ7oIgDfo5/eYdRqsyo170=",
         "type": "file",
-        "url": "https://luarocks.org/manifests/neorocks/mini.keymap-0.16.0-1.rockspec"
+        "url": "https://luarocks.org/manifests/neorocks/mini.keymap-0.18.0-1.rockspec"
       },
       "original": {
         "type": "file",
-        "url": "https://luarocks.org/manifests/neorocks/mini.keymap-0.16.0-1.rockspec"
+        "url": "https://luarocks.org/manifests/neorocks/mini.keymap-0.18.0-1.rockspec"
       }
     },
     "mini-keymap-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1747746162,
-        "narHash": "sha256-CKQV5ZitfEP61T+FjMOBCiuCCNWMUEClF7xu6cOqSqM=",
+        "lastModified": 1781885999,
+        "narHash": "sha256-hAkaV2IXBYhoObNOZO2JOxYC+0f2dY090x+d91B0MCg=",
         "owner": "nvim-mini",
         "repo": "mini.keymap",
-        "rev": "2aa0a66d6cbf15c9cea331d976ac4d4b9f01621e",
+        "rev": "2779b4a5d21ddd738b4c4c4b2347da6c89c62713",
         "type": "github"
       },
       "original": {
         "owner": "nvim-mini",
-        "ref": "refs/tags/v0.16.0",
+        "ref": "refs/tags/v0.18.0",
         "repo": "mini.keymap",
         "type": "github"
       }
@@ -253,28 +253,28 @@
     "mini-pairs-rockspec": {
       "flake": false,
       "locked": {
-        "narHash": "sha256-ezp0CSO3UyiiyF1/csgTIni68RNEQkUigoPauifmM/0=",
+        "narHash": "sha256-F84Ls9AhlAKUyEnSO/ALk9UAF6vFttboqH6egXL01o4=",
         "type": "file",
-        "url": "https://luarocks.org/manifests/neorocks/mini.pairs-0.16.0-1.rockspec"
+        "url": "https://luarocks.org/manifests/neorocks/mini.pairs-0.18.0-1.rockspec"
       },
       "original": {
         "type": "file",
-        "url": "https://luarocks.org/manifests/neorocks/mini.pairs-0.16.0-1.rockspec"
+        "url": "https://luarocks.org/manifests/neorocks/mini.pairs-0.18.0-1.rockspec"
       }
     },
     "mini-pairs-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1743517628,
-        "narHash": "sha256-ORD4ERYhN2F/MRpDlJvuH2wq8pgMsw/NMWiNX2eUcis=",
+        "lastModified": 1781885999,
+        "narHash": "sha256-35ewaDXW5RoQUHns0hVXMw6OTf/BTvKXLd1u/warDSE=",
         "owner": "nvim-mini",
         "repo": "mini.pairs",
-        "rev": "69864a2efb36c030877421634487fd90db1e4298",
+        "rev": "4a014143fcb4e9df26198ccb3ecff3b9e77a048c",
         "type": "github"
       },
       "original": {
         "owner": "nvim-mini",
-        "ref": "refs/tags/v0.16.0",
+        "ref": "refs/tags/v0.18.0",
         "repo": "mini.pairs",
         "type": "github"
       }
@@ -282,39 +282,39 @@
     "mini-snippets-rockspec": {
       "flake": false,
       "locked": {
-        "narHash": "sha256-YwZJhid80fqG9QHY+5DrqJUm3Wc4Ql9vC4lOTLAvNLo=",
+        "narHash": "sha256-CgdrzCZhGeNB7MncyJYpFW8ovn/KaNm0Ol5b8Ub0Pq4=",
         "type": "file",
-        "url": "https://luarocks.org/manifests/neorocks/mini.snippets-0.16.0-1.rockspec"
+        "url": "https://luarocks.org/manifests/neorocks/mini.snippets-0.18.0-1.rockspec"
       },
       "original": {
         "type": "file",
-        "url": "https://luarocks.org/manifests/neorocks/mini.snippets-0.16.0-1.rockspec"
+        "url": "https://luarocks.org/manifests/neorocks/mini.snippets-0.18.0-1.rockspec"
       }
     },
     "mini-snippets-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1744986074,
-        "narHash": "sha256-HXjCf/w6eVbSkYVAS7OXj7JRMrvENnOpqWZT0N/Htac=",
+        "lastModified": 1781886000,
+        "narHash": "sha256-AoSGqdCBdcCwZdwjhgSU3ACvE40FlrZARN/Lp1aZg54=",
         "owner": "nvim-mini",
         "repo": "mini.snippets",
-        "rev": "d005684e620e76eb2a5fbbbd211a1eba7212b4aa",
+        "rev": "cf5607c66571d130663fd20761d7cbebdbbf713d",
         "type": "github"
       },
       "original": {
         "owner": "nvim-mini",
-        "ref": "refs/tags/v0.16.0",
+        "ref": "refs/tags/v0.18.0",
         "repo": "mini.snippets",
         "type": "github"
       }
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1757262198,
-        "narHash": "sha256-3qzH/h9DNIDUoiCjcPUG0oJ5XJGwruukQ+7YrZZkaEg=",
+        "lastModified": 1784661320,
+        "narHash": "sha256-YPJFmwtyBQ4MFgswMGKbpS/Ug7r6DxzoBAa91q+eys4=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "0b9193275da059de5d836db9aa69bf452bc8ca51",
+        "rev": "8c6175f1d9ffb15fb1f5b8db0ba0ecfb78983f0f",
         "type": "github"
       },
       "original": {
