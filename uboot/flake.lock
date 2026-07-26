@@ -1,12 +1,28 @@
 {
   "nodes": {
+    "atf-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1781125164,
+        "narHash": "sha256-gbWDRy5ZngyELjBzPEd7dU84Apt+Nl8OkCZN74FTS90=",
+        "owner": "ARM-software",
+        "repo": "arm-trusted-firmware",
+        "rev": "ee2f5959c087bc836cb08c49719be584f17d1116",
+        "type": "github"
+      },
+      "original": {
+        "owner": "ARM-software",
+        "repo": "arm-trusted-firmware",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1759261913,
-        "narHash": "sha256-8Zk94uZDaq10GiHY9B7ssk8pMHeTTLGWHfu/L/ZicfI=",
+        "lastModified": 1781426636,
+        "narHash": "sha256-GKbrQg+Bv5cMxIstZnYLY4bXNfyE0lXSqbLODmYOy0M=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "a306114fe136282dee70782bd05e52f20315a700",
+        "rev": "9bf2e56a653c4136a6ba2c392858598ac8755eaa",
         "type": "github"
       },
       "original": {
@@ -15,14 +31,30 @@
         "type": "github"
       }
     },
+    "optee-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1781163115,
+        "narHash": "sha256-nRhaLT689z/ydoV8SFxXETdgj/vWWg53J/1PVOfmcn4=",
+        "owner": "OP-TEE",
+        "repo": "optee_os",
+        "rev": "40b5e2035680207bd81b3bc4f9f0cdd4d14ea62a",
+        "type": "github"
+      },
+      "original": {
+        "owner": "OP-TEE",
+        "repo": "optee_os",
+        "type": "github"
+      }
+    },
     "rkbin-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1749809222,
-        "narHash": "sha256-gNCZwJd9pjisk6vmvtRNyGSBFfAYOADTa5Nd6Zk+qEk=",
+        "lastModified": 1767094867,
+        "narHash": "sha256-U8d2cH6/TSXfBnLhh141A9wP/t6prFgwYMvwgXBf4vc=",
         "owner": "rockchip-linux",
         "repo": "rkbin",
-        "rev": "74213af1e952c4683d2e35952507133b61394862",
+        "rev": "ecb4fcbe954edf38b3ae037d5de6d9f5bccf81f4",
         "type": "github"
       },
       "original": {
@@ -33,24 +65,26 @@
     },
     "root": {
       "inputs": {
+        "atf-src": "atf-src",
         "nixpkgs": "nixpkgs",
+        "optee-src": "optee-src",
         "rkbin-src": "rkbin-src",
-        "uboot-src": "uboot-src"
+        "u-boot-src": "u-boot-src"
       }
     },
-    "uboot-src": {
+    "u-boot-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1751903308,
-        "narHash": "sha256-X+JhVkDudkvQo08hGwAChOeMZZR+iunT9aU6tSAuMmg=",
+        "lastModified": 1775498358,
+        "narHash": "sha256-LobC22bYpHVGZd5G8IugfcmHacVaHH0aNe3zQG7LJv0=",
         "owner": "u-boot",
         "repo": "u-boot",
-        "rev": "e37de002fac3895e8d0b60ae2015e17bb33e2b5b",
+        "rev": "88dc2788777babfd6322fa655df549a019aa1e69",
         "type": "github"
       },
       "original": {
         "owner": "u-boot",
-        "ref": "refs/tags/v2025.07",
+        "ref": "refs/tags/v2026.04",
         "repo": "u-boot",
         "type": "github"
       }
