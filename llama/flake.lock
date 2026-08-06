@@ -21,11 +21,11 @@
     "llama-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1785909997,
-        "narHash": "sha256-nlIWfY2FEoB/Bdf/e6zxa8NBrwk1AlVadg+tLWnRnMo=",
+        "lastModified": 1786038400,
+        "narHash": "sha256-Z6xuxbRIoi+d8kaGAdAIYr2L+sBXZID3++jSvzcvaIY=",
         "owner": "ggml-org",
         "repo": "llama.cpp",
-        "rev": "e031d956797f9a10f704fa523fe5fd9b72e9015c",
+        "rev": "15586e2d7165570fb3aa7c26e0d442e289ef69de",
         "type": "github"
       },
       "original": {
@@ -49,11 +49,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1785917641,
-        "narHash": "sha256-TXa/DErqV6mPcQteamRDhxLerYa9qYqyYniZOn98d+0=",
+        "lastModified": 1786044038,
+        "narHash": "sha256-Ag7YxHh+mAYoAibFmkAWErAmGBNyvw0RJ8dbw/ewqKU=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "e4607af720c403b89818540dee78b69bdce3dfa7",
+        "rev": "e189cf1e3d05026646496be23f9be5a6014a74e3",
         "type": "github"
       },
       "original": {
@@ -62,12 +62,29 @@
         "type": "github"
       }
     },
+    "poolside-llama-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1784558619,
+        "narHash": "sha256-Por75Kbr9e8Sx2i+BEz8aIgCnWGKW6TAuztdnVOnsjg=",
+        "owner": "poolsideai",
+        "repo": "llama.cpp",
+        "rev": "91d2fc387529940230555abd297a8b5e99737d3f",
+        "type": "github"
+      },
+      "original": {
+        "owner": "poolsideai",
+        "repo": "llama.cpp",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "flake-utils": "flake-utils",
         "llama-src": "llama-src",
         "llama-ui-assets": "llama-ui-assets",
-        "nixpkgs": "nixpkgs"
+        "nixpkgs": "nixpkgs",
+        "poolside-llama-src": "poolside-llama-src"
       }
     },
     "systems": {
