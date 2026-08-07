@@ -3,11 +3,25 @@
     "atf-src": {
       "flake": false,
       "locked": {
+<<<<<<< Updated upstream
         "lastModified": 1785759087,
         "narHash": "sha256-wDOE654BDgD6qoIeUu8MfmdHrkqWTz5ccbv4J3imH7U=",
+||||||| Stash base
+        "lastModified": 1781125164,
+        "narHash": "sha256-gbWDRy5ZngyELjBzPEd7dU84Apt+Nl8OkCZN74FTS90=",
+=======
+        "lastModified": 1784738862,
+        "narHash": "sha256-q/YcIDbvvQUbU70JcmZ7pYhzUgSnD4HcrC/bR7tzBnI=",
+>>>>>>> Stashed changes
         "owner": "ARM-software",
         "repo": "arm-trusted-firmware",
+<<<<<<< Updated upstream
         "rev": "3ca70972bc4656f59d5dac4a1848c171ec0ec540",
+||||||| Stash base
+        "rev": "ee2f5959c087bc836cb08c49719be584f17d1116",
+=======
+        "rev": "a5c580fd539929af41cf483b7c1434db261dd51b",
+>>>>>>> Stashed changes
         "type": "github"
       },
       "original": {
@@ -16,13 +30,43 @@
         "type": "github"
       }
     },
+    "ipxe-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1784637325,
+        "narHash": "sha256-PBVfwJDghSOh1zN3H2T7a7xbXl1iKQn0JCQpp0bwwl0=",
+        "owner": "ipxe",
+        "repo": "ipxe",
+        "rev": "ebca9ed2b2e62ee579100142ee61f5ba77a3c712",
+        "type": "github"
+      },
+      "original": {
+        "owner": "ipxe",
+        "repo": "ipxe",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
       "locked": {
+<<<<<<< Updated upstream
         "lastModified": 1786082896,
         "narHash": "sha256-PLpXkYHaTjBS2Pjq4IZdXBkU8jY0qDBC+FiEXSihSCs=",
+||||||| Stash base
+        "lastModified": 1781426636,
+        "narHash": "sha256-GKbrQg+Bv5cMxIstZnYLY4bXNfyE0lXSqbLODmYOy0M=",
+=======
+        "lastModified": 1785078927,
+        "narHash": "sha256-CF1iDNrGB234r9ivBq5SmCEzWAhmuEoNwbyul0+GJlk=",
+>>>>>>> Stashed changes
         "owner": "nixos",
         "repo": "nixpkgs",
+<<<<<<< Updated upstream
         "rev": "87963108030cda5cd8efab2a2ee5093f3fb849fd",
+||||||| Stash base
+        "rev": "9bf2e56a653c4136a6ba2c392858598ac8755eaa",
+=======
+        "rev": "af50c1fa899af709dca8def3b9914d95808a49fb",
+>>>>>>> Stashed changes
         "type": "github"
       },
       "original": {
@@ -34,11 +78,25 @@
     "optee-src": {
       "flake": false,
       "locked": {
+<<<<<<< Updated upstream
         "lastModified": 1786020279,
         "narHash": "sha256-Ulp9dB81ihnhIKXEWmAtU1LofJRwyr/lQ39+J/w1v2E=",
+||||||| Stash base
+        "lastModified": 1781163115,
+        "narHash": "sha256-nRhaLT689z/ydoV8SFxXETdgj/vWWg53J/1PVOfmcn4=",
+=======
+        "lastModified": 1784295448,
+        "narHash": "sha256-7yRe5n3XryTfGmb5miayoz0FCA4vvW+6TepfUKkBl7s=",
+>>>>>>> Stashed changes
         "owner": "OP-TEE",
         "repo": "optee_os",
+<<<<<<< Updated upstream
         "rev": "0aadfc23407f50e770eb5ddd871fc208f5626833",
+||||||| Stash base
+        "rev": "40b5e2035680207bd81b3bc4f9f0cdd4d14ea62a",
+=======
+        "rev": "991587c721a603e831cad228626078289adad159",
+>>>>>>> Stashed changes
         "type": "github"
       },
       "original": {
@@ -66,6 +124,7 @@
     "root": {
       "inputs": {
         "atf-src": "atf-src",
+        "ipxe-src": "ipxe-src",
         "nixpkgs": "nixpkgs",
         "optee-src": "optee-src",
         "rkbin-src": "rkbin-src",
@@ -75,16 +134,16 @@
     "u-boot-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1775498358,
-        "narHash": "sha256-LobC22bYpHVGZd5G8IugfcmHacVaHH0aNe3zQG7LJv0=",
+        "lastModified": 1783381843,
+        "narHash": "sha256-MJf4+MifD7Bzb2Fz11lIgFOaiAPgSbFnbM0Q3k5xWwQ=",
         "owner": "u-boot",
         "repo": "u-boot",
-        "rev": "88dc2788777babfd6322fa655df549a019aa1e69",
+        "rev": "ece349ade2973e220f524ce59e59711cc919263f",
         "type": "github"
       },
       "original": {
         "owner": "u-boot",
-        "ref": "refs/tags/v2026.04",
+        "ref": "refs/tags/v2026.07",
         "repo": "u-boot",
         "type": "github"
       }

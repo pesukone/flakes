@@ -2,7 +2,7 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs";
     u-boot-src = {
-      url = "github:u-boot/u-boot?ref=refs/tags/v2026.04";
+      url = "github:u-boot/u-boot?ref=refs/tags/v2026.07";
       flake = false;
     };
     rkbin-src = {
@@ -17,6 +17,10 @@
       url = "github:ARM-software/arm-trusted-firmware";
       flake = false;
     };
+    ipxe-src = {
+      url = "github:ipxe/ipxe";
+      flake = false;
+    };
   };
 
   outputs =
@@ -27,6 +31,7 @@
       rkbin-src,
       optee-src,
       atf-src,
+      ipxe-src,
     }:
     let
       /*
@@ -158,6 +163,19 @@
 
         preConfigure = ''
           make ARCH=arm64 turing-rk1-rk3588_defconfig
+          echo "CONFIG_CMD_WGET=y" >> .config
+          echo "CONFIG_NET_LWIP=y" >> .config
+          echo "CONFIG_DNS=y" >> .config
+          echo "CONFIG_LIBSSL=y" >> .config
+          echo "CONFIG_WGET_TLS=y" >> .config
+          echo "CONFIG_EFI_SIMPLE_NETWORK=y" >> .config
+          echo "CONFIG_EFI_NETWORK=y" >> .config
+          echo "CONFIG_EFI_LOADER=y" >> .config
+          echo "CONFIG_EFI_MANAGED_DEVICE_PATH=y" >> .config
+          echo "CONFIG_EFI_PCI=y" >> .config
+          echo "CONFIG_PCI=y" >> .config
+          echo "CONFIG_DM_PCI=y" >> .config
+          echo "CONFIG_RTL8169=y" >> .config
         '';
 
         buildPhase = ''
@@ -200,6 +218,21 @@
           "CFG_DT=y"
           "CFG_CORE_ARM64_PA_BITS=36"
         ];
+      };
+
+      packages.aarch64-linux.ipxe = aarch64-pkgs.ipxe.override {
+        additionalOptions = [
+          "CONSOLE_SERIAL"
+          "COMPRESERVE"
+        ];
+        embedScript = aarch64-pkgs.writeText "ipxe-script" ''
+          #!ipxe
+
+          dhcp
+          set dns 8.8.8.8
+          chain http://boot.ipxe.org/demo/boot.php
+          #chain --autofree http://192.168.1.202/nixos/netboot.ipxe
+        '';
       };
     };
 }

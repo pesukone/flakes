@@ -38,19 +38,22 @@
           buildInputs = with pkgs; [
             zlib.dev
             glew.dev
-            libudev-zero
+            udev.dev
             openal
             ffmpeg.dev
             llvm.dev
             curl.dev
-            qt6.full
+            qt6.wrapQtAppsHook
+            qt6.qtbase
+            qt6.qtmultimedia
             wayland.dev
             libX11.dev
             vulkan-headers
             vulkan-validation-layers
-            SDL2.dev
+            sdl3.dev
             sndio
             pulseaudio.dev
+            abseil-cpp.dev
           ];
 
           cmakeFlags = [
