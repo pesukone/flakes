@@ -1,0 +1,128 @@
+{
+  "nodes": {
+    "anthropic-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1785260266,
+        "narHash": "sha256-sQAV4+fKx+WNEsV08MSqL6o/iTOhqpf464uWc8iH/qc=",
+        "owner": "anthropics",
+        "repo": "anthropic-sdk-python",
+        "rev": "f5c30d0490fb7bcd8e0b65d8d8e63c0e7d1bfe59",
+        "type": "github"
+      },
+      "original": {
+        "owner": "anthropics",
+        "repo": "anthropic-sdk-python",
+        "type": "github"
+      }
+    },
+    "flake-utils": {
+      "inputs": {
+        "systems": "systems"
+      },
+      "locked": {
+        "lastModified": 1731533236,
+        "narHash": "sha256-l0KFg5HjrsfsO/JpG+r7fRrqm12kzFHyUHqHCVpMMbI=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "11707dc2f618dd54ca8739b309ec4fc024de578b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "type": "github"
+      }
+    },
+    "hatchling-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1785974482,
+        "narHash": "sha256-xxTykmExj+yQm5zaMv2MCwlS0SkdCfQzpbJSUgILQJ8=",
+        "owner": "pypa",
+        "repo": "hatch",
+        "rev": "3a9d853a68d009db91e70e4271b1d688e5381d3b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "pypa",
+        "repo": "hatch",
+        "type": "github"
+      }
+    },
+    "lacme-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1785366787,
+        "narHash": "sha256-3wJkSY+qjLS+5TPUrp9o+u+MhT24MJo2dSu5QlMB5S0=",
+        "owner": "turnstonelabs",
+        "repo": "lacme",
+        "rev": "4418e25592feea075b6945b05190b3efdabfa655",
+        "type": "github"
+      },
+      "original": {
+        "owner": "turnstonelabs",
+        "repo": "lacme",
+        "type": "github"
+      }
+    },
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1786101636,
+        "narHash": "sha256-kvww46toq843xZQkDQMofC6ONwBcbE6bI6dNKcZGNY4=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "270a18536dc293fb67efefb44c8540b766d563a6",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "root": {
+      "inputs": {
+        "anthropic-src": "anthropic-src",
+        "flake-utils": "flake-utils",
+        "hatchling-src": "hatchling-src",
+        "lacme-src": "lacme-src",
+        "nixpkgs": "nixpkgs",
+        "turnstone-src": "turnstone-src"
+      }
+    },
+    "systems": {
+      "locked": {
+        "lastModified": 1681028828,
+        "narHash": "sha256-Vy1rq5AaRuLzOxct8nz4T6wlgyUR7zLU309k9mBC768=",
+        "owner": "nix-systems",
+        "repo": "default",
+        "rev": "da67096a3b9bf56a91d16901293e51ba5b49a27e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-systems",
+        "repo": "default",
+        "type": "github"
+      }
+    },
+    "turnstone-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1786056497,
+        "narHash": "sha256-1JzWw4ypTX9z9MlA1p+qohFsBBinSVV18g8W/9fzd6w=",
+        "owner": "turnstonelabs",
+        "repo": "turnstone",
+        "rev": "f138784ba38173d5dd6710949f5b89c16f150cc1",
+        "type": "github"
+      },
+      "original": {
+        "owner": "turnstonelabs",
+        "repo": "turnstone",
+        "type": "github"
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}
