@@ -121,30 +121,6 @@
         '';
       };
 
-      packages."aarch64-linux".optee = aarch64-pkgs.stdenv.mkDerivation {
-        name = "OP-TEE";
-        src = optee-src;
-
-        nativeBuildInputs = with aarch64-pkgs; [
-          (python3.withPackages (
-            python-pkgs: with python-pkgs; [
-              cryptography
-              pyelftools
-            ]
-          ))
-        ];
-
-        postPatch = ''
-          patchShebangs scripts
-        '';
-
-        makeFlags = [
-          "CFG_ARM64_core=y"
-          "PLATFORM=rockchip"
-          "PLATFORM_FLAVOR=rk3588"
-        ];
-      };
-
       packages."aarch64-linux".atf = aarch64-pkgs.stdenv.mkDerivation {
         name = "arm-trusted-firmware";
         src = atf-src;
@@ -197,6 +173,33 @@
           dd if=./u-boot.itb of=bootloader.img bs=512 seek=16384
           cp bootloader.img $out
         '';
+      };
+
+      packages."aarch64-linux".optee = aarch64-pkgs.stdenv.mkDerivation {
+        name = "op-tee";
+        src = optee-src;
+
+        postPatch = ''
+          patchShebangs scripts
+        '';
+
+        nativeBuildInputs = with aarch64-pkgs; [
+          (python3.withPackages (
+            python-pkgs: with python-pkgs; [
+              cryptography
+              pyelftools
+            ]
+          ))
+        ];
+
+        makeFlags = [
+          "PLATFORM=rockchip"
+          "PLATFORM_FLAVOR=rk3588"
+          "CFG_ARM64_core=y"
+          "CFG_USER_TA_TARGETS=ta_arm64"
+          "CFG_DT=y"
+          "CFG_CORE_ARM64_PA_BITS=36"
+        ];
       };
     };
 }
