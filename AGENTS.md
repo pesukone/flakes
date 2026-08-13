@@ -1,63 +1,55 @@
-# AGENTS.md
+# flakes
 
-This is a personal collection of **independent Nix flakes** (one per subdirectory).
-There is no top-level `flake.nix`, no README, no CI, and no lint/test tooling.
-Each `<name>/flake.nix` + `<name>/flake.lock` is self-contained; treat them as
-separate projects.
+Collection of independent Nix flakes. Each top-level directory is a standalone flake with its own `flake.nix` and `flake.lock`. There is **no root flake.nix** — commands must be run inside a subdirectory.
 
-## Conventions
+## Structure
 
-- Flakes share a recurring template: `nixpkgs.url = "github:nixos/nixpkgs"` +
-  `flake-utils.url = "github:numtide/flake-utils"`, sources declared with
-  `flake = false`, outputs via `flake-utils.lib.eachDefaultSystem`, `pkgs =
-  nixpkgs.legacyPackages.${system}`, and `packages.default = packages.<name>`.
-  Follow this style in edits.
-- Exceptions that diverge from the template:
-  - `install-iso` is a **NixOS system config** (`nixosConfigurations`/`images.rpi2`),
-    not a package flake — builds with `nix build .#images.rpi2`.
-  - `uboot` does not use `flake-utils`; it produces a firmware binary
-    (`uboot/u-boot-rk1.bin`).
-- Sources using `url = "git+https://...?submodules=1"` need submodules (13 flakes:
-  ace-step, ctr, dolphin, gamescope, gta, keeperfx, mpv, n64, openxray,
-  romextract, rpcs3, rust, snes9x).
-- Only `sm` references local files via `${self}` (`${self}/sm.ini`, `${self}`
-  outputs); the directory is the flake root.
-- Three flakes use `pkgs.rustPlatform.buildRustPackage` (power-options, qmassa,
-  rust) — require `cargoHash`.
+- 30 independent flakes, one per directory
+- Each has its own inputs, lockfile, and build — they don't share state
+- Common inputs: `nixpkgs` (unpinned to latest), `flake-utils`
+- Sources are imported with `flake = false`
 
 ## Commands
 
-From inside a subdirectory:
+All commands run from within a flake's directory (e.g., `cd rpcs3 && ...`):
 
 ```
-nix build .#<package-name>      # builds; creates gitignored `result` symlink
-nix build .#packages.default    # builds the default package
-nix develop                     # shell if a devShell is defined (llama, mpv,
-                                # mythtv, power-options, romextract, uboot)
-nix flake update                # bump inputs → updates flake.lock
-nix flake lock                  # create/refresh lock without rebuilding
+nix build .#<pkg>      # Build a specific package, creates ./result symlink
+nix build .#default    # Build the default package
+nix build .            # Same as above
+nix flake show .       # List all outputs (packages, devShells, etc.)
+nix flake update       # Update all input pins in flake.lock
+nix develop .          # Enter devShell (if defined)
 ```
 
-- `result` is gitignored — **never commit it**. Several directories also contain
-  stray untracked build artifacts (`ctr/CTRPC.log`, `mpv/package-lock.json`,
-  `mythtv/mythtv-35.0.tar.gz`, `uboot/u-boot-rk1.bin`) that are not gitignored;
-  leave them alone unless you are regenerating them intentionally.
-- flake.lock files **are** committed. When changing source URLs in flake.nix,
-  run `nix flake update` (or `nix flake lock`) and commit both files.
+## Output conventions
 
-## Workflow
+- Most flakes expose `packages.default` as the primary output
+- Many also set `flakedPkgs = pkgs` (for overlay consumption)
+- Some define `devShell` for development environments
+- A few use `writeShellApplication` as `packages.default` to wrap launch scripts (`sm`, `gta`, `openmw`)
 
-- No lint, typecheck, or test suites exist; verification is a successful
-  `nix build`. There are no `checks` or `apps` outputs to run (only
-  `vacuumtube` defines `apps`).
-- Commit messages are terse lowercase subjects (e.g. `update llama`, `wip turnstone`).
-- Prefer one commit per flake when updating, matching existing history.
+## Notable deviations from the common pattern
 
-## Build helpers spotted
+| Flake | Quirk |
+|---|---|
+| `ctr` | No `nixpkgs` input — relies entirely on upstream `ctr-sdk` flake for packages |
+| `uboot` | No `flake-utils`; targets `aarch64-linux` and `armv7l-linux` explicitly |
+| `install-iso` | Uses `nixosConfigurations` and `images` outputs, not `eachDefaultSystem` |
+| `sm` | Bundles local `sm/sm.ini` into derivation via `${self}/sm.ini` |
+| `nvim` | Builds mini.nvim plugins via `buildLuarocksPackage` + `buildNeovimPlugin` |
+| `openmw` | Multi-stage: builds bullet3, mygui, collada-dom, osg as intermediates |
+| `llama` | Complex ROCm/Vulkan/OpenVINO build; `postConfigure` fetches UI assets |
+| `ace-step` | Python packages with `torchWithRocm`, `triton`, etc. |
+| `gta` | Separate `-bin` and `-assets` packages, composed into `writeShellApplication` |
 
-- Meson flakes set `mesonFlags` via `pkgs.lib.mesonEnable` / `mesonOption`
-  (mpv, gamescope, libplacebo).
-- CMake flakes use `pkgs.lib.strings.cmakeFeature` / `cmakeBool`
-  (llama, dsda-doom).
-- Some CMake flakes set the compiler via `CMAKE_HIP_COMPILER` and require env
-  vars: `ROCM_PATH`, `HIP_DEVICE_LIB_PATH` (llama).
+## Runtime data
+
+Several game emulators expect ROMs/data at `~/roms/<game>/`. The `packages.default` for these flakes is a wrapper script that copies assets there at launch.
+
+## Gotchas
+
+- `.gitignore` only contains `result` — the symlink created by `nix build`
+- No CI, tests, linting, or pre-commit hooks
+- `nixpkgs` is unpinned (`github:nixos/nixpkgs` resolves to latest master)
+- When adding packages, follow the existing pattern: `rec { packages.<name> = ...; packages.default = packages.<name>; }`
