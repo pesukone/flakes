@@ -36,8 +36,8 @@
 
           buildInputs = with pkgs; [
             zlib
-            SDL2
-            SDL2_mixer
+            sdl3
+            sdl3-mixer
             lua
             (lua.withPackages (
               p: with p; [

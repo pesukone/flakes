@@ -19,11 +19,11 @@
     "dsda-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1778263614,
-        "narHash": "sha256-s9N6n20Egh0A0Zya0CqPjSf87wWXXgWCVqJA0GABNg0=",
+        "lastModified": 1786552771,
+        "narHash": "sha256-xiKlWgKGDkxXO5doxgfipDXOHauLJYVVtj+uj4OEe5A=",
         "owner": "kraflab",
         "repo": "dsda-doom",
-        "rev": "d71c50c7160ea73d3c6f9b815383b39bc0fb865c",
+        "rev": "6f79f9f5b1f905948c625d59c756b771af608035",
         "type": "github"
       },
       "original": {
@@ -53,11 +53,11 @@
     "freedoom-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1765036198,
-        "narHash": "sha256-BgX/qTA2xYa5NS9Y3CehSE+bj9YuM92crARE2U8T0SY=",
+        "lastModified": 1782143501,
+        "narHash": "sha256-HOlPse37LjrUM5WDCm/b5Rl45VCx0/6pwJv96octhX0=",
         "owner": "freedoom",
         "repo": "freedoom",
-        "rev": "d7ad12f26d644aedc4d94b598087223d3e4a38dd",
+        "rev": "d14dbbee3b6fbfb2c11cdb65eb61216e86d4ee85",
         "type": "github"
       },
       "original": {
@@ -81,11 +81,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1780058297,
-        "narHash": "sha256-y8MN9yzGDlTfBInfMbqLin1P0oqVhWr2eN8EMYcKvoU=",
+        "lastModified": 1786598068,
+        "narHash": "sha256-aijuoRVJOcl6ffSivh4w1+pA/tGqrFd6sZWxojrbw2k=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "dd73bc63956d6447f6fb8fc22904dfae4f61e560",
+        "rev": "1d2bd5d4cbb7d42f10c32e9e70abad34f08a0d05",
         "type": "github"
       },
       "original": {

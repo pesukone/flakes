@@ -3,11 +3,11 @@
     "corsixth-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1783734979,
-        "narHash": "sha256-aEQ7vnvG9FYv/VfARXYE3DXgzOh2U/tN2ZV9KG+Pu/w=",
+        "lastModified": 1786534626,
+        "narHash": "sha256-yV/Se2BD3xfqYBKQXK3nTXDI+j4xr28mkypBxY4y0kM=",
         "owner": "CorsixTH",
         "repo": "CorsixTH",
-        "rev": "f39f80140caa9b4b2d38c27cfe651b34eab5ad8e",
+        "rev": "3aa4adae516aaa186b3605d223130765e9366f1e",
         "type": "github"
       },
       "original": {
@@ -36,11 +36,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1783944444,
-        "narHash": "sha256-/uNlW79ktdFQWgFDnLaK7YhBkZPO+Zsf7dflm1ZhTaY=",
+        "lastModified": 1786598068,
+        "narHash": "sha256-aijuoRVJOcl6ffSivh4w1+pA/tGqrFd6sZWxojrbw2k=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "4a454c41b6bf25ded64e16f32fe0934ada4ee256",
+        "rev": "1d2bd5d4cbb7d42f10c32e9e70abad34f08a0d05",
         "type": "github"
       },
       "original": {
