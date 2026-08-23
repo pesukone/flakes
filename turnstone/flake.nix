@@ -17,8 +17,16 @@
       url = "github:anthropics/anthropic-sdk-python";
       flake = false;
     };
+    openai-src = {
+      url = "github:openai/openai-python";
+      flake = false;
+    };
+    pydantic-settings-src = {
+      url = "github:pydantic/pydantic-settings";
+      flake = false;
+    };
     hatchling-src = {
-      url = "github:pypa/hatch?tag=hatchling-v1.26.3?dir=backend";
+      url = "github:pypa/hatch?tag=hatchling-v1.26.3&dir=backend";
       flake = false;
     };
   };
@@ -32,6 +40,8 @@
       lacme-src,
       anthropic-src,
       hatchling-src,
+      openai-src,
+      pydantic-settings-src,
     }:
     flake-utils.lib.eachDefaultSystem (
       system:
@@ -46,24 +56,11 @@
           pyproject = true;
 
           dependencies = with pkgs.python3Packages; [
-            hatchling
-            hatch-vcs
-            click
-            distro
-            httpx2
-            hyperlink
-            keyring
-            pexpect
-            platformdirs
-            pyproject-hooks
-            python-discovery
-            rich
-            shellingham
-            tomli-w
+            packaging
+            pathspec
+            pluggy
             tomlkit
-            userpath
-            uv
-            virtualenv
+            trove-classifiers
           ];
         };
 
@@ -72,10 +69,11 @@
           src = lacme-src;
           pyproject = true;
 
+          build-system = [ packages.hatchling ];
+
           dependencies = with pkgs.python3Packages; [
-            hatchling
             cryptography
-            httpx
+            httpx2
           ];
         };
 
@@ -84,9 +82,56 @@
           src = anthropic-src;
           pyproject = true;
 
-          dependencies = with pkgs.python3Packages; [
+          build-system = [
             packages.hatchling
-            #hatch-fancy-pypi-readme
+            (pkgs.python3Packages.hatch-fancy-pypi-readme.overridePythonAttrs (old: {
+              propagatedBuildInputs = [ packages.hatchling ];
+            }))
+          ];
+
+          dependencies = with pkgs.python3Packages; [
+            httpx
+            pydantic
+            typing-extensions
+            anyio
+            sniffio
+            jiter
+            docstring-parser
+          ];
+        };
+
+        packages.openai = pkgs.python3Packages.buildPythonPackage {
+          name = "openai";
+          src = openai-src;
+          pyproject = true;
+
+          build-system = [
+            packages.hatchling
+          ];
+
+          dependencies = with pkgs.python3Packages; [
+            httpx2
+            pydantic
+            typing-extensions
+            anyio
+            distro
+            sniffio
+            tqdm
+            jiter
+          ];
+        };
+
+        packages.pydantic-settings = pkgs.python3Packages.buildPythonPackage {
+          name = "pydantic-settings";
+          src = pydantic-settings-src;
+          pyproject = true;
+
+          build-system = [ pkgs.python3Packages.hatchling ];
+
+          dependencies = with pkgs.python3Packages; [
+            pydantic
+            python-dotenv
+            typing-inspection
           ];
         };
 
@@ -95,33 +140,38 @@
           src = turnstone-src;
           pyproject = true;
 
-          dependencies = with pkgs.python3Packages; [
-            hatchling
-            alembic
-            altair
-            anthropic
-            bcrypt
-            croniter
-            cryptography
-            httpx-sse
-            httpx
-            packages.lacme
-            mcp
-            openai
-            pillow
-            psycopg
-            pydantic-settings
-            pydantic
-            pyjwt
-            pypdfium2
-            python-frontmatter
-            sqlalchemy
-            sse-starlette
-            starlette
-            structlog
-            uvicorn
-            vl-convert-python
-          ];
+          build-system = [ pkgs.python3Packages.hatchling ];
+
+          dependencies =
+            with pkgs.python3Packages;
+            [
+              alembic
+              altair
+              bcrypt
+              croniter
+              cryptography
+              httpx-sse
+              httpx
+              mcp
+              pillow
+              psycopg
+              pydantic
+              pyjwt
+              pypdfium2
+              python-frontmatter
+              sqlalchemy
+              sse-starlette
+              starlette
+              structlog
+              uvicorn
+              vl-convert-python
+            ]
+            ++ [
+              packages.anthropic
+              packages.lacme
+              packages.openai
+              packages.pydantic-settings
+            ];
         };
 
         packages.default = packages.turnstone;

@@ -176,10 +176,11 @@
         packages.yt-dlp = pkgs.python3Packages.buildPythonPackage {
           name = "yt-dlp";
           src = yt-dlp-src;
-          format = "pyproject";
+          pyproject = true;
 
-          propagatedBuildInputs = with pkgs.python3Packages; [
-            hatchling
+          build-system = with pkgs.python3Packages; [ hatchling ];
+
+          dependencies = with pkgs.python3Packages; [
             brotli
             certifi
             mutagen
@@ -189,6 +190,8 @@
             websockets
             pkgs.deno
           ];
+
+          meta.mainProgram = "yt-dlp";
         };
 
         packages.default = packages.mpv;
