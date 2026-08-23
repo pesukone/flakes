@@ -19,6 +19,11 @@
       url = "https://github.com/ggml-org/llama.cpp/releases/download/b9860/llama-b9860-ui.tar.gz";
       flake = false;
     };
+
+    dflash-patch = {
+      url = "file+https://github.com/ggml-org/llama.cpp/pull/27342.patch";
+      flake = false;
+    };
   };
 
   outputs =
@@ -29,6 +34,7 @@
       llama-src,
       poolside-llama-src,
       llama-ui-assets,
+      dflash-patch,
     }:
     flake-utils.lib.eachDefaultSystem (
       system:
@@ -41,6 +47,8 @@
           name = "llama.cpp";
           src = llama-src;
           enableParallelBuilding = true;
+
+          patches = [ dflash-patch ];
 
           nativeBuildInputs = with pkgs; [
             cmake

@@ -1,5 +1,17 @@
 {
   "nodes": {
+    "dflash-patch": {
+      "flake": false,
+      "locked": {
+        "narHash": "sha256-xRNmEhGHQASD4xMjrOkQuRxQ6/6VYmhhrYFpiyyVjqY=",
+        "type": "file",
+        "url": "https://github.com/ggml-org/llama.cpp/pull/27342.patch"
+      },
+      "original": {
+        "type": "file",
+        "url": "https://github.com/ggml-org/llama.cpp/pull/27342.patch"
+      }
+    },
     "flake-utils": {
       "inputs": {
         "systems": "systems"
@@ -80,6 +92,7 @@
     },
     "root": {
       "inputs": {
+        "dflash-patch": "dflash-patch",
         "flake-utils": "flake-utils",
         "llama-src": "llama-src",
         "llama-ui-assets": "llama-ui-assets",
