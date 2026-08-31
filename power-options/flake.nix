@@ -42,6 +42,9 @@
           ];
 
           postInstall = ''
+            mv $out/bin/frontend $out/bin/power-options
+            mv $out/bin/frontend-gtk $out/bin/power-options-gtk
+
             $out/bin/power-daemon-mgr -v generate-base-files --path $out --program-path $out/bin/power-daemon-mgr
 
             mkdir -p $out/usr/share/icons
@@ -54,6 +57,18 @@
         };
 
         packages.default = packages.power-options;
+
+        devShell = pkgs.mkShell {
+          buildInputs = with pkgs; [
+            packages.power-options
+            libadwaita
+            yad
+            pciutils
+            acpi
+            webkitgtk_4_1
+            dioxus-cli
+          ];
+        };
       }
     );
 }

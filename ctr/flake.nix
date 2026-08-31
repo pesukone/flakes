@@ -14,7 +14,7 @@
       ctr-sdk,
     }:
     flake-utils.lib.eachDefaultSystem (system: rec {
-      packages.ctr-pc = ctr-sdk.packages.${system}.pc-decomp.release.native32.gcc.overrideAttrs {
+      packages.ctr-pc = ctr-sdk.packages.${system}.pc-decomp.debug.native32.gcc.overrideAttrs {
         postPatch = ''
           substituteInPlace ../rebuild_PS1/TEST_226.c \
           --replace-fail "*(unsigned char*)&tlByteAddr[tlU3 + 0], *(unsigned char*)&tlByteAddr[tlU3 + 1]," "*(unsigned char*)&tlByteAddr[tlU3 + 0], *(unsigned char*)&tlByteAddr[tlU3 + 1]"

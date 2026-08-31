@@ -17,6 +17,10 @@
       url = "github:yt-dlp/yt-dlp";
       flake = false;
     };
+    yt-dlp-ejs-src = {
+      url = "github:yt-dlp/ejs?ref=refs/tags/0.3.1";
+      flake = false;
+    };
     wayland-protocols-src = {
       url = "git+https://gitlab.freedesktop.org/wayland/wayland-protocols.git";
       flake = false;
@@ -31,6 +35,7 @@
       mpv-src,
       libplacebo-src,
       yt-dlp-src,
+      yt-dlp-ejs-src,
       wayland-protocols-src,
     }:
     flake-utils.lib.eachDefaultSystem (
@@ -192,6 +197,22 @@
           ];
 
           meta.mainProgram = "yt-dlp";
+        };
+
+        packages.yt-dlp-ejs = pkgs.python3Packages.buildPythonPackage {
+          name = "yt-dlp-ejs";
+          version = "0.3.1";
+          src = yt-dlp-ejs-src;
+          format = "pyproject";
+
+          propagatedBuildInputs = with pkgs.python3Packages; [
+            hatchling
+            hatch-vcs
+          ];
+          nativeBuildInputs = with pkgs; [
+            nodejs
+            npmHooks.npmConfigHook
+          ];
         };
 
         packages.default = packages.mpv;

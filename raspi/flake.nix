@@ -4,7 +4,7 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs";
     flake-utils.url = "github:numtide/flake-utils";
-    
+
     pinctrl-src = {
       type = "github";
       owner = "raspberrypi";
@@ -22,30 +22,33 @@
     };
   };
 
-  outputs = {
-    self,
-    nixpkgs,
-    flake-utils,
-    pinctrl-src,
-    ovmerge-src
-  }:
-    flake-utils.lib.eachDefaultSystem (system:
+  outputs =
+    {
+      self,
+      nixpkgs,
+      flake-utils,
+      pinctrl-src,
+      ovmerge-src,
+    }:
+    flake-utils.lib.eachDefaultSystem (
+      system:
       let
         pkgs = nixpkgs.legacyPackages.${system};
 
-      in rec {
+      in
+      rec {
         packages.pinctrl = pkgs.stdenv.mkDerivation {
           name = "pinctrl";
-	  src = pinctrl-src;
+          src = pinctrl-src;
 
-	  nativeBuildInputs = with pkgs; [ cmake ];
+          nativeBuildInputs = with pkgs; [ cmake ];
 
-	  buildInputs = with pkgs; [ python3Packages.libfdt ];
+          buildInputs = with pkgs; [ python3Packages.libfdt ];
 
           cmakeFlags = [
             "-DCMAKE_C_FLAGS=\"-Wno-error=maybe-uninitialized\""
           ];
-	};
+        };
 
         packages.ovmerge = pkgs.stdenv.mkDerivation {
           name = "ovmerge";
@@ -53,7 +56,11 @@
 
           buildInputs = with pkgs; [ perl ];
 
-          phases = [ "unpackPhase" "installPhase" "fixupPhase" ];
+          phases = [
+            "unpackPhase"
+            "installPhase"
+            "fixupPhase"
+          ];
 
           installPhase = ''
             mkdir -p $out/bin

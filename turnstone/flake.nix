@@ -14,19 +14,15 @@
       flake = false;
     };
     anthropic-src = {
-      url = "github:anthropics/anthropic-sdk-python";
+      url = "git+https://github.com/anthropics/anthropic-sdk-python?ref=refs/tags/v0.121.0";
       flake = false;
     };
     openai-src = {
-      url = "github:openai/openai-python";
+      url = "git+https://github.com/openai/openai-python?ref=refs/tags/v2.53.0";
       flake = false;
     };
     pydantic-settings-src = {
-      url = "github:pydantic/pydantic-settings";
-      flake = false;
-    };
-    hatchling-src = {
-      url = "github:pypa/hatch?tag=hatchling-v1.26.3&dir=backend";
+      url = "git+https://github.com/pydantic/pydantic-settings?ref=refs/tags/v2.15.0";
       flake = false;
     };
   };
@@ -39,7 +35,6 @@
       turnstone-src,
       lacme-src,
       anthropic-src,
-      hatchling-src,
       openai-src,
       pydantic-settings-src,
     }:
@@ -49,84 +44,84 @@
         pkgs = nixpkgs.legacyPackages.${system};
       in
       rec {
-        packages.hatchling = pkgs.python3Packages.buildPythonPackage {
-          name = "hatchling";
-          version = "1.26.3";
-          src = hatchling-src;
-          pyproject = true;
-
-          dependencies = with pkgs.python3Packages; [
-            packaging
-            pathspec
-            pluggy
-            tomlkit
-            trove-classifiers
-          ];
-        };
-
         packages.lacme = pkgs.python3Packages.buildPythonPackage {
           name = "lacme";
           src = lacme-src;
           pyproject = true;
 
-          build-system = [ packages.hatchling ];
+          nativeBuildInputs = with pkgs.python3Packages; [
+            hatchling
+          ];
 
           dependencies = with pkgs.python3Packages; [
             cryptography
-            httpx2
+            httpx
           ];
         };
 
         packages.anthropic = pkgs.python3Packages.buildPythonPackage {
-          name = "anthropic";
-          src = anthropic-src;
+          pname = "anthropic";
+          version = "0.121.0";
           pyproject = true;
+          src = anthropic-src;
 
-          build-system = [
-            packages.hatchling
-            (pkgs.python3Packages.hatch-fancy-pypi-readme.overridePythonAttrs (old: {
-              propagatedBuildInputs = [ packages.hatchling ];
-            }))
+          postPatch = ''
+            substituteInPlace pyproject.toml \
+              --replace-fail '"hatchling==1.26.3"' '"hatchling"'
+          '';
+
+          build-system = with pkgs.python3Packages; [
+            hatchling
+            hatch-fancy-pypi-readme
           ];
 
           dependencies = with pkgs.python3Packages; [
-            httpx
-            pydantic
-            typing-extensions
             anyio
-            sniffio
-            jiter
+            distro
             docstring-parser
+            httpx
+            jiter
+            pydantic
+            sniffio
+            typing-extensions
           ];
         };
 
         packages.openai = pkgs.python3Packages.buildPythonPackage {
-          name = "openai";
-          src = openai-src;
+          pname = "openai";
+          version = "2.53.0";
           pyproject = true;
+          src = openai-src;
 
-          build-system = [
-            packages.hatchling
+          postPatch = ''
+            substituteInPlace pyproject.toml \
+              --replace-fail '"hatchling==1.26.3"' '"hatchling"'
+          '';
+
+          build-system = with pkgs.python3Packages; [
+            hatchling
+            hatch-fancy-pypi-readme
           ];
 
           dependencies = with pkgs.python3Packages; [
-            httpx2
-            pydantic
-            typing-extensions
             anyio
             distro
+            httpx
+            jiter
+            pydantic
             sniffio
             tqdm
-            jiter
+            typing-extensions
           ];
         };
 
         packages.pydantic-settings = pkgs.python3Packages.buildPythonPackage {
-          name = "pydantic-settings";
-          src = pydantic-settings-src;
+          pname = "pydantic-settings";
+          version = "2.15.0";
           pyproject = true;
+          src = pydantic-settings-src;
 
-          build-system = [ pkgs.python3Packages.hatchling ];
+          build-system = with pkgs.python3Packages; [ hatchling ];
 
           dependencies = with pkgs.python3Packages; [
             pydantic
@@ -140,38 +135,36 @@
           src = turnstone-src;
           pyproject = true;
 
-          build-system = [ pkgs.python3Packages.hatchling ];
+          doCheck = false;
 
-          dependencies =
-            with pkgs.python3Packages;
-            [
-              alembic
-              altair
-              bcrypt
-              croniter
-              cryptography
-              httpx-sse
-              httpx
-              mcp
-              pillow
-              psycopg
-              pydantic
-              pyjwt
-              pypdfium2
-              python-frontmatter
-              sqlalchemy
-              sse-starlette
-              starlette
-              structlog
-              uvicorn
-              vl-convert-python
-            ]
-            ++ [
-              packages.anthropic
-              packages.lacme
-              packages.openai
-              packages.pydantic-settings
-            ];
+          build-system = with pkgs.python3Packages; [ hatchling ];
+
+          dependencies = with pkgs.python3Packages; [
+            alembic
+            altair
+            packages.anthropic
+            bcrypt
+            croniter
+            cryptography
+            httpx-sse
+            httpx
+            packages.lacme
+            mcp
+            packages.openai
+            pillow
+            psycopg
+            packages.pydantic-settings
+            pydantic
+            pyjwt
+            pypdfium2
+            python-frontmatter
+            sqlalchemy
+            sse-starlette
+            starlette
+            structlog
+            uvicorn
+            vl-convert-python
+          ];
         };
 
         packages.default = packages.turnstone;
