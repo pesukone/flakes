@@ -3,17 +3,18 @@
     "anthropic-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1785260266,
-        "narHash": "sha256-sQAV4+fKx+WNEsV08MSqL6o/iTOhqpf464uWc8iH/qc=",
-        "owner": "anthropics",
-        "repo": "anthropic-sdk-python",
-        "rev": "f5c30d0490fb7bcd8e0b65d8d8e63c0e7d1bfe59",
-        "type": "github"
+        "lastModified": 1786122619,
+        "narHash": "sha256-s0bxTYpxVp6xvSqhLM4HT6pXgNmltEgQSWByxmZodvw=",
+        "ref": "refs/tags/v0.121.0",
+        "rev": "204fa8e7ebc0c289a91c1fa337b21263e2f0da0e",
+        "revCount": 1220,
+        "type": "git",
+        "url": "https://github.com/anthropics/anthropic-sdk-python"
       },
       "original": {
-        "owner": "anthropics",
-        "repo": "anthropic-sdk-python",
-        "type": "github"
+        "ref": "refs/tags/v0.121.0",
+        "type": "git",
+        "url": "https://github.com/anthropics/anthropic-sdk-python"
       }
     },
     "flake-utils": {
@@ -34,30 +35,14 @@
         "type": "github"
       }
     },
-    "hatchling-src": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1785974482,
-        "narHash": "sha256-xxTykmExj+yQm5zaMv2MCwlS0SkdCfQzpbJSUgILQJ8=",
-        "owner": "pypa",
-        "repo": "hatch",
-        "rev": "3a9d853a68d009db91e70e4271b1d688e5381d3b",
-        "type": "github"
-      },
-      "original": {
-        "owner": "pypa",
-        "repo": "hatch",
-        "type": "github"
-      }
-    },
     "lacme-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1785366787,
-        "narHash": "sha256-3wJkSY+qjLS+5TPUrp9o+u+MhT24MJo2dSu5QlMB5S0=",
+        "lastModified": 1786603188,
+        "narHash": "sha256-ed9OSVzN5woUR4ssS/OXFjafysXHuh5IVoGoJat48k4=",
         "owner": "turnstonelabs",
         "repo": "lacme",
-        "rev": "4418e25592feea075b6945b05190b3efdabfa655",
+        "rev": "40c6a10df8737c23d5fb7cfef89ecd8f67b97e10",
         "type": "github"
       },
       "original": {
@@ -68,11 +53,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1786101636,
-        "narHash": "sha256-kvww46toq843xZQkDQMofC6ONwBcbE6bI6dNKcZGNY4=",
+        "lastModified": 1788213989,
+        "narHash": "sha256-PpMRquPIMkb4mADS2wItGoYxy5Z2gohJSA6gB1F7xmI=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "270a18536dc293fb67efefb44c8540b766d563a6",
+        "rev": "db2c3989ae74a0773208d977021e8237a0e5c36c",
         "type": "github"
       },
       "original": {
@@ -81,13 +66,48 @@
         "type": "github"
       }
     },
+    "openai-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1787955603,
+        "narHash": "sha256-tO/0gYwA95KsdAmh6yBwU01SkyrSrdr+6TOQnMbFQUw=",
+        "ref": "refs/tags/v3.6.0",
+        "rev": "1cfa80ab6b4bd48e3566f05992027b2ff460f2c5",
+        "revCount": 1524,
+        "type": "git",
+        "url": "https://github.com/openai/openai-python"
+      },
+      "original": {
+        "ref": "refs/tags/v3.6.0",
+        "type": "git",
+        "url": "https://github.com/openai/openai-python"
+      }
+    },
+    "pydantic-settings-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1786093319,
+        "narHash": "sha256-bVZ0KOQ+YA2n4HZ/G7A8fmgQJMtcACRdz587du/z1s4=",
+        "ref": "refs/tags/v2.15.0",
+        "rev": "f725ca187bee4212e9ef799eefa3cb25be788462",
+        "revCount": 406,
+        "type": "git",
+        "url": "https://github.com/pydantic/pydantic-settings"
+      },
+      "original": {
+        "ref": "refs/tags/v2.15.0",
+        "type": "git",
+        "url": "https://github.com/pydantic/pydantic-settings"
+      }
+    },
     "root": {
       "inputs": {
         "anthropic-src": "anthropic-src",
         "flake-utils": "flake-utils",
-        "hatchling-src": "hatchling-src",
         "lacme-src": "lacme-src",
         "nixpkgs": "nixpkgs",
+        "openai-src": "openai-src",
+        "pydantic-settings-src": "pydantic-settings-src",
         "turnstone-src": "turnstone-src"
       }
     },
@@ -109,15 +129,16 @@
     "turnstone-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1786056497,
-        "narHash": "sha256-1JzWw4ypTX9z9MlA1p+qohFsBBinSVV18g8W/9fzd6w=",
+        "lastModified": 1787778672,
+        "narHash": "sha256-dX74NXen54XfWU2M1DoqFu352p4cTr6w8kB1mBka7Cs=",
         "owner": "turnstonelabs",
         "repo": "turnstone",
-        "rev": "f138784ba38173d5dd6710949f5b89c16f150cc1",
+        "rev": "8ae8e3067fec032b76fd728bc2e24787c5cad573",
         "type": "github"
       },
       "original": {
         "owner": "turnstonelabs",
+        "ref": "main",
         "repo": "turnstone",
         "type": "github"
       }

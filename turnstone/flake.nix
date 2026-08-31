@@ -6,7 +6,7 @@
     flake-utils.url = "github:numtide/flake-utils";
 
     turnstone-src = {
-      url = "github:turnstonelabs/turnstone";
+      url = "github:turnstonelabs/turnstone/main";
       flake = false;
     };
     lacme-src = {
@@ -18,7 +18,7 @@
       flake = false;
     };
     openai-src = {
-      url = "git+https://github.com/openai/openai-python?ref=refs/tags/v2.53.0";
+      url = "git+https://github.com/openai/openai-python?ref=refs/tags/v3.6.0";
       flake = false;
     };
     pydantic-settings-src = {
@@ -55,7 +55,8 @@
 
           dependencies = with pkgs.python3Packages; [
             cryptography
-            httpx
+            httpx2
+            idna
           ];
         };
 
@@ -64,11 +65,7 @@
           version = "0.121.0";
           pyproject = true;
           src = anthropic-src;
-
-          postPatch = ''
-            substituteInPlace pyproject.toml \
-              --replace-fail '"hatchling==1.26.3"' '"hatchling"'
-          '';
+          postPatch = "sed -i 's/hatchling==1.26.3/hatchling>=1.26.3/' pyproject.toml";
 
           build-system = with pkgs.python3Packages; [
             hatchling
@@ -89,14 +86,10 @@
 
         packages.openai = pkgs.python3Packages.buildPythonPackage {
           pname = "openai";
-          version = "2.53.0";
+          version = "3.6.0";
           pyproject = true;
           src = openai-src;
-
-          postPatch = ''
-            substituteInPlace pyproject.toml \
-              --replace-fail '"hatchling==1.26.3"' '"hatchling"'
-          '';
+          postPatch = "sed -i 's/hatchling==1.27.0/hatchling>=1.27.0/' pyproject.toml; sed -i 's/httpx2>=2.7.0/httpx2>=2.0.0/' pyproject.toml; sed -i 's/jiter>=0.16.0/jiter>=0.12.0/' pyproject.toml";
 
           build-system = with pkgs.python3Packages; [
             hatchling
@@ -107,6 +100,7 @@
             anyio
             distro
             httpx
+            httpx2
             jiter
             pydantic
             sniffio
@@ -134,6 +128,7 @@
           name = "turnstone";
           src = turnstone-src;
           pyproject = true;
+          postPatch = "sed -i 's/pydantic-settings>=2.14.2/pydantic-settings>=2.12.0/' pyproject.toml";
 
           doCheck = false;
 
@@ -153,7 +148,7 @@
             packages.openai
             pillow
             psycopg
-            packages.pydantic-settings
+            pydantic-settings
             pydantic
             pyjwt
             pypdfium2
@@ -164,6 +159,8 @@
             structlog
             uvicorn
             vl-convert-python
+            httpx2
+            idna
           ];
         };
 
