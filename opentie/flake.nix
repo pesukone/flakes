@@ -29,7 +29,39 @@
           src = opentie-src;
           enableParallelBuilding = true;
 
-          nativeBuildInputs = with pkgs; [ cmake ];
+          patches = [ ./add-new-include.patch ];
+
+          nativeBuildInputs = with pkgs; [
+            cmake
+            pkg-config
+          ];
+
+          buildInputs = with pkgs; [
+            sdl3
+            (sdl3-shadercross.overrideAttrs (
+              finalAttrs: previousAttrs: {
+                patches = (previousAttrs.patches or [ ]) ++ [
+                  "${opentie-src}/packaging/common/shadercross-fsr3.patch"
+                ];
+              }
+            ))
+            zstd
+            ffmpeg
+            alsa-lib
+          ];
+
+          installPhase = ''
+            runHook preInstall
+
+            install -Dm755 OpenTIE "$out/bin/OpenTIE"
+            install -d "$out/bin/shaders"
+            cp shaders/* "$out/bin/shaders/"
+            cp -r resources "$out/bin/resources"
+
+            runHook postInstall
+          '';
+
+          meta.mainProgram = "OpenTIE";
         };
 
         packages.default = packages.opentie;

@@ -1,0 +1,10 @@
+--- a/aeron/src/fsr3/backend.cpp	2026-09-02 22:40:37.498699351 +0300
++++ b/aeron/src/fsr3/backend.cpp	2026-09-02 22:40:37.503032206 +0300
+@@ -13,6 +13,7 @@
+ #include <cstdlib>
+ #include <cstring>
+ #include <cwchar>
++#include <new>
+ 
+ namespace {
+ 
