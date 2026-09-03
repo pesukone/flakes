@@ -4,7 +4,7 @@ Collection of independent Nix flakes. Each top-level directory is a standalone f
 
 ## Structure
 
-- 30 independent flakes, one per directory
+- 39 independent flakes, one per directory
 - Each has its own inputs, lockfile, and build — they don't share state
 - Common inputs: `nixpkgs` (unpinned to latest), `flake-utils`
 - Sources are imported with `flake = false`
@@ -38,6 +38,7 @@ nix develop .          # Enter devShell (if defined)
 | `install-iso` | Uses `nixosConfigurations` and `images` outputs, not `eachDefaultSystem` |
 | `sm` | Bundles local `sm/sm.ini` into derivation via `${self}/sm.ini` |
 | `nvim` | Builds mini.nvim plugins via `buildLuarocksPackage` + `buildNeovimPlugin` |
+| `opentie` | Applies local `opentie/add-new-include.patch` (flakes may carry local patch/data files next to `flake.nix`) |
 | `openmw` | Multi-stage: builds bullet3, mygui, collada-dom, osg as intermediates |
 | `llama` | Complex ROCm/Vulkan/OpenVINO build; `postConfigure` fetches UI assets |
 | `ace-step` | Python packages with `torchWithRocm`, `triton`, etc. |
@@ -51,5 +52,6 @@ Several game emulators expect ROMs/data at `~/roms/<game>/`. The `packages.defau
 
 - `.gitignore` only contains `result` — the symlink created by `nix build`
 - No CI, tests, linting, or pre-commit hooks
-- `nixpkgs` is unpinned (`github:nixos/nixpkgs` resolves to latest master)
+- `nixpkgs` is unpinned (`github:nixos/nixpkgs` resolves to latest master) — exception: `kodi` pins a rev
+- Untracked cruft exists (`*.orig`, stray logs, binaries); `.gitignore` only covers `result` — don't commit these
 - When adding packages, follow the existing pattern: `rec { packages.<name> = ...; packages.default = packages.<name>; }`
