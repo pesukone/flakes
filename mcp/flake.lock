@@ -1,0 +1,94 @@
+{
+  "nodes": {
+    "chrome-devtools-mcp-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1789391610,
+        "narHash": "sha256-yETVU8sppAZMhd+2g94+MplmdT7FYIjWUsm5+XXINhE=",
+        "owner": "ChromeDevTools",
+        "repo": "chrome-devtools-mcp",
+        "rev": "17c671899b557d63e76e21f18af323616dd2ee8e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "ChromeDevTools",
+        "repo": "chrome-devtools-mcp",
+        "type": "github"
+      }
+    },
+    "flake-utils": {
+      "inputs": {
+        "systems": "systems"
+      },
+      "locked": {
+        "lastModified": 1731533236,
+        "narHash": "sha256-l0KFg5HjrsfsO/JpG+r7fRrqm12kzFHyUHqHCVpMMbI=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "11707dc2f618dd54ca8739b309ec4fc024de578b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "type": "github"
+      }
+    },
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1789397045,
+        "narHash": "sha256-a6EMRp2C0Goodlh5sjZAH9Crmy4QNQsLGuEyx5ZorN4=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "fd36b0f1acd806f4c0e52441dec0520d0dc33cfe",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "postgres-mcp-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1786858417,
+        "narHash": "sha256-/bl1U0us0f0K+if3FsOVb8FhGdCGzQK0R/x69zfiNUc=",
+        "owner": "crystaldba",
+        "repo": "postgres-mcp",
+        "rev": "15c8e33353546148acc2d8bd784551cf3905d1e2",
+        "type": "github"
+      },
+      "original": {
+        "owner": "crystaldba",
+        "repo": "postgres-mcp",
+        "type": "github"
+      }
+    },
+    "root": {
+      "inputs": {
+        "chrome-devtools-mcp-src": "chrome-devtools-mcp-src",
+        "flake-utils": "flake-utils",
+        "nixpkgs": "nixpkgs",
+        "postgres-mcp-src": "postgres-mcp-src"
+      }
+    },
+    "systems": {
+      "locked": {
+        "lastModified": 1681028828,
+        "narHash": "sha256-Vy1rq5AaRuLzOxct8nz4T6wlgyUR7zLU309k9mBC768=",
+        "owner": "nix-systems",
+        "repo": "default",
+        "rev": "da67096a3b9bf56a91d16901293e51ba5b49a27e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-systems",
+        "repo": "default",
+        "type": "github"
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}
