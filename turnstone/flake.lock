@@ -53,11 +53,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1788213989,
-        "narHash": "sha256-PpMRquPIMkb4mADS2wItGoYxy5Z2gohJSA6gB1F7xmI=",
+        "lastModified": 1789967368,
+        "narHash": "sha256-z49qKZgApIcXKPwTbIFThoyA2p+RgNLS9r7YeE1r0h8=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "db2c3989ae74a0773208d977021e8237a0e5c36c",
+        "rev": "ceb9606bd1f7fa30717f5d944a188e4842563fda",
         "type": "github"
       },
       "original": {
@@ -129,11 +129,11 @@
     "turnstone-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1787778672,
-        "narHash": "sha256-dX74NXen54XfWU2M1DoqFu352p4cTr6w8kB1mBka7Cs=",
+        "lastModified": 1789185489,
+        "narHash": "sha256-G8FQ4CYpkWBshipogHIwVlGV9cmo815G4xy+h4NGQrY=",
         "owner": "turnstonelabs",
         "repo": "turnstone",
-        "rev": "8ae8e3067fec032b76fd728bc2e24787c5cad573",
+        "rev": "969b3816f9385ce13ea922e27f13e6e57917b0a7",
         "type": "github"
       },
       "original": {

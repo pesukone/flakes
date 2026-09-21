@@ -128,7 +128,7 @@
           name = "turnstone";
           src = turnstone-src;
           pyproject = true;
-          postPatch = "sed -i 's/pydantic-settings>=2.14.2/pydantic-settings>=2.12.0/' pyproject.toml";
+          postPatch = "sed -i 's/pydantic-settings>=2.14.2/pydantic-settings>=2.12.0/' pyproject.toml; sed -i 's/httpx2>=2.12,<3/httpx2>=2.0,<3/' pyproject.toml";
 
           doCheck = false;
 
