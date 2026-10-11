@@ -136,7 +136,7 @@
             libva
             libvdpau
             docutils
-            lua
+            lua5_2
             SDL2
             egl-wayland
             libGL
