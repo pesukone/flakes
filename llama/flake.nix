@@ -52,6 +52,7 @@
             rocmPackages.rocblas
             rocmPackages.hipblas
             rocmPackages.rocwmma
+            rocmPackages.rccl
             openblas
             vulkan-headers
             vulkan-loader
@@ -72,6 +73,7 @@
             (pkgs.lib.strings.cmakeBool "GGML_BLAS" true)
             (pkgs.lib.strings.cmakeBool "GGML_HIP" true)
             (pkgs.lib.strings.cmakeBool "GGML_HIP_ROCWMMA_FATTN" true)
+            (pkgs.lib.strings.cmakeBool "GGML_HIP_RCCL" true)
             (pkgs.lib.strings.cmakeBool "GGML_RPC" true)
             (pkgs.lib.strings.cmakeBool "GGML_VULKAN" true)
             (pkgs.lib.strings.cmakeBool "GGML_BACKEND_DL" true)
