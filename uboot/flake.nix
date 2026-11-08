@@ -220,19 +220,55 @@
         ];
       };
 
-      packages.aarch64-linux.ipxe = aarch64-pkgs.ipxe.override {
-        additionalOptions = [
-          "CONSOLE_SERIAL"
-          "COMPRESERVE"
-        ];
-        embedScript = aarch64-pkgs.writeText "ipxe-script" ''
-          #!ipxe
+      packages.aarch64-linux.ipxe =
+        (aarch64-pkgs.ipxe.override {
+          additionalOptions = [
+            "CONSOLE_SERIAL"
+            "COMPRESERVE"
+            "USB_KEYBOARD"
+            "FDT_CMD"
+            "CERT_CMD"
+            "CONSOLE_CMD"
+            "DIGEST_CMD"
+            "DOWNLOAD_PROTO_HTTPS"
+            "DOWNLOAD_PROTO_NFS"
+            "IMAGE_TRUST_CMD"
+            "IMAGE_GZIP"
+            "IMAGE_PNG"
+            "IMAGE_ZLIB"
+            #"NET_PROTO_IPV6"
+            "NET_PROTO_LLDP"
+            "NSLOOKUP_CMD"
+            "NTP_CMD"
+            "PARAM_CMD"
+            "PCI_CMD"
+            "PING_CMD"
+            "POWEROFF_CMD"
+            "REBOOT_CMD"
+            "TIME_CMD"
+            "VLAN_CMD"
+          ];
+          embedScript = aarch64-pkgs.writeText "ipxe-script" ''
+            #!ipxe
 
-          dhcp
-          set dns 8.8.8.8
-          chain http://boot.ipxe.org/demo/boot.php
-          #chain --autofree http://192.168.1.202/nixos/netboot.ipxe
-        '';
-      };
+            dhcp
+            set dns 192.168.1.1
+
+            chain --autofree https://boot.netboot.xyz
+            #shell
+            #chain http://boot.ipxe.org/demo/boot.php
+            #chain --autofree http://192.168.1.202/nixos/netboot.ipxe
+          '';
+        }).overrideAttrs
+          (
+            finalAttrs: prevAttrs: {
+              postConfigure = prevAttrs.postConfigure or "" + ''
+                echo "#undef NAP_EFI" >> src/config/local/nap.h
+                echo "#define NAP_NULL" >> src/config/local/nap.h
+
+                #echo "#undef NET_PROTO_IPV6" >> src/config/general.h
+              '';
+            }
+          );
     };
 }
