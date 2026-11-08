@@ -36,7 +36,8 @@
     "root": {
       "inputs": {
         "flake-utils": "flake-utils",
-        "nixpkgs": "nixpkgs"
+        "nixpkgs": "nixpkgs",
+        "ttymidi-src": "ttymidi-src"
       }
     },
     "systems": {
@@ -52,6 +53,19 @@
         "owner": "nix-systems",
         "repo": "default",
         "type": "github"
+      }
+    },
+    "ttymidi-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1328126180,
+        "narHash": "sha256-O51StshMqt3LTZkKYDi9xkjQjZ1EwHCfpQF5JZRiSO8=",
+        "type": "tarball",
+        "url": "https://varal.org/ttymidi/ttymidi.tar.gz"
+      },
+      "original": {
+        "type": "tarball",
+        "url": "https://varal.org/ttymidi/ttymidi.tar.gz"
       }
     }
   },
