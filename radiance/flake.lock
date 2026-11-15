@@ -1,0 +1,77 @@
+{
+  "nodes": {
+    "flake-utils": {
+      "inputs": {
+        "systems": "systems"
+      },
+      "locked": {
+        "lastModified": 1794427683,
+        "narHash": "sha256-o7ey9gEilsxaifqJWnBDlYSKbNWYQYtKwDyXeZU2kaU=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "cd489559845d81f673a12885576016c65cbe9363",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "type": "github"
+      }
+    },
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1794703068,
+        "narHash": "sha256-jCYqjJfQj6WxQBsOdHcjo0Ccx7lKHJSGJghu9Apmh08=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "ec645e1667f9e572d2430d569a296566e84fb5b7",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "radiance-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1794691948,
+        "narHash": "sha256-kTvfyp2FXHVbO+6FPTv4cZqvDGPVZQNKAeUrawIZ2tE=",
+        "ref": "refs/heads/main",
+        "rev": "ddcb9c69bb6c9ff270f8436bd4c059fba88ac6b7",
+        "revCount": 938,
+        "type": "git",
+        "url": "https://codeberg.org/StillDeadCode/radiance.git"
+      },
+      "original": {
+        "type": "git",
+        "url": "https://codeberg.org/StillDeadCode/radiance.git"
+      }
+    },
+    "root": {
+      "inputs": {
+        "flake-utils": "flake-utils",
+        "nixpkgs": "nixpkgs",
+        "radiance-src": "radiance-src"
+      }
+    },
+    "systems": {
+      "locked": {
+        "lastModified": 1791244623,
+        "narHash": "sha256-uuanbkFk8a313Zfrxdcz8Us/yQtaxNnKJtX8v0ZPpd8=",
+        "owner": "nix-systems",
+        "repo": "default",
+        "rev": "d36eeed142f88b5a636f2e3856a53c61654cf29b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-systems",
+        "repo": "default",
+        "type": "github"
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}
