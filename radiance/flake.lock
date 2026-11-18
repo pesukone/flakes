@@ -20,11 +20,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1794703068,
-        "narHash": "sha256-jCYqjJfQj6WxQBsOdHcjo0Ccx7lKHJSGJghu9Apmh08=",
+        "lastModified": 1795027601,
+        "narHash": "sha256-OLZ0Qx48kBcAP0uWaxnCEie0Jv8hdStHJAHFgYNR+T4=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "ec645e1667f9e572d2430d569a296566e84fb5b7",
+        "rev": "a8b12040d6c26c3b1896772a610a198ba4a0c3bc",
         "type": "github"
       },
       "original": {
@@ -36,11 +36,11 @@
     "radiance-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1794691948,
-        "narHash": "sha256-kTvfyp2FXHVbO+6FPTv4cZqvDGPVZQNKAeUrawIZ2tE=",
+        "lastModified": 1795025820,
+        "narHash": "sha256-VwVv0y01bo6MgiRZu8+VjL7EXh0Xlh4FBDtNQMhm8/k=",
         "ref": "refs/heads/main",
-        "rev": "ddcb9c69bb6c9ff270f8436bd4c059fba88ac6b7",
-        "revCount": 938,
+        "rev": "3deabdaeca17b58bad90d332f4b204cf7bb8a10e",
+        "revCount": 1047,
         "type": "git",
         "url": "https://codeberg.org/StillDeadCode/radiance.git"
       },

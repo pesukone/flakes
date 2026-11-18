@@ -1,0 +1,16 @@
+--- a/core/CMakeLists.txt
++++ b/core/CMakeLists.txt
+@@ -118,6 +118,13 @@
+   list(REMOVE_DUPLICATES RAD_CORE_GPU_TARGETS)
+   set_target_properties(rad_core PROPERTIES HIP_ARCHITECTURES "${RAD_CORE_GPU_TARGETS}")
+   rad_hip_repeatable(rad_core)
++  # The AQL backend extracts the code object from the embedded fat binary itself
++  # (core/device/aql_code.cpp) and refuses a compressed offload bundle at first
++  # launch. ROCm clang compresses the offload bundle by default, so force the
++  # uncompressed form for the engine's own kernels, as rad_hipify() does for
++  # plugins (cmake/RadAddPlugin.cmake).
++  target_compile_options(rad_core PRIVATE $<$<COMPILE_LANGUAGE:HIP>:--no-offload-compress>)
++  target_link_options(rad_core PRIVATE $<$<LINK_LANGUAGE:HIP>:--no-offload-compress>)
+   # Executables linking the core export the HIP entry points the backend defines, so a dlopen'ed
+   # kernel plugin binds to them instead of real HIP (which does not own the queues). aql.cpp checks
+   # this at startup and refuses to run without it.

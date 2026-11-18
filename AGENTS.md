@@ -39,6 +39,7 @@ nix develop .          # Enter devShell (if defined)
 | `sm` | Bundles local `sm/sm.ini` into derivation via `${self}/sm.ini` |
 | `nvim` | Builds mini.nvim plugins via `buildLuarocksPackage` + `buildNeovimPlugin` |
 | `opentie` | Applies local `opentie/add-new-include.patch` (flakes may carry local patch/data files next to `flake.nix`) |
+| `radiance` | ROCm build via `symlinkJoin` env (`rocmEnv`); applies local `radiance-core-no-offload-compress.patch` so `rad_core`'s fat binaries stay uncompressed (the AQL backend rejects compressed bundles); local patch files must be `git add -N` for the git-backed flake source |
 | `openmw` | Multi-stage: builds bullet3, mygui, collada-dom, osg as intermediates |
 | `llama` | Complex ROCm/Vulkan/OpenVINO build; `postConfigure` fetches UI assets |
 | `ace-step` | Python packages with `torchWithRocm`, `triton`, etc. |
